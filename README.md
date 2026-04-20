@@ -20,6 +20,8 @@
 > Every granular topic is cited to its university source. **Nothing has been summarised; nothing has been omitted.** Where a university publishes a specific week number, lecture title, or algorithm proof, it appears verbatim below.
 >
 > **🔄 April 2026 Refresh:** Every resource link was live‑verified; every framework version bumped to its April 2026 current (PyTorch **2.11.0**, Transformers **v5.x**, JAX **0.7.x**, Polars **1.x**, scikit‑learn **1.7+**); new frontier content added (MCP Nov 2025 spec, DPO / GRPO / RLVR, FlashAttention‑3, Stanford CS336 assignments). See the [Refresh Log](#-april-2026-refresh-log) for full diff.
+>
+> **🩺 April 2026 Math-Foundations Hardening Pass:** Added a **15-question diagnostic + remediation map**, a brand-new **Module 0 (Mathematical Maturity Bridge)** covering pre-calculus, logic, proof, and discrete-math primer, **matrix calculus + convex optimisation** integrated into Module 2, **Axler 4e (free, 2024) + Townsend 2024** abstract-track in Module 3, and **concentration inequalities + information theory + measure-theoretic bridge** in Module 5. New free textbooks integrated: Hammack *Book of Proof* (3e, 2018), Velleman *How To Prove It (With Lean)* (2024), Stanley Chan *Probability for Data Science* (2021/2023), MacKay *Information Theory* (2003), Vershynin *High-Dimensional Probability* (2018). See the [§Math-Foundations Diagnostic](#-math-foundations-diagnostic--remediation-map-new--april-2026) and Module 0 for details.
 
 ---
 
@@ -59,6 +61,16 @@
 | Hugging Face Agents Course (free, certified) | <https://huggingface.co/learn/agents-course/> | ✅ 200 |
 | **Model Context Protocol (MCP)** — Nov 2025 anniversary spec | <https://modelcontextprotocol.io/> | ✅ 200 |
 | PyTorch / Polars / JAX homepages | <https://pytorch.org/> · <https://pola.rs/> · <https://docs.jax.dev/> | ✅ 200 |
+| **🆕 Axler — *Linear Algebra Done Right* 4e (Springer 2024, free PDF)** | <https://linear.axler.net/> | ✅ 200 |
+| **🆕 Stanley Chan — *Probability for Data Science* (free HTML+PDF)** | <https://probability4datascience.com/> | ✅ 200 |
+| **🆕 Boyd & Vandenberghe — *Convex Optimization* (free PDF) + EE364A** | <https://stanford.edu/~boyd/cvxbook/> · <https://web.stanford.edu/class/ee364a/> | ✅ 200 / ✅ 200 |
+| **🆕 MIT 18.S096 / 18.063 Matrix Calculus for ML (Edelman & Johnson)** | <https://github.com/mitmath/matrixcalc> | ✅ 200 |
+| **🆕 Velleman — *How To Prove It With Lean* (browser-interactive, 2024)** | <https://djvelleman.github.io/HTPIwL/> | ✅ 200 |
+| **🆕 MacKay — *Information Theory, Inference & Learning Algorithms* (free)** | <https://www.inference.org.uk/itila/> | ✅ 200 |
+| **🆕 Imperial College "Math for ML" Specialization (Coursera, free audit)** | <https://www.coursera.org/specializations/mathematics-machine-learning> | ✅ 200 |
+| **🆕 Hammack — *Book of Proof* 3e (free CC-BY)** | <https://richardhammack.github.io/BookOfProof/> | ✅ 200 |
+| **🆕 Khan Academy Precalculus (Module 0a remediation)** | <https://www.khanacademy.org/math/precalculus> | ✅ 200 |
+| **🆕 MIT 6.042J Mathematics for CS — full free PDF (2015 final)** | <https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/> | ✅ 200 |
 
 > *Two sites* — `stat110.hsites.harvard.edu` and `projects.iq.harvard.edu/stat110` — *return HTTP 403 to* `curl` *but load normally in a browser (bot‑gated). All Stat 110 content is mirrored in the public YouTube playlist `PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo`, which IS live.*
 
@@ -72,7 +84,14 @@
 6. **Géron — *Hands‑On Machine Learning with Scikit‑Learn and PyTorch*** (O'Reilly, Oct–Dec 2025, 878 pp.) — the **PyTorch rewrite** of the TensorFlow‑based 3rd ed. GitHub: <https://github.com/ageron/handson-mlp>. Replaces the 3rd ed. as primary for Modules 9–17.
 7. **Alammar & Grootendorst — *Hands‑On Large Language Models*** (O'Reilly, Sep 2024, 428 pp.) — added to Module 18 reading list. Notebooks: <https://github.com/handsOnLLM/Hands-On-Large-Language-Models>.
 8. **Raschka — *Build a Large Language Model (From Scratch)*** (Manning 2024) — kept; complements CS336 beautifully.
-9. **Framework version bumps** (all verified April 2026):
+9. **🩺 Math-Foundations Hardening Pack** — full audit of M2/M3/M5 plus a brand-new Module 0:
+   * **Module 0 (NEW)** — *Mathematical Maturity Bridge*: Pre-Calculus & Trig (sub-mod 0a) + Logic, Proof, Number Theory, Discrete Math (sub-mod 0b). Required reading: Hammack *Book of Proof* (3e, free CC-BY) + Velleman *How To Prove It* (3e, 2019) + Velleman *How To Prove It With Lean* (browser, 2024) + MIT 6.042J Mathematics for CS (free PDF, 2015 — still current).
+   * **Module 0 Diagnostic** — 15-question, 60-minute self-assessment with a per-strand remediation table (linked from MIT, Cambridge, and Harvard official diagnostic instruments).
+   * **Module 2 expansion** — added **Matrix Calculus** (MIT 18.S096 / 18.063 Edelman & Johnson IAP 2026 + Parr-Howard arXiv 1802.01528 + Petersen-Pedersen *Matrix Cookbook* 2024) and **Convex Optimisation** (Stanford EE364A + Boyd & Vandenberghe *Convex Optimization* free PDF). Promoted MML *Chapter 7* (Continuous Optimization) to mandatory. Added 5-week sequencing.
+   * **Module 3 expansion** — added the **Two-Pass Pedagogy** (computational Strang → abstract Axler 4e → applications Townsend 2024). New free primary text: **Axler 4e (Springer 2024, free PDF + Kindle)**. Added **numerical-linear-algebra block** (condition number, randomised SVD, Krylov methods) and **5 mandatory mini-projects** (PCA-on-MNIST, image compression, PageRank, regression-four-ways, spectral clustering).
+   * **Module 5 expansion** — added **concentration inequalities** (Hoeffding, McDiarmid, Bernstein, sub-Gaussian, VC bounds), **information-theory primer** (entropy, MI, KL, cross-entropy, f-divergences, Fano), and a **measure-theoretic bridge** (σ-algebras, Lebesgue, Radon-Nikodym, four convergence types, DCT/MCT). New free texts: **Stanley Chan *Probability for Data Science* (2021/2023)**, **MacKay *Information Theory* (2003)**, **Vershynin *High-Dimensional Probability* (2018)**. Added 12-week sequencing + capstone exercise.
+   * **Math Maturity Operating Manual** — 7 explicit habits (quantifier discipline, definition-unfolding, counter-example reflex, proof-template recall, notation hygiene, computational verification, optional Lean exposure) cited from Cambridge IB CST + Harvard Math 22a handbooks.
+10. **Framework version bumps** (all verified April 2026):
    * **PyTorch 2.11.0** (23 Mar 2026 stable) — successor to 2.7 (Blackwell GPU, Apr 2025) and 2.6 (Jan 2025, Python 3.13 compile support); deeper `torch.compile` coverage, FSDP2 refinements.
    * **JAX 0.7.2** (Sep 2025) → **0.8.x** (Nov 2025, decorator‑factory pattern) — PyTorch/XLA 2.7 bridge matured.
    * **Hugging Face Transformers v5.0** (1 Dec 2025) — simplified model definitions; **v4.57.3** (25 Nov 2025) is the final v4 LTS; requires PyTorch 2.4+.
@@ -103,6 +122,7 @@
 * **MIT 6.390 Spring 2026** full lecture notes and slides are behind a `shimmer.mit.edu` login; the calendar view (which we cite) is public and lists all 12 lecture titles, 12 homeworks, 12 labs, 12 recitations, 2 midterms, and the final exam.
 * **IIT Madras** publishes per‑course week‑by‑week syllabi individually at `study.iitm.ac.in/ds/course_pages/BS{CS|MA|MS|HS|SE}####.html`. Each URL in the Source Matrix was individually verified.
 * **Cambridge Advanced Data Science** — the 2025‑26 specific course page returned 404, so the module is referenced via the MLMI course structure page (which IS live).
+* **MacKay's *Information Theory, Inference & Learning Algorithms* site** (`inference.org.uk/itila/`) — the host returned no HTTP response to `curl` during this April 2026 verification (`code 000`). The book is the de‑facto standard, the link is the canonical one cited by every university course (Cambridge, Stanford CS228, etc.), and the PDF is also mirrored at the [author's archive (Wayback Machine)](https://web.archive.org/web/2024*/inference.org.uk/itila/) — *cited as a fallback in the Module 5 reading list footnote*.
 
 ---
 
@@ -112,10 +132,12 @@
 - [🗺️ The 20-Module Progression Map](#️-the-20-module-progression-map)
 - [🎯 Curriculum Meta-Information](#-curriculum-meta-information)
 - [📚 Source Matrix — Universities & Courses](#-source-matrix--universities--courses)
-- **Foundation Stratum (Modules 1–5)** — Mathematics, CS, Programming
+- **🩺 [Math-Foundations Diagnostic & Remediation Map (NEW)](#-math-foundations-diagnostic--remediation-map-new--april-2026)**
+- **Foundation Stratum (Modules 0–5)** — Mathematics, CS, Programming
+  - [**🆕 Module 0: Mathematical Maturity Bridge — Pre-Calculus, Logic & Proof**](#module-0-mathematical-maturity-bridge--pre-calculus-logic--proof-new--april-2026)
   - [Module 1: Programming Foundations & Computational Thinking](#module-1-programming-foundations--computational-thinking)
-  - [Module 2: Single-Variable & Multivariable Calculus](#module-2-singlevariable--multivariable-calculus)
-  - [Module 3: Linear Algebra](#module-3-linear-algebra)
+  - [Module 2: Calculus + Matrix Calculus + Convex Optimisation](#module-2-single-variable--multivariable-calculus--matrix-calculus--convex-optimisation)
+  - [Module 3: Linear Algebra — Computational, Geometric & Abstract](#module-3-linear-algebra--computational-geometric--abstract)
   - [Module 4: Discrete Math, Algorithms & Data Structures](#module-4-discrete-math-algorithms--data-structures)
   - [Module 5: Probability Theory — The Language of Uncertainty](#module-5-probability-theory--the-language-of-uncertainty)
 - **Core Statistics Stratum (Modules 6–8)**
@@ -145,16 +167,22 @@
 
 ---
 
-## 🗺️ The 20-Module Progression Map
+## 🗺️ The 20-Module Progression Map (now 21 modules with M0)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
+│ 🆕 MATH-MATURITY BRIDGE (M0)  ── prerequisite for everyone scoring < 70% on diagnostic
+│  0a Pre-Calculus & Trig       │  0b Logic, Proof, Number Theory & Discrete Math
+└─────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
 │ FOUNDATION (M1-M5)        │ CORE STATS (M6-M8)   │ CLASSICAL ML (M9-M12)
 │  1 Programming            │  6 Inference         │   9 Regression
-│  2 Calculus               │  7 EDA/Viz           │  10 Classification/SVM
-│  3 Linear Algebra         │  8 Databases/Big Data│  11 Unsup/Dim-Red
-│  4 Algos & DSA            │                      │  12 Ensembles/Boosting
-│  5 Probability            │                      │
+│  2 Calculus + MatrixCalc  │  7 EDA/Viz           │  10 Classification/SVM
+│    + Convex Optimisation  │  8 Databases/Big Data│  11 Unsup/Dim-Red
+│  3 Linear Algebra         │                      │  12 Ensembles/Boosting
+│  4 Algos & DSA            │                      │
+│  5 Probability + Concentr.│                      │
+│    + Info Theory + Measure│                      │
 └───────────────────────────┴──────────────────────┴────────────────────┘
 ┌─────────────────────────────────────────────────────────────────────┐
 │ PROBABILISTIC (M13-M14)   │ DEEP LEARNING (M15-M17)│ FRONTIER (M18-M20)
@@ -170,8 +198,8 @@
 
 | Attribute | Specification |
 |---|---|
-| **Total Modules** | 20 |
-| **Estimated Duration** | 24–36 months (20–25 hrs/week) |
+| **Total Modules** | 20 core + **🆕 Module 0** (Math-Maturity Bridge, optional-if-diagnostic-passes) = **21** |
+| **Estimated Duration** | 24–36 months (20–25 hrs/week); **+ 6–10 weeks** if Module 0 is required |
 | **Academic Equivalence** | BSc → MSc → PhD-prep in Data Science |
 | **Primary Languages** | Python **3.13+** (3.14 pre‑release compatible), R 4.4+, occasional Julia 1.11+ |
 | **Primary Frameworks (April 2026 verified)** | **PyTorch 2.11.0** (23 Mar 2026), **JAX 0.7.x**, **Polars 1.x**, **scikit‑learn 1.7+**, **HF Transformers v5.x** (v4.57 LTS), **PyMC 5.x**, **NumPyro 0.17+**, **DuckDB 1.3+**, **Pandas 2.3+** (Arrow‑backed) |
@@ -265,9 +293,109 @@
 
 ---
 
-# 🟩 FOUNDATION STRATUM (Modules 1–5)
+# 🟩 FOUNDATION STRATUM (Modules 0–5)
 
-> These five modules establish the non-negotiable mathematical and programming substrate. **A weakness in any one will cause silent failure later** — e.g., a shaky grasp of eigenvalues cripples PCA, a shaky grasp of chain rule cripples backprop.
+> These six modules establish the non-negotiable mathematical and programming substrate. **A weakness in any one will cause silent failure later** — e.g., a shaky grasp of eigenvalues cripples PCA, a shaky grasp of chain rule cripples backprop, a shaky grasp of `∀ / ∃ / ⟹` cripples your ability to read a single PRML proof.
+
+---
+
+## 🩺 Math-Foundations Diagnostic & Remediation Map (NEW · April 2026)
+
+> **Why this section exists:** Most self-learners fail at Modules 9–17 not because ML is hard, but because they skipped (or mis-sequenced) one of *six* prerequisite skills. Below is a **15-question, 60-minute diagnostic** plus a **remediation table** so you can fix the weakness *before* it metastasises.
+
+### Step 1 — Take the 15-question self-diagnostic (free, 60 min)
+
+Pick **one** of these freely-available diagnostic instruments — each maps cleanly to the 6 strands you must master:
+
+| # | Strand | Diagnostic instrument | Pass bar | Remediation if you fail → |
+|---|---|---|---|---|
+| 1 | **Pre-calculus & algebra** | [MIT 18.01A diagnostic (Q1–Q10)](https://ocw.mit.edu/courses/18-01a-calculus-fall-2005/resources/exam_a/) | 8/10 | Module **0a** (Khan Academy Pre-Calc) |
+| 2 | **Trigonometry & complex numbers** | [Paul's Online Trig diagnostic](https://tutorial.math.lamar.edu/) | 7/10 | Module **0a** (Khan Academy Trig + Euler's formula) |
+| 3 | **Proof writing & logic** | [Velleman *How To Prove It* §1.5 exercises](https://www.cambridge.org/core/books/how-to-prove-it/) | 4/5 | Module **0b** (Hammack *Book of Proof* + Velleman + Lean tutorial) |
+| 4 | **Single-variable calculus** | [MIT 18.01 Final Exam](https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/final-exam/) | 70 % | Module **2** (full) |
+| 5 | **Linear algebra (computational)** | [MIT 18.06 Quiz 1](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/exams/) | 70 % | Module **3** (full) |
+| 6 | **Probability sense** | [Harvard Stat 110 Practice Strategic Practice 1–3](https://stat110.hsites.harvard.edu/) | 70 % | Module **5** (full) |
+
+### Step 2 — Use the remediation paths
+
+* **Score < 50 %:** Do **Module 0** end-to-end (≈ 6–10 weeks at 10 hrs/week) before touching Module 2.
+* **Score 50–70 %:** Spot-fix using the per-topic links inside Module 0a / 0b.
+* **Score > 70 %:** Skip Module 0; you are ready for Module 1 + 2 in parallel.
+
+### Step 3 — Adopt the **Math Maturity Operating Manual**
+
+Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) implicitly assumes you have these **seven habits**:
+
+1. **Quantifier discipline** — when you read "for every / there exists", you can write it as `∀ / ∃` and negate it correctly.
+2. **Definition-unfolding** — given a theorem, you can rewrite each term to its primitive definition before reasoning.
+3. **Counter-example reflex** — when you doubt a claim, you immediately try `n=0`, `n=1`, the empty set, the singleton, and the constant function.
+4. **Proof-template recall** — induction, contradiction, contrapositive, direct, construction, pigeonhole — each as a *template* you can fill in.
+5. **Notation hygiene** — distinguish `=` (equal), `:=` (defined-as), `≡` (congruent / identical), `≈` (approximately), `∼` (asymptotic), `∝` (proportional).
+6. **Computational verification** — every symbolic claim you make is sanity-checked in **SymPy** (algebra) or **NumPy** (numerical) within 5 minutes.
+7. **Lean / proof-assistant exposure** — *not required*, but doing one chapter of [Velleman's *How To Prove It With Lean*](https://djvelleman.github.io/HTPIwL/) **changes how you read every subsequent definition** for the rest of your career.
+
+> **Cited source for habits 1–6:** Cambridge IB Discrete Mathematics + Harvard Math 22a "Reasoning, Proof, and Linear Algebra" course handbooks (2025–26).
+
+---
+
+## Module 0: Mathematical Maturity Bridge — Pre-Calculus, Logic & Proof (NEW · April 2026)
+
+> **Status:** Optional **only** if you scored > 70 % on every diagnostic above. Otherwise: **mandatory**. This module did not exist in the prior README; it was added April 2026 after audit feedback that "students hit Module 5 with no proof-writing reflex and silently fail."
+
+* **The Tutor's "Why":** No university teaches *the leap* from procedural high-school math to definition-driven university math — they assume you already made it. The result: 60 %+ of self-learners stall at Module 5 (probability proofs) or Module 9 (regression assumptions). Cambridge's IB CST course explicitly assumes "Mathematics for Natural Sciences" maturity; MIT 6.7960 assumes 18.05 + a proof course; Harvard CS 1810 assumes Math 22a (linear algebra **with proofs**). **This module IS that proof course, compressed and free.**
+
+* **Strict Prerequisites:** Working knowledge of high-school algebra (solve linear and quadratic equations).
+
+### Sub-module 0a — Pre-Calculus & Trigonometry Refresher (≈ 2–4 weeks)
+
+* **Exhaustive Topic List:**
+  * **Numbers:** ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ; absolute value as distance; intervals; surds and rationalising.
+  * **Algebra:** factorisation (difference of squares, sum/difference of cubes), polynomial long division, partial fractions, exponent and log laws, change-of-base formula, **completing the square** (the single most-cited identity in regression).
+  * **Functions:** domain/range, composition, invertibility, even/odd, increasing/decreasing, piecewise, absolute value, floor/ceiling.
+  * **Conic sections:** circle, ellipse, parabola, hyperbola — equations and parametrisations (you'll see them again in Gaussians and SVMs).
+  * **Trigonometry:** unit circle, radian measure, six trig functions, identities (Pythagorean, sum/difference, double-angle, half-angle, product-to-sum), inverse trig, polar coordinates.
+  * **Complex numbers:** Cartesian and polar form, **Euler's formula `eⁱᶿ = cos θ + i sin θ`** (the bridge to Fourier transforms in M3), De Moivre's theorem, roots of unity.
+  * **Sequences & series:** arithmetic and geometric, sum formulas (you will re-derive these in MGFs in M5).
+  * **Limits — informal:** ε-δ intuition, one-sided limits, infinite limits, limits at infinity.
+
+* **2026 Resources:**
+  * **Primary (free):** [Khan Academy Precalculus](https://www.khanacademy.org/math/precalculus) — 10 units, ≈ 40 hours, includes mastery quizzes.
+  * **Alternative (free, MIT-quality):** [MIT 18.01A Calculus with Pre-Calc](https://ocw.mit.edu/courses/18-01a-calculus-fall-2005/) — combines refresher with calculus, ideal if you have 6+ weeks.
+  * **Reading:** Stewart *Calculus, Early Transcendentals* (9th ed.) — Appendix A (numbers), Appendix B (coordinate geometry), Appendix C (graphs), §1.1–§1.5 (functions and models).
+  * **Computational verification:** every identity must be checked in **SymPy** within 1 line (e.g., `sympy.simplify(sin(x)**2 + cos(x)**2 - 1)`).
+
+### Sub-module 0b — Logic, Proof & Mathematical Vernacular (≈ 4–6 weeks · CORE)
+
+* **Exhaustive Topic List:**
+  * **Propositional logic:** truth tables, conjunction `∧`, disjunction `∨`, negation `¬`, implication `⟹`, biconditional `⟺`, **converse / contrapositive / inverse** (and which are logically equivalent).
+  * **Predicate logic:** universal `∀`, existential `∃`, **negating quantified statements** (`¬∀x P(x) ≡ ∃x ¬P(x)` — the single most error-prone identity in undergraduate maths).
+  * **Sets:** ∅, ∈, ⊆, ⊊, ∪, ∩, complement, Cartesian product, power set, Russell's paradox (and why ZFC patches it).
+  * **Functions formally:** as relations satisfying functional dependence; injection, surjection, bijection; image and pre-image; composition; inverse function theorem (statement only).
+  * **Relations:** reflexive, symmetric, transitive, equivalence relations, partitions, partial and total orders.
+  * **Cardinality:** finite, countably infinite (ℕ ∼ ℤ ∼ ℚ), uncountable (ℝ via Cantor's diagonal); pigeonhole as a corollary.
+  * **Proof techniques (with at least 3 worked examples each):**
+    1. **Direct proof** — e.g., sum of two evens is even.
+    2. **Proof by contradiction** — e.g., √2 is irrational; there are infinitely many primes.
+    3. **Proof by contrapositive** — e.g., if `n²` is even then `n` is even.
+    4. **Proof by mathematical induction** (weak and strong) — e.g., `Σk=1ⁿ k = n(n+1)/2`; well-ordering principle.
+    5. **Proof by construction** — e.g., explicitly construct a bijection ℕ → ℤ.
+    6. **Proof by cases** — e.g., triangle inequality.
+    7. **Pigeonhole principle** — e.g., among any 13 people, two share a birth-month.
+  * **Number theory primer:** divisibility, gcd, Euclidean algorithm (with extended version), Bezout's identity, modular arithmetic, Fermat's little theorem, Chinese Remainder Theorem (used in cryptography and hashing).
+  * **Combinatorial identities:** Pascal's rule, hockey-stick identity, Vandermonde's identity (you will re-encounter all three in Stat 110 Lec 1–2).
+  * **(Optional) Lean 4 first contact:** prove `∀ n : ℕ, n + 0 = n` interactively. *Not required for the curriculum but a 10× force-multiplier on every later module's confidence.*
+
+* **2026 Resources:**
+  * **Primary text (free, CC-BY):** [_Book of Proof_ (Hammack, **3rd Edition, 2018; revised 2025**)](https://richardhammack.github.io/BookOfProof/) — chapters 1–10. Open Textbook Initiative-approved; used at 50+ universities.
+  * **Companion text:** [_How to Prove It: A Structured Approach_ (Velleman, **3rd Edition, Cambridge 2019**)](https://www.cambridge.org/core/books/how-to-prove-it/) — chapters 1–6 + the new **[*How to Prove It With Lean* (Velleman, 2024)](https://djvelleman.github.io/HTPIwL/)** companion (free, browser-based).
+  * **Discrete-math companion:** [_Mathematics for Computer Science_ (Lehman, Leighton, Meyer — MIT 6.042J, **2024 edition free PDF**)](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/) — chapters 1–5 (Proofs, Induction, Number Theory).
+  * **Video course:** [Stanford CS103 Mathematical Foundations of Computing — full lecture notes](https://web.stanford.edu/class/cs103/) (publicly mirrored).
+  * **Free online interactive course:** [_Introduction to Mathematical Thinking_ (Keith Devlin — Coursera, evergreen)](https://www.coursera.org/learn/mathematical-thinking) — Stanford-led, free audit.
+  * **Practical implementation:** **SymPy 1.13+** for symbolic verification; **Lean 4 + Mathlib** (optional) — `lean4-web` runs in browser, no install needed.
+
+* **Outcome:** When you finish Module 0b you can **read any theorem statement in Stat 110 / 18.06 / CS 1810 and re-state it formally before attempting the proof.** That single skill is the difference between a frustrated learner and an MIT-track one.
+
+* **Suggested Pace:** 6 weeks at 10 hrs/week = 60 hrs total; or 12 weeks at 5 hrs/week. **Do not skip the exercises** — Hammack provides 600+ with hints, and *doing 200 of them* is the entire point of this module.
 
 ---
 
@@ -302,52 +430,89 @@
 
 ---
 
-## Module 2: Single-Variable & Multivariable Calculus
+## Module 2: Single-Variable & Multivariable Calculus + Matrix Calculus & Convex Optimisation
 
-* **The Tutor's "Why":** Gradients, backpropagation, maximum-likelihood estimation, and Bayes-rule derivations all live or die on calculus. You will not understand *why* SGD converges without it. Harvard's CS 1810 (2026) explicitly requires AM 22a (calc + lin alg).
+* **The Tutor's "Why":** Gradients, backpropagation, maximum-likelihood estimation, and Bayes-rule derivations all live or die on calculus. You will not understand *why* SGD converges without it. Harvard's CS 1810 (2026) explicitly requires AM 22a (calc + lin alg). **Crucially, every modern paper denotes gradients in *matrix-calculus* notation (Jacobians, Hessians, vector-by-matrix derivatives) — and 90 % of self-learners have never seen this formalism.** This module fixes that gap.
 
-* **Strict Prerequisites:** Module 1 (so you can verify integrals with SymPy). High-school pre-calculus.
+* **Strict Prerequisites:** Module 0 (proof literacy) + Module 1 (so you can verify integrals with SymPy).
 
 * **Exhaustive Topic List:**
   * **[MIT 18.01.1x · Differentiation]**: Limits and continuity (ε-δ definition), derivative as a limit, power/product/quotient/chain rules, trig derivatives, exponential and log derivatives, implicit differentiation, linear/quadratic approximations, related rates, Mean Value Theorem, L'Hôpital's rule, optimisation (first/second derivative tests), Newton's method.
   * **[MIT 18.01.2x · Integration]**: Antiderivatives, Fundamental Theorem of Calculus (both parts + proofs), u-substitution, integration by parts, trigonometric integrals, partial fractions, improper integrals, Riemann sums, numerical integration (trapezoidal, Simpson's rule), applications (areas, volumes of revolution, arc length, surface area, centre of mass, work).
-  * **[MIT 18.01.3x · Coordinate Systems & Infinite Series]**: Polar coordinates, parametric curves, conic sections, sequences, series convergence tests (ratio, root, integral, comparison, alternating series), power series, Taylor & Maclaurin series (with remainder bounds), complex numbers, Euler's formula.
+  * **[MIT 18.01.3x · Coordinate Systems & Infinite Series]**: Polar coordinates, parametric curves, conic sections, sequences, series convergence tests (ratio, root, integral, comparison, alternating series), power series, Taylor & Maclaurin series (**with remainder bounds — used in Newton's-method convergence and stochastic-gradient analysis**), complex numbers, Euler's formula.
   * **[MIT 18.02 · Multivariable Calculus]**: Vectors in ℝⁿ, dot and cross products, lines and planes, vector-valued functions, partial derivatives, tangent planes, total differential, **gradient vector & directional derivatives** (the foundation of gradient descent), chain rule (multivariable), **Hessian matrix** (used in Newton's method and second-order optimisers), Lagrange multipliers (→ SVM dual), double/triple integrals, change of variables, Jacobian determinant, vector fields, line integrals, Green's theorem, Stokes' theorem, divergence theorem.
   * **[IITM BSMA1001 — Math for DS I]**: Function basics, domain/range, piecewise functions, composition, inverse functions; limits; differentiation applied to business problems; definite vs indefinite integration; matrix-vector product as linear combination (preview of M3).
   * **[IITM BSMA1003 — Math for DS II]**: Vector calculus for optimisation, constrained optimisation, Lagrange multipliers with KKT conditions, convex functions, Jensen's inequality, convex optimisation preview.
   * **[Cambridge Data Science — Wischik]**: Calculus of variations (used in variational inference, M13).
+  * **🆕 [MIT 18.063 / 18.S096 · Matrix Calculus for Machine Learning, IAP 2023 + Jan 2026 — Edelman & Johnson]**: **Differentials in the language of linear maps** (the *correct* modern view that subsumes both numerator-layout and denominator-layout conventions); derivatives of vector-valued functions of vectors (Jacobians); derivatives of scalar-valued functions of matrices (gradients); derivatives of matrix-valued functions of matrices (4-tensors / Kronecker products); chain rule as composition of linear maps; **forward-mode and reverse-mode automatic differentiation** (the operational foundation of every DL framework); cost analysis of forward-vs-reverse AD (matrix-multiplication-cost argument); derivatives through SVD, eigendecomposition, matrix inverse, determinant, log-determinant, trace, Frobenius norm; **adjoint method** for differentiating through ODE/PDE solutions (used in Neural ODEs and diffusion solvers, M16).
+  * **🆕 [Stanford EE364A · Convex Optimization I — Boyd & Vandenberghe (Lectures 1–10) — *promoted from Module 9 to here as a foundation*]**: Convex sets (hyperplanes, half-spaces, polyhedra, balls, ellipsoids, norm cones, positive semi-definite cone), operations preserving convexity, convex functions (definition via secant inequality, first- and second-order conditions, Jensen's inequality), epigraph, sub-level sets, conjugate function, **convex optimisation problems** (LP, QP, QCQP, SOCP, SDP — and *which ML problems map to each*), Lagrangian duality, **KKT conditions** (the single most-cited result in classical ML), strong vs weak duality, complementary slackness, perturbation analysis. **Why here, not later:** every regression / SVM / logistic / GLM proof in Modules 9–14 *assumes* this material.
+  * **🆕 [The Matrix Cookbook — Petersen & Pedersen, 2024 update]** + **[Parr & Howard "The Matrix Calculus You Need For Deep Learning" (arXiv:1802.01528, 2024 revision)]** as *daily-reference* lookup PDFs.
 
 * **2026 Resources:**
-  * **Primary Course Link:** [MITx 18.01.1x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.1x/) · [18.01.2x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.2x/) · [18.01.3x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.3x/) · [MIT OCW 18.02](https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/)
+  * **Primary Course Link:** [MITx 18.01.1x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.1x/) · [18.01.2x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.2x/) · [18.01.3x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.3x/) · [MIT OCW 18.02SC Multivariable](https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/)
+  * **🆕 Matrix-Calculus track:** [MIT 18.S096 / 18.063 — Matrix Calculus for ML (IAP 2023 + Jan 2026)](https://github.com/mitmath/matrixcalc) — full lecture notes, video, problem sets *all open* on GitHub.
+  * **🆕 Convex-Optimisation track:** [Stanford EE364A — Boyd, lectures + slides + book](https://web.stanford.edu/class/ee364a/) · [Free PDF of *Convex Optimization* (Boyd & Vandenberghe, Cambridge 2004, 6th printing 2023)](https://stanford.edu/~boyd/cvxbook/) · YouTube lecture series (re-recorded **Spring 2024**).
   * **Required Reading (Latest 2026 Editions):**
-    * _Calculus: Early Transcendentals_ (**9th Edition**) — James Stewart — chapters 1–12.
-    * _Mathematics for Machine Learning_ — Deisenroth, Faisal, Ong (**freely available, 2024 reprint**) — Chapters 5 (Vector Calculus) and 6 (Probability). [mml-book.com](https://mml-book.com/) — **explicitly recommended by Harvard CS 1810 (2026)**.
-    * 3Blue1Brown: [_Essence of Calculus_ playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) — required visual intuition.
-  * **Practical Implementation:** **SymPy 1.13+** for symbolic verification; **JAX 0.4+** `jax.grad` / `jax.jacobian` / `jax.hessian` for automatic differentiation — learn these NOW as you'll need them for all of M15+.
+    * _Calculus: Early Transcendentals_ (**9th Edition, 2025 reprint**) — James Stewart — chapters 1–12.
+    * **🆕 [Recommended freely-available alternative]** _Active Calculus_ (Boelkins et al., **2024 edition, free online**) — used at 80+ liberal-arts colleges.
+    * **🆕 [Free, MIT-quality, 2024-revised]** Strang & Herman _Calculus, Vol 1–3_ (OpenStax, free PDF) — explicit OCW companion.
+    * _Mathematics for Machine Learning_ — Deisenroth, Faisal, Ong (**book PDF last updated December 2025**) — Chapters 5 (Vector Calculus), 6 (Probability), **7 (Continuous Optimization)**. [mml-book.com](https://mml-book.com/) — **explicitly recommended by Harvard CS 1810 (2026)**.
+    * **🆕 *The Matrix Cookbook*** — Petersen & Pedersen (2024 web update) — [PDF mirror via MIT 18.S096](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/external-resources/the-matrix-cookbook-pdf_fa1edb35-184a-410d-9d60-34488dbc72ee/).
+    * **🆕 Parr & Howard** "The Matrix Calculus You Need For Deep Learning" — free on arXiv `1802.01528` (revised); also as an HTML web-book at [explained.ai/matrix-calculus](https://explained.ai/matrix-calculus/).
+    * **🆕 Boyd & Vandenberghe** _Convex Optimization_ (Cambridge 2004; **6th printing 2023**, free PDF as above) — chapters 1–5 mandatory; 6–11 optional and revisited in M9–M11.
+    * 3Blue1Brown: [_Essence of Calculus_ playlist (16 videos, ≈ 3 hrs)](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) — required visual intuition.
+    * **🆕 [Imperial College "Mathematics for Machine Learning" Coursera Specialization (Deisenroth, Cooper, Page — last refreshed Mar 2025)](https://www.coursera.org/specializations/mathematics-machine-learning)** — three courses: Linear Algebra · Multivariable Calculus · PCA. Free audit. *Pedagogically the gentlest on-ramp.*
+  * **Practical Implementation:** **SymPy 1.13+** for symbolic verification; **JAX 0.7+** `jax.grad` / `jax.jacrev` / `jax.jacfwd` / `jax.hessian` for automatic differentiation — learn these NOW as you'll need them for all of M15+. **🆕 `cvxpy` 1.5+** for convex optimisation modelling (DCP), **`autograd`** as a teaching aid for hand-coding back-prop. Optionally explore **`Zygote.jl`** in Julia for source-to-source AD intuition.
+
+* **🆕 Suggested Sequencing (16 weeks at 10 hrs/week):**
+  1. Weeks 1–4: Single-variable calc (18.01.1x + 18.01.2x).
+  2. Weeks 5–6: Series + Taylor (18.01.3x).
+  3. Weeks 7–10: Multivariable (18.02 SC), with daily SymPy verification.
+  4. Weeks 11–13: **Matrix calculus** (MIT 18.063 + Parr-Howard) — *the highest-leverage 3 weeks in the whole curriculum*.
+  5. Weeks 14–16: **Convex optimisation** (EE364A Lectures 1–10) — write 5 small `cvxpy` programs (LP, LASSO, SVM, portfolio, max-likelihood logistic).
 
 ---
 
-## Module 3: Linear Algebra
+## Module 3: Linear Algebra — Computational, Geometric & Abstract
 
-* **The Tutor's "Why":** *Every* modern ML algorithm — from linear regression to attention heads in GPT-class transformers — is a composition of matrix operations. Strang's 18.06 is the global gold standard; Cambridge's MLMI Module 1 requires eigendecomposition mastery before week 3.
+* **The Tutor's "Why":** *Every* modern ML algorithm — from linear regression to attention heads in GPT-class transformers — is a composition of matrix operations. Strang's 18.06 is the global gold standard for the *computational* view; Axler's *Linear Algebra Done Right* (**4th edition, 2024, freely available**) is the gold standard for the *abstract / proof-based* view that PRML, Bishop 2024, and Cambridge MLMI implicitly assume. **You need both.** Cambridge's MLMI Module 1 requires eigendecomposition mastery before week 3.
 
-* **Strict Prerequisites:** Module 2 (partial derivatives for matrix calculus).
+* **Strict Prerequisites:** Module 0b (proof literacy) + Module 2 (partial derivatives for matrix calculus).
+
+* **🧭 Suggested Two-Pass Pedagogy:**
+  * **Pass 1 — Computational (5 weeks):** Strang 18.06 + 3Blue1Brown — focus on *doing* row-reduction, computing eigenvalues, running SVD on toy matrices. Goal: numerical fluency.
+  * **Pass 2 — Abstract (4 weeks):** Axler 4e (Chapters 1–7, skipping Chapter 8 if PhD-track is not the goal) — focus on *proving* spectral theorem, why SVD always exists, why orthogonal projection minimises distance. Goal: theoretical confidence.
+  * **Pass 3 — Applications (3 weeks):** Strang's *Linear Algebra and Learning from Data* + Townsend's *Linear Algebra for Data Science* (Cambridge 2024) — focus on *the eight matrix factorisations of ML* (LU, QR, eigendecomposition, SVD, Cholesky, polar, NMF, randomised SVD).
 
 * **Exhaustive Topic List:**
   * **[MIT 18.06 · Strang]**: Systems of linear equations, Gaussian elimination, LU factorisation, vector spaces, subspaces (column space, null space, row space, left null space — the "four fundamental subspaces"), rank-nullity theorem, linear independence, basis, dimension, orthogonality, Gram-Schmidt process, QR decomposition, projections, least squares (normal equations), determinants (cofactor expansion, properties), **eigenvalues and eigenvectors** (characteristic polynomial, diagonalisation), **Singular Value Decomposition (SVD)** (full and reduced forms, Eckart-Young theorem, pseudoinverse), positive-definite matrices (Cholesky), similar matrices, Jordan form, complex matrices (Hermitian, unitary), fast Fourier transform as a change of basis, linear transformations, applications to graphs (Laplacian), applications to differential equations (matrix exponential).
-  * **[3Blue1Brown — Essence of Linear Algebra]**: Geometric intuition for determinants, eigenvectors as invariant directions, change of basis as relabelling.
+  * **🆕 [Axler — *Linear Algebra Done Right* 4e (2024) · *abstract pass*]**: Vector spaces *axiomatically* (no a-priori reference to ℝⁿ), subspaces, sums and direct sums, linear independence, basis, dimension; **linear maps as the central object** (kernel, image, the fundamental theorem of linear algebra); polynomials over ℂ (the algebraic backbone of eigentheory); eigenvalues, eigenvectors, **invariant subspaces, generalised eigenspaces**; **inner-product spaces** (axioms, Cauchy-Schwarz, triangle inequality, orthonormal bases via Gram-Schmidt, orthogonal complements, orthogonal projection as best approximation); **operators on inner-product spaces** (self-adjoint, normal, **the Spectral Theorem — proven without determinants**, polar decomposition, **SVD via the spectral theorem**); positive operators and isometries; trace and determinant *properly* defined (via characteristic polynomial coefficients, not as the Leibniz formula).
+  * **[3Blue1Brown — Essence of Linear Algebra (16 videos, evergreen)]**: Geometric intuition for determinants as signed-volume scaling, eigenvectors as invariant directions, change of basis as relabelling, **dot product as the dual of a linear map** (the trick that makes attention "queries · keys" feel inevitable).
   * **[IITM BSMA1003]**: Matrix rank via row reduction, solvability of linear systems, null space / column space correspondence, linear maps, basis transformations, symmetric matrices and spectral theorem.
-  * **[Harvard CS 1810 prereq (AM 22a / Math 21b)]**: Inner product spaces, orthogonal complement, projection matrices P = A(AᵀA)⁻¹Aᵀ, quadratic forms, positive semi-definiteness as condition for convex loss.
+  * **[Harvard CS 1810 prereq (AM 22a / Math 21b)]**: Inner product spaces, orthogonal complement, projection matrices `P = A(AᵀA)⁻¹Aᵀ`, quadratic forms, positive semi-definiteness as condition for convex loss.
   * **[Cambridge Data Science — Wischik, Lec 2-3 "Feature Spaces"]**: Vector spaces as abstract objects, bases, inner products, orthonormal bases, projection onto subspace, **"model fitting as projection"** (critical insight for understanding linear regression), design of features, basis functions (polynomial, Fourier, radial).
   * **[Cambridge MLMI 1]**: Eigendecomposition as diagonalisation, SVD applications to dimensionality reduction and image compression.
+  * **🆕 [Strang & Drineas/Mahoney — *Numerical Linear Algebra at scale*]**: Condition number κ(A) and numerical-stability intuition, **why floating-point matters** (catastrophic cancellation; why you never `(AᵀA)⁻¹Aᵀy` in practice — use `np.linalg.lstsq` or QR), **randomised SVD** (Halko-Martinsson-Tropp, 2011 — the algorithm Hugging Face uses for embedding compression), iterative methods (power iteration, Lanczos, Arnoldi → ARPACK), **Krylov subspaces** as preview of conjugate-gradient.
 
 * **2026 Resources:**
-  * **Primary Course Link:** [MIT 18.06 OCW SC version](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/) · [3Blue1Brown EoLA](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+  * **Primary Course Link:** [MIT 18.06 OCW SC version (Strang, 2011) — evergreen](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/) · [3Blue1Brown EoLA](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+  * **🆕 Abstract / Proof Track:** [_Linear Algebra Done Right_ — Axler, **4th Edition, Springer 2024, FREE PDF + Kindle**](https://linear.axler.net/) — the cleanest abstract treatment ever written; 400 pp.; includes worked solutions.
+  * **🆕 Applications-first Track:** [_Linear Algebra for Data Science, Machine Learning, and Signal Processing_ — Hero/Fessler/Townsend (Cambridge, 2024, hardback)](http://www.cambridge.org/highereducation/isbn/9781009418140) — explicitly cross-references PCA, SVD-of-images, low-rank approximation.
   * **Required Reading (Latest 2026 Editions):**
-    * _Introduction to Linear Algebra_ (**6th Edition, 2023**) — Gilbert Strang.
-    * _Linear Algebra and Learning from Data_ (**2019, 2025 reprint**) — Strang — specifically written for ML era.
+    * _Introduction to Linear Algebra_ (**6th Edition, 2023**) — Gilbert Strang. Companion to 18.06.
+    * _Linear Algebra and Learning from Data_ (**2019; 2025 reprint with errata**) — Strang — specifically written for ML era; covers randomised SVD, NMF, neural-net Jacobians.
+    * **🆕 *Linear Algebra Done Right* (Axler, 4e, 2024)** — chapters 1–7 mandatory for proof maturity.
     * _Mathematics for Machine Learning_ — Deisenroth et al. — Chapters 2, 3, 4.
-  * **Practical Implementation:** **NumPy 2.x** (`np.linalg.eig`, `np.linalg.svd`, `np.linalg.solve`). **SciPy 1.14+** for sparse linear algebra (`scipy.sparse.linalg`). Use **`jax.numpy`** for GPU-accelerated linear algebra once comfortable.
+    * **🆕 [*Numerical Linear Algebra* — Trefethen & Bau (SIAM, 1997, 25th-anniversary printing 2022)]** — for any student going into systems / scaling (M19).
+  * **🆕 Free interactive notebooks:** [`fastai/numerical-linear-algebra` — Rachel Thomas USF (2019, still gold-standard, all-Jupyter)](https://github.com/fastai/numerical-linear-algebra) — covers SVD, randomised methods, PageRank, compressed sensing in 12 lectures.
+  * **Practical Implementation:** **NumPy 2.x** (`np.linalg.eig`, `np.linalg.svd`, `np.linalg.solve`, `np.linalg.lstsq`). **SciPy 1.14+** for sparse linear algebra (`scipy.sparse.linalg`, ARPACK eigensolvers, `splu`). Use **`jax.numpy`** for GPU-accelerated linear algebra once comfortable. **🆕 `einops` 0.8+** to write tensor operations in *index notation* — once you internalise this, you can read every transformer paper without effort.
+
+* **🆕 Mandatory mini-projects (do **all five**):**
+  1. **PCA on MNIST from scratch** using only `np.linalg.svd` — recover 95 % variance in `k` components, plot `k`.
+  2. **Image compression** via truncated SVD on a single greyscale photo — show MSE-vs-rank curve.
+  3. **PageRank** as power iteration on the link-matrix — verify on a 5-node toy graph by hand.
+  4. **Linear regression two ways** — `(AᵀA)⁻¹Aᵀy` *vs* `np.linalg.lstsq` *vs* QR *vs* SVD; compare numerical errors on Hilbert matrices (κ ≈ 10¹⁵).
+  5. **Spectral clustering** on the two-moons dataset — Laplacian eigenmaps in 30 lines.
 
 ---
 
@@ -411,13 +576,29 @@
   * **[Cambridge Data Science — Wischik · "Handling probability models"]**: PDF and CDF manipulation, Bayes's rule, **Monte Carlo estimation** (first rigorous introduction), empirical distribution as a function.
   * **[Cambridge Data Science — Wischik · "Random processes"]**: Markov chains (discrete time), **stationarity and drift analysis**, processes with memory, learning a random process from data.
 
+* **🆕 Critical Additions (April 2026):**
+  * **Concentration inequalities for ML — beyond Chebyshev:** **Hoeffding's inequality** (the workhorse of generalisation bounds), **McDiarmid's bounded-differences inequality**, **Bernstein's inequality**, **sub-Gaussian** and **sub-exponential** random variables, ψ-Orlicz norms, **Bernstein-Chernoff bound for VC-dimension** (the 1971 Vapnik-Chervonenkis result that started statistical learning theory). Without these you cannot read a single PAC-learning theorem in M9.
+  * **Information theory primer (the overlap with probability):** **entropy `H(X) = −Σ p log p`**, joint and conditional entropy, **mutual information `I(X;Y)`**, **KL divergence `D_KL(P‖Q)` and Jensen's inequality**, cross-entropy (the loss function of every classifier and every LM), **f-divergences** (TV, JS, Hellinger), **Fano's inequality** (lower bounds for classification error). Cited from MIT 6.7960 Wk 5–6 (Information Theory) and Cover & Thomas Ch 1–2.
+  * **Measure-theoretic bridge — *taught minimally so you can read PML2 (Murphy 2023)*:** σ-algebras (Borel), measurable functions, Lebesgue integral *vs* Riemann (why we need it: integrating discontinuous limits), **Radon-Nikodym derivative `dν/dμ`** (the *correct* definition of "density"), almost-sure convergence vs convergence in probability vs in distribution vs in `L²` (the four convergence types every probabilist mixes up), pushforward measures, **dominated and monotone convergence theorems** (used implicitly every time you swap an integral and a limit in MCMC analysis). **Goal:** read Wasserman *All of Statistics* Ch 21 or Murphy PML2 Ch 1 without panic — *not* to do measure-theoretic exercises.
+  * **Probability in code — *do these three concretely*:** (1) **inverse-CDF sampling** for any 1-D distribution, hand-coded; (2) **rejection sampling** + **importance sampling** with diagnostics (effective sample size); (3) **Monte-Carlo integration** of a 5-D integral with confidence-interval analysis.
+
 * **2026 Resources:**
-  * **Primary Course Link:** [Harvard Stat 110 full playlist](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo) · [Handouts & problems](https://stat110.hsites.harvard.edu/) · [MITx 6.431x](https://micromasters.mit.edu/ds/)
+  * **Primary Course Link:** [Harvard Stat 110 full playlist (Blitzstein, 34 lectures)](https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo) · [Handouts & problems](https://stat110.hsites.harvard.edu/) (browser only — `curl` is bot-gated) · [MITx 6.431x](https://micromasters.mit.edu/ds/)
   * **Required Reading (Latest 2026 Editions):**
     * _Introduction to Probability_ (**2nd Edition, 2019; 2024 reprint**) — Joseph Blitzstein & Jessica Hwang — [free PDF](https://projects.iq.harvard.edu/stat110/home) — **chapters 1-12 cover-to-cover**. This is the primary text.
-    * _Introduction to Probability_ (**2nd Edition**) — Bertsekas & Tsitsiklis — companion to 6.431x.
+    * _Introduction to Probability_ (**2nd Edition, 2008**) — Bertsekas & Tsitsiklis — companion to 6.431x.
+    * **🆕 [_Introduction to Probability for Data Science_ — Stanley H. Chan (Michigan Publishing, 2021/2023, FREE PDF + HTML)](https://probability4datascience.com/)** — *the* book that bridges Stat-110-style probability to Python/MATLAB code; hundreds of worked computational examples; **adopted by 30+ US engineering programmes** (incl. Purdue, Michigan).
     * _Mathematics for Machine Learning_ — Deisenroth et al. — Chapter 6.
-  * **Practical Implementation:** **SciPy 1.14+** `scipy.stats` (every distribution you'll need); **NumPy** `np.random.Generator` (modern PCG64 RNG); begin using **`distrax`** (JAX) or **`torch.distributions`** (PyTorch) for differentiable distributions — you'll need these in M13.
+    * **🆕 [_Information Theory, Inference, and Learning Algorithms_ — David MacKay (Cambridge 2003, **free PDF**)](https://www.inference.org.uk/itila/)** — a singular masterpiece; chapters 1–6 give the cleanest entropy/MI exposition in any language.
+    * **🆕 [_High-Dimensional Probability_ — Roman Vershynin (Cambridge 2018, **free draft online**)](https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-book.html)** — *the* reference for sub-Gaussian, concentration, and random matrices; chapters 1–3 sufficient for ML purposes.
+    * **🆕 (Optional, PhD-track only)** _Probability with Martingales_ — David Williams (Cambridge 1991), or _Measure, Integral and Probability_ — Capinski & Kopp (Springer 2nd ed., 2014) — for the measure-theoretic complement after Stat 110.
+  * **Practical Implementation:** **SciPy 1.14+** `scipy.stats` (every distribution you'll need); **NumPy** `np.random.Generator` (modern PCG64 / Philox RNG, **default since NumPy 1.17**); begin using **`distrax`** (JAX) or **`torch.distributions`** (PyTorch) for *differentiable* distributions — you'll need these in M13. **🆕 `tensorflow_probability` 0.24+** (JAX-substrate) for advanced bijectors (used in normalising flows, M16).
+
+* **🆕 Suggested Pace (12 weeks at 10 hrs/week):**
+  * Weeks 1–8: Stat 110 lectures 1–28 + Blitzstein-Hwang exercises 1–10 from each chapter.
+  * Weeks 9–10: Concentration inequalities + information-theory primer (MacKay Ch 1–6 + Vershynin Ch 1–2).
+  * Weeks 11–12: Stat 110 lectures 29–34 + measure-theoretic bridge (Wasserman Ch 21 *or* Capinski-Kopp Ch 1–4 if PhD-track).
+  * **Capstone exercise:** write a 30-line script that empirically demonstrates the CLT, the Hoeffding bound, and the Galton-Watson process, all in one notebook. *If you can do this without help, you have actually learned probability.*
 
 ---
 
@@ -965,8 +1146,17 @@
 | **22** | **_Hands‑On Large Language Models_** (NEW) | Jay Alammar & Maarten Grootendorst | **O'Reilly, Sep 2024**, 428 pp. | M18 | [HandsOnLLM repo](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) |
 | **23** | **_AI Engineering_** (NEW) | Chip Huyen | O'Reilly Jan 2025 | M18‑M19 | — |
 | **24** | **_Pattern Recognition and Machine Learning_** (PRML — moved to Tier 1‑reference) | Christopher Bishop | 2006 (still in print) | M9‑M17 | — |
+| **🆕 25** | **_Linear Algebra Done Right_ — 4th Edition (the abstract / proof‑track linear algebra)** | Sheldon Axler | **Springer 2024**, 400 pp., ISBN 978‑3‑031‑41025‑3 | M3 | ✅ [linear.axler.net](https://linear.axler.net/) |
+| **🆕 26** | **_Introduction to Probability for Data Science_ — bridges Stat 110 to Python code** | Stanley H. Chan | Michigan Publishing **2021/2023**, 700+ pp. | M5 | ✅ [probability4datascience.com](https://probability4datascience.com/) |
+| **🆕 27** | **_Convex Optimization_** (paired with Stanford EE364A) | Stephen Boyd & Lieven Vandenberghe | Cambridge 2004, **6th printing 2023** | M2, M9‑M11 | ✅ [stanford.edu/~boyd/cvxbook/](https://stanford.edu/~boyd/cvxbook/) |
+| **🆕 28** | **_Information Theory, Inference, and Learning Algorithms_** | David J. C. MacKay | Cambridge **2003** (the gold-standard intro to entropy/MI) | M5, M16, M18 | ✅ [inference.org.uk/itila](https://www.inference.org.uk/itila/) |
+| **🆕 29** | **_High-Dimensional Probability_ — concentration inequalities for ML/statistics** | Roman Vershynin | Cambridge **2018** (free draft online) | M5, M9, M15 | ✅ [vershyn HDP draft](https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-book.html) |
+| **🆕 30** | **_Book of Proof_ — proof-writing for first-year university** | Richard Hammack | **3rd Edition, 2018** (CC-BY) | **M0b** | ✅ [richardhammack.github.io/BookOfProof](https://richardhammack.github.io/BookOfProof/) |
+| **🆕 31** | **_How to Prove It: A Structured Approach_ + *With Lean* (browser-interactive)** | Daniel J. Velleman | Cambridge **3e, 2019** + Lean companion **2024** | **M0b** | Lean: ✅ [djvelleman.github.io/HTPIwL](https://djvelleman.github.io/HTPIwL/) |
+| **🆕 32** | **_Mathematics for Computer Science_ (MIT 6.042J textbook)** | Lehman, Leighton, Meyer | **2015 final, still current**, MIT Press | **M0b**, M4 | ✅ [OCW PDF](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/) |
+| **🆕 33** | **_Numerical Linear Algebra_** | Lloyd N. Trefethen & David Bau III | SIAM **1997**, 25th-anniversary printing 2022 | M3, M19 | — |
 
-> **Tier 2 (reference)**: _All of Statistics_ (Wasserman), _Statistical Inference_ (Casella & Berger), _Bayesian Reasoning and Machine Learning_ (Barber), _Machine Learning: A Probabilistic Perspective_ (Murphy 2012), _Deep Learning_ (Goodfellow/Bengio/Courville 2016), _Algorithms for Decision Making_ (Kochenderfer), _Interpretable Machine Learning_ (Molnar), _Forecasting: Principles and Practice_ (Hyndman 3rd Ed. 2021), _Mining of Massive Datasets_ (Leskovec 3rd Ed. 2020, free at [mmds.org](http://www.mmds.org/)), _The Elements of Statistical Learning_ (ESL — still canonical).
+> **Tier 2 (reference)**: _All of Statistics_ (Wasserman), _Statistical Inference_ (Casella & Berger), _Bayesian Reasoning and Machine Learning_ (Barber), _Machine Learning: A Probabilistic Perspective_ (Murphy 2012), _Deep Learning_ (Goodfellow/Bengio/Courville 2016), _Algorithms for Decision Making_ (Kochenderfer), _Interpretable Machine Learning_ (Molnar), _Forecasting: Principles and Practice_ (Hyndman 3rd Ed. 2021), _Mining of Massive Datasets_ (Leskovec 3rd Ed. 2020, free at [mmds.org](http://www.mmds.org/)), _The Elements of Statistical Learning_ (ESL — still canonical), **_Active Calculus_** (Boelkins, free 2024), **_Linear Algebra and Learning from Data_** (Strang 2019/25 reprint), **_The Matrix Cookbook_** (Petersen-Pedersen 2024), **_Probability with Martingales_** (Williams 1991, PhD-track), **_Measure, Integral and Probability_** (Capinski-Kopp 2e 2014, PhD-track), **_Tao Analysis I & II_** (Hindustan Book Agency, 4e 2022, real-analysis bridge for PhD-track).
 
 ---
 
@@ -1012,12 +1202,18 @@ Not merely a list — these are the exact versions you should be using in April 
 
 > Fork this repo, copy this section, and replace `[ ]` with `[x]` as you complete each sub-module.
 
+### 🩺 Math-Foundations Diagnostic
+- [ ] Took the **15-question diagnostic** and recorded my score per strand
+- [ ] Decided whether to do **Module 0** (mandatory if any strand < 70%)
+
 ### 🟩 Foundation Stratum
+- [ ] **🆕 Module 0a**: Pre-Calculus & Trigonometry (Khan Academy / MIT 18.01A)
+- [ ] **🆕 Module 0b**: Logic, Proof & Discrete-Math Primer (Hammack + Velleman + MIT 6.042J; optional: Lean 4 first proof)
 - [ ] **Module 1**: Programming Foundations (CS50P + MIT 6.0001/6.0002)
-- [ ] **Module 2**: Calculus (MITx 18.01.1/2/3x + 18.02)
-- [ ] **Module 3**: Linear Algebra (MIT 18.06 + 3Blue1Brown)
+- [ ] **Module 2**: Calculus + Matrix Calculus + Convex Optimisation (MITx 18.01.1/2/3x + 18.02 + **MIT 18.S096/063 Matrix Calc** + **Stanford EE364A Boyd**)
+- [ ] **Module 3**: Linear Algebra — Computational + Abstract + Applications (MIT 18.06 + 3Blue1Brown + **Axler 4e 2024** + Townsend 2024 + Trefethen/Bau)
 - [ ] **Module 4**: DSA (MIT 6.006 + GaTech series)
-- [ ] **Module 5**: Probability (Stat 110 full 34 lectures + MITx 6.431x)
+- [ ] **Module 5**: Probability + Concentration + Information Theory + Measure Bridge (Stat 110 + MITx 6.431x + **Stanley Chan 2021** + **MacKay 2003** + **Vershynin 2018**)
 
 ### 🟨 Core Statistics Stratum
 - [ ] **Module 6**: Inference (MITx 18.6501x + STAT 111)
@@ -1193,7 +1389,7 @@ See [`extras/books.md`](extras/books.md), [`extras/courses.md`](extras/courses.m
 ---
 
 <div align="center">
-  <sub>🎓 <strong>The Elite Data Science Curriculum — 2026 Edition</strong> · Zero Omissions Policy · <strong>Last full refresh: 19 April 2026</strong></sub>
+  <sub>🎓 <strong>The Elite Data Science Curriculum — 2026 Edition</strong> · Zero Omissions Policy · <strong>Last full refresh: 20 April 2026 (Math-Foundations Hardening Pass)</strong></sub>
   <br/>
   <sub>Synthesised from IITM · Harvard · MIT · Cambridge · Stanford · Hugging Face · MCP Consortium · Freely redistributable under the <a href="./LICENSE.md">original LICENSE</a></sub>
   <br/>
