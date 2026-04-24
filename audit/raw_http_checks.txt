@@ -1,0 +1,188 @@
+=== PDF Source 1: UC Berkeley MIDS ===
+200   | https://ischoolonline.berkeley.edu/data-science/                            | Berkeley MIDS
+200   | https://ischoolonline.berkeley.edu/data-science/curriculum/                 | Berkeley MIDS curriculum
+=== PDF Source 2: CMU MADS ===
+404   | https://www.heinz.cmu.edu/programs/applied-data-science-master/             | CMU MADS
+404   | https://www.cmu.edu/mads/                                                   | CMU MADS alt
+=== PDF Source 3: MIT 6.390 ===
+200   | https://introml.mit.edu/                                                    | MIT 6.390 homepage
+200   | https://introml.mit.edu/spring26                                            | MIT 6.390 Spring 2026
+=== PDF Source 4: Stanford CS336 ===
+200   | https://stanford-cs336.github.io/spring2025/                                | CS336 spring2025
+200   | https://cs336.stanford.edu/                                                 | CS336
+=== PDF Source 5: Harvard Stat 110 ===
+403   | https://projects.iq.harvard.edu/stat110                                     | Stat 110
+=== PDF Source 6: MIT AISF ===
+000   | https://www.mitaisafety.com/                                                | MIT AI Safety
+200   | https://aisafetyfundamentals.com/                                           | AISF
+=== PDF Source 7: DataCamp ===
+200   | https://www.datacamp.com/tracks/associate-data-scientist-in-python          | DataCamp Associate DS
+=== Causal Inference anchors (new M7) ===
+200   | https://www.hsph.harvard.edu/causal/                                        | Harvard CAUSALab
+200   | https://www.bradyneal.com/causal-inference-course                           | Brady Neal
+200   | https://matheusfacure.github.io/python-causality-handbook/landing-page.html | Facure CIBT
+200   | https://ocw.mit.edu/courses/14-387-applied-econometrics-mostly-harmless-big-data-fall-2014/ | MIT 14.387
+=== Data Engineering anchors (new M9/M10) ===
+200   | https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/    | Joe Reis FDE book
+200   | https://github.com/DataExpert-io/data-engineer-handbook                     | DataExpert handbook
+200   | https://www.getdbt.com/                                                     | dbt
+200   | https://airflow.apache.org/                                                 | Airflow
+200   | https://www.dagster.io/                                                     | Dagster
+200   | https://spark.apache.org/                                                   | Spark
+200   | https://kafka.apache.org/                                                   | Kafka
+200   | https://flink.apache.org/                                                   | Flink
+200   | https://delta.io/                                                           | Delta Lake
+200   | https://iceberg.apache.org/                                                 | Iceberg
+200   | https://www.snowflake.com/                                                  | Snowflake
+200   | https://duckdb.org/                                                         | DuckDB
+=== Modern Python tooling (M1 additions) ===
+200   | https://docs.astral.sh/uv/                                                  | uv
+200   | https://docs.pytest.org/                                                    | pytest
+200   | https://hypothesis.readthedocs.io/                                          | hypothesis
+200   | https://mypy-lang.org/                                                      | mypy
+200   | https://docs.pydantic.dev/                                                  | Pydantic
+=== Dataviz (M8 additions) ===
+200   | https://pola.rs/                                                            | Polars
+200   | https://greatexpectations.io/                                               | Great Expectations
+200   | https://pandera.readthedocs.io/                                             | Pandera
+200   | https://plotly.com/python/                                                  | Plotly
+200   | https://altair-viz.github.io/                                               | Altair
+200   | https://observablehq.com/plot                                               | Observable Plot
+200   | https://streamlit.io/                                                       | Streamlit
+200   | https://www.gradio.app/                                                     | Gradio
+200   | https://www.evidentlyai.com/                                                | Evidently
+=== PyMC/NumPyro (M15) ===
+200   | https://www.pymc.io/                                                        | PyMC
+200   | https://num.pyro.ai/                                                        | NumPyro
+=== Time Series Foundation Models (M16) ===
+200   | https://facebook.github.io/prophet/                                         | Prophet
+200   | https://neuralprophet.com/                                                  | NeuralProphet
+200   | https://www.nixtla.io/                                                      | TimeGPT / Nixtla
+200   | https://github.com/amazon-science/chronos-forecasting                       | Amazon Chronos
+200   | https://github.com/time-series-foundation-models/lag-llama                  | Lag-Llama
+200   | https://github.com/ServiceNow/N-BEATS                                       | N-BEATS
+=== DL / JAX (M17) ===
+200   | https://jax.readthedocs.io/                                                 | JAX docs
+200   | https://docs.jax.dev/                                                       | JAX docs (new)
+200   | https://flax.readthedocs.io/                                                | Flax
+200   | https://pytorch.org/                                                        | PyTorch
+404   | https://pytorch.org/docs/stable/distributed.fsdp.html                       | FSDP docs
+=== Transformers/Gen (M18) ===
+200   | https://github.com/facebookresearch/dinov2                                  | DINOv2
+200   | https://github.com/facebookresearch/sam2                                    | SAM 2
+200   | https://github.com/state-spaces/mamba                                       | Mamba
+200   | https://github.com/BlinkDL/RWKV-LM                                          | RWKV
+200   | https://github.com/openai/CLIP                                              | CLIP
+200   | https://github.com/haotian-liu/LLaVA                                        | LLaVA
+=== RL (M19) ===
+200   | https://github.com/vwxyzjn/cleanrl                                          | CleanRL
+200   | https://stable-baselines3.readthedocs.io/                                   | Stable-Baselines3
+=== LLMs/Fine-tune (M20) ===
+200   | https://github.com/unslothai/unsloth                                        | Unsloth
+200   | https://github.com/axolotl-ai-cloud/axolotl                                 | Axolotl
+200   | https://github.com/huggingface/trl                                          | TRL
+200   | https://github.com/huggingface/peft                                         | PEFT
+200   | https://github.com/stanfordnlp/dspy                                         | DSPy
+200   | https://github.com/zou-group/textgrad                                       | TextGrad
+200   | https://docs.vllm.ai/                                                       | vLLM
+200   | https://github.com/sgl-project/sglang                                       | SGLang
+200   | https://github.com/NVIDIA/TensorRT-LLM                                      | TensorRT-LLM
+200   | https://github.com/promptfoo/promptfoo                                      | promptfoo
+200   | https://github.com/confident-ai/deepeval                                    | DeepEval
+200   | https://github.com/explodinggradients/ragas                                 | Ragas
+200   | https://github.com/rasbt/LLMs-from-scratch                                  | Raschka LLMs-from-scratch
+=== RAG / Vector DBs (M21) ===
+200   | https://www.pinecone.io/learn/                                              | Pinecone learning
+200   | https://docs.llamaindex.ai/                                                 | LlamaIndex docs
+200   | https://github.com/pgvector/pgvector                                        | pgvector
+200   | https://qdrant.tech/                                                        | Qdrant
+200   | https://weaviate.io/                                                        | Weaviate
+302   | https://milvus.io/                                                          | Milvus
+200   | https://lancedb.com/                                                        | LanceDB
+200   | https://github.com/stanford-futuredata/ColBERT                              | ColBERT
+=== Agentic AI (M22) ===
+200   | https://www.langchain.com/langgraph                                         | LangGraph
+200   | https://docs.crewai.com/                                                    | CrewAI
+200   | https://modelcontextprotocol.io/                                            | MCP
+200   | https://huggingface.co/learn/agents-course/                                 | HF Agents Course
+200   | https://www.anthropic.com/research/building-effective-agents                | Anthropic Building Effective Agents
+200   | https://llmagents-learning.org/                                             | Berkeley LLM Agents MOOC
+200   | https://llmagents-learning.org/f24                                          | Berkeley LLM Agents F24
+200   | https://huggingface.co/gaia-benchmark                                       | GAIA
+200   | https://www.swebench.com/                                                   | SWE-bench
+200   | https://e2b.dev/                                                            | E2B
+200   | https://www.daytona.io/                                                     | Daytona
+200   | https://modal.com/                                                          | Modal
+200   | https://github.com/huggingface/smolagents                                   | smolagents
+=== AI Safety (M23) ===
+000   | https://www.mitaisafety.com/                                                | MIT AISF
+200   | https://transformer-circuits.pub/                                           | Anthropic transformer-circuits
+200   | https://github.com/EleutherAI/cookbook                                      | EleutherAI cookbook
+200   | https://artificialintelligenceact.eu/                                       | EU AI Act
+200   | https://www.nist.gov/itl/ai-risk-management-framework                       | NIST AI RMF
+=== MLOps (M24) ===
+200   | https://mlflow.org/                                                         | MLflow
+200   | https://wandb.ai/                                                           | W&B
+403   | https://neptune.ai/                                                         | Neptune
+200   | https://feast.dev/                                                          | Feast
+200   | https://www.tecton.ai/                                                      | Tecton
+200   | https://arize.com/                                                          | Arize
+200   | https://whylabs.ai/                                                         | WhyLabs
+200   | https://www.bentoml.com/                                                    | BentoML
+200   | https://kserve.github.io/website/                                           | KServe
+200   | https://docs.ray.io/en/latest/serve/                                        | Ray Serve
+200   | https://developer.nvidia.com/nvidia-triton-inference-server                 | Triton
+=== LLMOps (M24) ===
+200   | https://langfuse.com/                                                       | Langfuse
+200   | https://promptlayer.com/                                                    | PromptLayer
+200   | https://www.helicone.ai/                                                    | Helicone
+200   | https://github.com/NVIDIA/NeMo-Guardrails                                   | NeMo Guardrails
+200   | https://www.guardrailsai.com/                                               | Guardrails AI
+200   | https://github.com/meta-llama/PurpleLlama                                   | Llama Guard
+200   | https://opentelemetry.io/docs/specs/semconv/gen-ai/                         | OTel GenAI
+=== AgentOps (M24) ===
+200   | https://www.langchain.com/langsmith                                         | LangSmith
+200   | https://github.com/Arize-ai/phoenix                                         | Arize Phoenix
+200   | https://wandb.ai/site/weave                                                 | W&B Weave
+=== FSDL + Chip Huyen + Made With ML ===
+200   | https://fullstackdeeplearning.com/                                          | FSDL
+200   | https://www.oreilly.com/library/view/ai-engineering/9781098166298/          | Chip Huyen AI Eng
+200   | https://madewithml.com/                                                     | Made With ML
+=== Product DS (M25) ===
+404   | https://www.heinz.cmu.edu/programs/applied-data-science-master/curriculum/  | CMU MADS curriculum
+000   | https://www.decisive.com/                                                   | Kozyrkov Decisive (maybe)
+200   | https://kozyr.com/                                                          | Kozyrkov site
+=== DE Roadmap refs ===
+200   | https://roadmap.sh/ai-data-scientist                                        | roadmap.sh AI DS
+200   | https://www.dataexpert.io/free-data-engineer-bootcamp                       | DataExpert free bootcamp
+=== Framework homepages (version check context) ===
+200   | https://pypi.org/project/torch/                                             | PyTorch pypi
+200   | https://pypi.org/project/jax/                                               | JAX pypi
+200   | https://pypi.org/project/polars/                                            | Polars pypi
+200   | https://pypi.org/project/transformers/                                      | Transformers pypi
+200   | https://pypi.org/project/vllm/                                              | vLLM pypi
+=== Books ===
+200   | https://bishopbook.com/                                                     | Bishop DL
+200   | https://udlbook.github.io/udlbook/                                          | UDL Prince
+200   | https://www.statlearning.com/                                               | ISLP
+200   | https://mml-book.com/                                                       | MML
+200   | https://linear.axler.net/                                                   | Axler LADR
+200   | https://probml.github.io/pml-book/book1.html                                | Murphy PML1
+200   | https://probml.github.io/pml-book/book2.html                                | Murphy PML2
+200   | https://d2l.ai/                                                             | D2L
+000   | https://www.inference.org.uk/itila/                                         | MacKay ITILA
+200   | https://probability4datascience.com/                                        | Stanley Chan
+200   | https://web.stanford.edu/~boyd/cvxbook/                                     | Boyd Convex
+200   | https://richardhammack.github.io/BookOfProof/                               | Hammack Book of Proof
+200   | https://djvelleman.github.io/HTPIwL/                                        | Velleman Lean
+=== Old/existing URLs in README (spot-check for breakage) ===
+200   | https://study.iitm.ac.in/ds/academics.html                                  | IITM academics
+200   | https://deeplearning6-7960.github.io/                                       | MIT 6.7960
+200   | https://gradml.mit.edu/                                                     | MIT 6.7900
+200   | https://introtodeeplearning.com/                                            | MIT 6.S191
+200   | https://harvard-ml-courses.github.io/cs181-web/                             | Harvard CS1810
+200   | https://cs50.harvard.edu/python/                                            | CS50P
+200   | https://www.cl.cam.ac.uk/teaching/2526/DataSci/                             | Cambridge DataSci
+200   | https://www.cl.cam.ac.uk/teaching/2526/MLBayInfer/                          | Cambridge MLBayInfer
+200   | https://www.cl.cam.ac.uk/teaching/2526/MLRD/                                | Cambridge MLRD
+200   | https://www.mlmi.eng.cam.ac.uk/about-programme/course-structure             | Cambridge MLMI
