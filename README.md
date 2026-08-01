@@ -1,9 +1,12 @@
 <div align="center">
 
+<img src="assets/hero-banner.jpg" alt="Data Science and AI Roadmap - foundations to production AI" width="100%">
+
 # Data Science & AI Roadmap
 
 ### A rigorous, free-first path from foundations to production AI
 
+[![Version](https://img.shields.io/badge/version-2026.3%20Practitioner's%20Pass-blue)](#refresh-log)
 [![Modules](https://img.shields.io/badge/modules-27-6f42c1)](#roadmap)
 [![Level](https://img.shields.io/badge/level-beginner%20to%20advanced-0969da)](#who-this-is-for)
 [![Resources](https://img.shields.io/badge/resources-free--first-1a7f37)](#how-to-use-this-roadmap)
@@ -11,7 +14,7 @@
 
 **Mathematics · Statistics · Machine Learning · Data Engineering · Deep Learning · LLMs · Production AI**
 
-[Start here](#start-here) · [Choose a track](#choose-your-track) · [Browse modules](#roadmap) · [Companion curricula](#companion-curricula) · [Books](#books) · [Toolchain](#toolchain) · [Progress tracker](#progress-tracker)
+[Start here](#start-here) · [Fast lane](#practitioner-track) · [Choose a track](#choose-your-track) · [Browse modules](#roadmap) · [Companion curricula](#companion-curricula) · [Books](#books) · [Toolchain](#toolchain) · [Career ops](#career-operations) · [Progress tracker](#progress-tracker)
 
 </div>
 
@@ -63,6 +66,71 @@ Use the shortest entry point that matches your current experience. You can retur
 
 > **First milestone:** complete one small project before collecting more resources. The Microsoft companion courses below supply guided lessons, quizzes, assignments, and solutions; this roadmap supplies the deeper prerequisite and production sequence.
 
+<a id="practitioner-track"></a>
+## 🚀 Practitioner Track (Fast Lane)
+
+> **Read this before you decide the roadmap is too long.** The full curriculum above is a *proof-literate* path: it front-loads mathematics so that by Module 13 you can read a derivation and by Module 26 you can write one. That is the correct path for research, graduate study, and roles where you must invent methods rather than apply them.
+>
+> It is **not** the only defensible path, and for a large share of 2026 job postings it is not the fastest one. This section is the parallel on-ramp for people whose goal is to be **employed building systems**, not to be able to prove convergence.
+
+### Why this track exists
+
+Three independent practitioner sources — an [ML Engineer path from a Twitch senior applied scientist](https://www.youtube.com/watch?v=UZ_rK9gzVSc), a [breaking-into-AI/ML account from an Amazon applied scientist](https://www.youtube.com/watch?v=FeQZmQMffzc), and an [AI-Engineer reading list from an ex-Coursera/Amazon engineer](https://www.youtube.com/watch?v=Pr9oRVtAqCM) — converge on the same three claims:
+
+1. **Intuition beats derivation for applied work.** "The math you actually need is way less than people make it sound" (video 1, 01:09). "You need intuition, not derivation skills. Get the concepts down and then move forward" (video 3, 04:47). Both speakers report never hand-deriving a chain rule in years of industry practice.
+2. **Shipping beats studying.** Hiring managers "don't need to see that you've *studied*; they need to see that you can do the job" (video 1, 06:23). Repos full of course exercises and Kaggle notebooks with hand-fed data are explicitly called weak signals (video 1, 06:10).
+3. **The applied-AI layer is now its own discipline.** "Unlike data scientists or machine learning engineers who train models from scratch, AI engineers build applications using pre-trained models… Their toolkit is mostly prompt engineering, RAG, fine-tuning, and agents" (video 3, 00:53).
+
+**We present both doctrines rather than choosing between them.** The trade-off is explicit and stated at each step below.
+
+### The 6–9 month sequence
+
+Assumes 15–20 hrs/week. Each stage ends with a shipped artifact, not a completion certificate.
+
+| # | Stage | Duration | What you do | Full-track equivalent | What you give up |
+|---|---|---|---|---|---|
+| **1** | **Python to working fluency** | Weeks 1–14 | [Module 1 Phase 1–3](#module-1) using the [free-course matrix](#python-course-matrix); ship a CLI tool and an API-consuming app | M1 (complete) | Nothing — M1 is shared by both tracks |
+| **2** | **Math *intuition only*** | Weeks 8–16 (parallel) | [3Blue1Brown Essence of Linear Algebra](https://www.3blue1brown.com/topics/linear-algebra) + [Essence of Calculus](https://www.3blue1brown.com/topics/calculus) + [StatQuest](https://statquest.org/) + the [Manga Guides](#practitioner-shelf) | M0, M2, M3, M5 | **Proof literacy.** You will not be able to read PRML/ESL derivations. See the ⚡ callouts in each math module |
+| **3** | **Classical ML at sklearn level** | Weeks 14–24 | [Andrew Ng ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) (free audit) + [Microsoft ML for Beginners](#companion-curricula) + StatQuest; concept-level [M9](#module-9)–[M12](#module-12) | M9–M12 with derivations | The ability to derive estimators or diagnose a model from first principles |
+| **4** | **From-scratch NumPy implementations** | Weeks 24–28 | Implement **logistic regression, K-Means, and a decision tree** in pure NumPy — the specific three named in video 1 (05:05–05:13) | — | Nothing; this *adds* depth the fast lane would otherwise miss |
+| **5** | **AI-Engineer stack** | Weeks 28–40 | Prompt engineering → [M21 RAG](#module-21) → [M22 agents/MCP](#module-22) → evals → fine-tuning basics ([M18](#module-18)) | M18, M21–M23 | Training-from-scratch and alignment-research depth |
+| **6** | **Production wrap** | Weeks 36–44 | [M24](#module-24) subset: Docker, CI/CD, MLflow or W&B, monitoring, a real deployment. Meet the [Minimum Production Bar](#production-bar) | M24 (complete) | Platform-scale infrastructure and SLO engineering |
+
+### Stage 4 in detail — the from-scratch discipline
+
+This is the fast lane's substitute for proof work, and it is non-negotiable. Video 1 (05:01–05:15) shows the exact shape expected: a class exposing `__init__`, `sigmoid`, `fit` (containing the gradient-descent loop), and `predict`. Writing that loop yourself is what converts "I watched a video about gradient descent" into "I know what the gradient is doing to the weights."
+
+```
+LogisticRegressionScratch
+├── __init__(self, lr, n_iters)   # hyperparameters, weights=None, bias=None
+├── sigmoid(self, z)              # 1 / (1 + np.exp(-z))
+├── fit(self, X, y)               # gradient-descent loop: forward → dw, db → update
+└── predict(self, X)              # sigmoid(Xw + b) thresholded at 0.5
+```
+
+Do the same for **K-Means** (assignment step / update step / inertia) and a **decision tree** (impurity criterion, best-split search, recursive build, prediction traversal). Then check each against the scikit-learn equivalent on the same data and explain any divergence.
+
+### When you must come back to the math spine
+
+The fast lane is a *loan*, not a discount. Repay it if you:
+
+- want to read or write papers, or enter [M13](#module-13) Bayesian derivations, [M16](#module-16) architecture theory, or [M17](#module-17) RL proofs;
+- interview for research scientist, applied scientist, or PhD-track roles;
+- need to debug a model whose failure mode is mathematical rather than engineering (identifiability, ill-conditioning, non-convergence);
+- find yourself unable to evaluate whether a paper's claim is sound.
+
+At that point return to [M0](#module-0) → [M2](#module-2) → [M3](#module-3) → [M5](#module-5) in order. The material is unchanged and waiting.
+
+### Honest timeline
+
+| Source | Claim | Conditions |
+|---|---|---|
+| [Scrimba, *How to Learn Python* (2026)](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/) | 9–12 months to entry-level job-ready | Measures *Python* job-readiness (data analyst, junior backend, junior ML), assumes a portfolio, 5–10 hrs/week |
+| [Video 2, 04:56](https://www.youtube.com/watch?v=FeQZmQMffzc) | 18 / 24 / 36 months for a career transition | Measures a *career change* into AI/ML from a non-tech background, in a market where juniors compete with laid-off senior engineers |
+| This roadmap (full track) | 24–36 months at 20–25 hrs/week | Complete path including the math spine and capstone |
+
+These are not in conflict; they measure different finish lines. Use the shorter figure if you already work in tech and are adding a skill. Use the longer figure if you are changing careers. See [Career Operations](#career-operations) for how to operate inside that window.
+
 ## Choose your track
 
 | Track | Recommended modules | Portfolio outcome |
@@ -71,10 +139,19 @@ Use the shortest entry point that matches your current experience. You can retur
 | **Data Scientist** | M1–M7 → M9–M14 → M25 → M26 | Validated model plus causal or experimental evaluation |
 | **Data Engineer** | M1 → M4 → M7 → M8a → M8b → M24 → M26 | Tested batch/streaming data platform with observability |
 | **ML Engineer** | M1–M12 → M15–M17 → M24 → M26 | Model served behind an API with CI, monitoring, and SLOs |
-| **AI Engineer** | M1 → M8a → M15–M18 → M21–M24 → M26 | Evaluated RAG or agent system with tracing and guardrails |
+| **AI Engineer (Applications)** | [Fast lane](#practitioner-track): M1 → M7 → M8a → intuition-level M2/M3/M5 → M18 → M21–M24 → M26 | Deployed product built **on** a foundation model: RAG or agent system with an eval suite, tracing, guardrails, and a cost/latency budget |
+| **AI Engineer (Systems/Research-adjacent)** | M1 → M8a → M15–M18 → M21–M24 → M26 | Evaluated RAG or agent system with tracing and guardrails, plus architecture-level understanding of the models it serves |
 | **Research / PhD prep** | M0–M18 → M23 → M26 Research Track | Reproducible paper, ablations, and public research artifact |
 
+> **Reading the two AI Engineer rows.** They are different jobs, not seniority levels. The **Applications** row matches the role as defined in [video 3, 00:53](https://www.youtube.com/watch?v=Pr9oRVtAqCM): a software engineer who turns GPT/Claude/Llama into products via prompting, RAG, fine-tuning, and agents, and who does *not* train models from scratch. Its primary text is **Chip Huyen, _AI Engineering: Building Applications with Foundation Models_** (O'Reilly, Jan 2025 — see the [Practitioner Shelf](#practitioner-shelf)). The **Systems** row keeps the deep-learning spine (M15–M17) for people who must also reason about the model internals, not just the API surface. In our [survey of 16 live 2026 postings](#skills-checklist), titles for the Applications row appear as "AI Engineer", "Applied AI Architect", and "Forward Deployed Engineer (GenAI)".
+
 ## Roadmap
+
+### Tracks and pacing
+
+- [🚀 Practitioner Track (fast lane, 6–9 months)](#practitioner-track)
+- [Choose your track](#choose-your-track)
+- [Module projects — the enforcement rule](#module-projects)
 
 ### Foundations
 
@@ -121,13 +198,23 @@ Use the shortest entry point that matches your current experience. You can retur
 
 ### Reference sections
 
-- [Core textbook list](#books)
-- [Production toolchain](#toolchain)
+- [Core textbook list](#books) · [🧰 Practitioner Shelf](#practitioner-shelf)
+- [Production toolchain](#toolchain) · [🏁 Minimum Production Bar](#production-bar)
+- [🐍 Free Python course matrix](#python-course-matrix)
+- [⚖️ Prompting vs RAG vs fine-tuning](#module-21)
+- [🧭 Career Operations](#career-operations) · [Skills ↔ job-description mapping](#skills-checklist)
 - [Progress tracker](#progress-tracker)
+- [🗓️ Refresh log](#refresh-log)
 - [Acknowledgements and sources](#acknowledgements)
-- [Verification and audit trail](audit/FINAL_AUDIT.md)
+- [Verification and audit trail](audit/FINAL_AUDIT.md) · [v2026.3 pass](audit/AUDIT_v2026.3.md)
 
 ## Curriculum at a glance
+
+<div align="center">
+
+<img src="assets/roadmap-overview.jpg" alt="The six curriculum strata as a left-to-right learning path, from Foundations (M0-M5) to Production AI (M18-M26)" width="100%">
+
+</div>
 
 | Stage | Modules | Main outcome |
 |---|---|---|
@@ -176,9 +263,28 @@ For each module, use a simple four-step loop:
 
 > **Resource policy:** free and open resources are preferred. Some books are listed as optional references when no equivalent open source is as strong.
 
+<a id="module-projects"></a>
+### Module projects — the enforcement rule
+
+Every module from [M1](#module-1) to [M25](#module-25) carries a **📦 Module Project (mandatory)** or **📋 Mandatory mini-projects** block. The rule is simple and it is not negotiable: **you do not advance to the next module until the current module's project is pushed to a public repository.** Passing a course's quizzes is not evidence; a repository is.
+
+Each project block states three things in the same shape:
+
+| Field | What it means |
+| :--- | :--- |
+| **Deliverable** | The concrete artefact. Specific enough that you cannot talk yourself into having finished. |
+| **Definition of done** | Three fixed requirements every time: a **test suite**, a **`README.md`** a stranger can follow, and a short **results memo** stating what you found and what you are unsure about. The memo is the part everyone skips and the part that reads as senior. |
+| **Stretch goal** | Adds exactly **one production element** — a Dockerfile, a CI workflow, a deployment, a monitoring hook. Stretch goals accumulate; by [M24](#module-24) you will have met the full [Minimum Production Bar](#production-bar). |
+
+> **Ship it before it is good.** A messy project on the internet beats a perfect project on your laptop. An unfinished public repository with an honest README is a stronger signal than a polished notebook nobody can see — and it is the only version of the work that can get you a job, feedback, or a collaborator. Video 2 (11:30) goes one step further: prefer projects built **for a real person or organisation** over generic dataset projects, because a stakeholder who wanted the result is what makes the project a story rather than a screenshot.
+>
+> **Where the archetypes come from.** The project set is deliberately drawn from the archetypes named in the [source videos](#refresh-log) — churn-prediction dashboard, constraint-based meal planner, weather CLI, Reddit scraper, Discord bot, Flask blog with authentication, Hugging Face sentiment analyser, stock dashboard, RAG chatbot over your own notes — mapped to the module that actually teaches the underlying skill, and hardened with the definition-of-done requirements above.
+
 ---
 
 # 🟩 FOUNDATION STRATUM — Modules 0–5
+
+<img src="assets/stratum-1-foundations.jpg" alt="Foundation stratum, modules 0 to 5" width="100%">
 
 > These six modules establish the non-negotiable mathematical and programming substrate. **A weakness in any one will cause silent failure later** — e.g., a shaky grasp of eigenvalues cripples PCA, a shaky grasp of chain rule cripples backprop, a shaky grasp of `∀ / ∃ / ⟹` cripples your ability to read a single PRML proof.
 
@@ -284,6 +390,16 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 
 * **Suggested Pace:** 6 weeks at 10 hrs/week = 60 hrs total; or 12 weeks at 5 hrs/week. **Do not skip the exercises** — Hammack provides 600+ with hints, and *doing 200 of them* is the entire point of this module.
 
+> ### ⚡ Intuition-First Alternative (Practitioner Track)
+>
+> **The route:** Skip Module 0 entirely. Go straight to [M1](#module-1), and pick up mathematical vocabulary as it appears via [StatQuest](https://statquest.org/) and the [Manga Guides](#practitioner-shelf). Return here only if you later hit the wall described below.
+>
+> **The argument for it:** Video 3 (04:47) — *"You need intuition, not derivation skills. Get the concepts down and then move forward."* Video 1 (00:44–01:09) reports that months spent on manual derivations "took years longer than it needed to" and did not yield "great intuition for why models behave the way they do in practice."
+>
+> **What you give up — stated plainly:** Module 0 is not a maths course, it is a *reading* course. Without it you cannot parse `∀ / ∃`, negate a quantified statement, or unfold a definition — which means every theorem statement in Stat 110, ESL, PRML, and Murphy remains opaque. You will be able to *use* methods and unable to *check* them.
+>
+> **Come back when:** you enter [M13](#module-13) (Bayesian derivations), any research-track work, or you find yourself unable to tell whether a paper's claim is actually supported. Module 0 is 60 hours; it does not expire.
+
 ---
 
 <a id="module-1"></a>
@@ -312,8 +428,8 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 * **2026 Resources:**
   * **Primary Course Link:** [Harvard CS50P — 2024 edition](https://cs50.harvard.edu/python/) · [MIT 6.0001 on OCW](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/)
   * **Required Reading (Latest 2026 Editions):**
-    * _Fluent Python_ (**3rd Edition, 2025**) — Luciano Ramalho — chapters 1–6, 9 (closures/decorators), 17 (iterators).
-    * _Python Crash Course_ (**4th Edition, 2025**) — Eric Matthes — for absolute beginners only.
+    * _Fluent Python_ (**2nd Edition, 2022** — the current edition; [fluentpython.com](https://www.fluentpython.com/) ✅) — Luciano Ramalho — chapters 1–6, 9 (closures/decorators), 17 (iterators).
+    * _Python Crash Course_ (**3rd Edition** — the current edition; [No Starch](https://nostarch.com/python-crash-course-3rd-edition) ✅) — Eric Matthes — for absolute beginners only.
   * **Practical Implementation:** **Python 3.12+** (pattern matching, improved error messages, per-interpreter GIL awareness). IDE: **VS Code** with `ms-python.python`, `charliermarsh.ruff`, `ms-python.mypy-type-checker`. Dependency manager: **`uv`** (2024-released, now standard).
 
 * **🛠 Modern Python Tooling:**
@@ -323,6 +439,94 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Git + GitHub Actions CI** — pre-commit hooks, branch-protection, conventional commits, GitHub Actions workflows for test/lint/build.
   * **`pytest` + `hypothesis` (property-based testing)** — [hypothesis docs](https://hypothesis.readthedocs.io/) ✅. Every ML engineer at FAANG writes property-based tests for numerical code; learn the `@given` decorator and shrinking.
   * **`ruff` + `pyright`** for lint + typecheck; **`pre-commit`** to run them on every commit.
+
+### 📅 Official pacing structure — the four-phase Python roadmap
+
+The topic list above is *what* to learn. This is *when*, and — more importantly — *what you must have shipped* by the end of each phase. Pacing and milestones adapted from Scrimba's [beginner's guide to learning Python (2026)](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/) ✅ and reconciled with the CS50P week map.
+
+| Phase | Weeks | Goal | Core skills | **Milestone you must ship** |
+| :--- | :--- | :--- | :--- | :--- |
+| **1 — Foundations** | 1–4 | Stop being confused by syntax | Variables, types, operators, conditionals, loops, functions, lists/dicts/tuples/sets, string methods | A **number-guessing game** and a **command-line calculator** — both in a git repo with a README |
+| **2 — Working Python** | 5–8 | Write programs that touch the outside world | File I/O, CSV/JSON, exceptions, `pathlib`, modules + `import`, standard library, virtual envs, regular expressions | A **file-I/O CLI tool** (e.g. an expense tracker or file organiser) that reads and writes real files and survives bad input |
+| **3 — Real-World Python** | 9–14 | Write code another engineer would accept | OOP (classes, inheritance, dunders), decorators, generators, comprehensions, type hints, `pytest`, `requests`, git branching + PRs, debugging | An **API-consuming application** with a class-based design, a `pytest` suite, type hints, and a CI workflow that runs on every push |
+| **4 — Specialisation** | Month 4–6+ | Point Python at a domain | NumPy/pandas (→ [M7](#module-7)), a web framework (Flask/FastAPI), Docker, deployment | **2–3 deployed portfolio projects** — see the [Minimum Production Bar](#production-bar) |
+
+**Phase-matched project ladder.** Match project difficulty to the phase you are actually in. Building above your rung produces copy-paste; building below it produces boredom.
+
+| Rung | Phase | Project options |
+| :--- | :--- | :--- |
+| **Beginner** | 1 | Number-guessing game · password generator · Pomodoro timer · expense tracker · Markdown-to-HTML converter |
+| **Intermediate** | 2–3 | Reddit scraper · Spotify listening-history analyser · Discord bot · weather CLI (real API + caching + error handling) · bulk file organiser |
+| **Advanced** | 4 | Flask blog with authentication · sentiment analyser on a pretrained Hugging Face model · stock dashboard · RAG chatbot over your own notes |
+
+> **Note on the advanced rung.** The last two entries are deliberately the *same* deliverables as the [M7](#module-7) and [M21](#module-21) module projects. Phase 4 of Python is not a separate track — it *is* the beginning of the data/AI curriculum. Do not build them twice.
+
+<a id="python-course-matrix"></a>
+### 🐍 Free Python course matrix
+
+There is no single best free Python course; there is a best *pair*. This matrix is synthesised from Scrimba's [best free Python courses for beginners in 2026](https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/) ✅, with every link independently live-verified (see [`audit/VERIFICATION.md`](audit/VERIFICATION.md)).
+
+| Course | Hours | Format | Free certificate? | Projects | Best for |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **[Scrimba — Learn Python](https://scrimba.com/learn-python-c02t)** ✅ | ~5.6 h · 58 parts | Interactive screencasts you can edit and run inline (Olof Paulson) | Yes | Many small in-browser challenges | The fastest possible *start*. Removes environment-setup friction entirely |
+| **[Harvard CS50P](https://cs50.harvard.edu/python/)** ✅ | ~100 h · 10 weeks | Lectures + graded problem sets (David Malan) | Yes (free certificate) | 9 problem sets + final project | The single best **rigour** option; the spine of this module's topic list |
+| **[University of Helsinki — Python Programming MOOC](https://programming-24.mooc.fi/)** ✅ | 200+ h · 14 parts | Text-based, browser-graded, auto-tested exercises (no video) | ECTS credits available | Hundreds of auto-graded exercises | Learners who prefer **reading over watching** and want relentless exercise volume |
+| **[freeCodeCamp — Scientific Computing with Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/)** ✅ | ~300 h | Video + browser projects | Yes (free certification) | 5 certification projects | A **free credential** plus scientific-computing framing. ⚠️ Content is older than the others — verify Python-3 idioms against the official docs as you go |
+| **[Coursera — Python for Everybody (Michigan, Severance)](https://www.coursera.org/specializations/python)** ✅ | ~32 h (audit) | University lectures + readings | No — certificate is paid; **audit is free** | Weekly assignments | Learners who want a **classic university sequence** and databases/web-scraping coverage |
+| **[Official Python Tutorial](https://docs.python.org/3/tutorial/)** ✅ | ~15 h | Reference-grade prose | No | None | The **authoritative** source. Use as a companion, never as your first course |
+| **[Google's Python Class](https://developers.google.com/edu/python)** ✅ | ~10 h | Written lessons + exercises | No | Small exercise sets | Programmers **already fluent in another language** who need Python syntax fast |
+| **[Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)** ✅ | Book (3rd Ed., 2025) | Free full text online (Al Sweigart) | No | Chapter-end practice projects | **Motivation and immediate utility** — the single best "why would I use this?" answer |
+
+> **The recommended pairing stack.** No single course produces competence. Run them in this order:
+> **1. [Scrimba — Learn Python](https://scrimba.com/learn-python-c02t)** for a frictionless first two weeks →
+> **2. [Automate the Boring Stuff](https://automatetheboringstuff.com/)** to convert syntax into things you actually use →
+> **3. [CS50P](https://cs50.harvard.edu/python/) *or* the [Helsinki MOOC](https://programming-24.mooc.fi/)** for the depth, testing discipline, and OOP that the fast courses skip. Pick CS50P if you learn from lectures; pick Helsinki if you learn from exercises.
+>
+> **Red flags in any Python course you find elsewhere.** Reject it if (a) it teaches **Python 2** (`print` as a statement, `raw_input`, integer division by default) or (b) it **never reaches OOP, exceptions, or testing** — those are exactly the topics that separate a tutorial-completer from someone employable.
+
+### 🔨 How to actually study this module — the tutorial-hell escape protocol
+
+Tutorial hell is the state of continuously consuming instruction while producing nothing. It feels like progress because it is comfortable, and it is the single most common failure mode in self-taught Python. The protocol below is the escape.
+
+1. **Build before you feel ready.** You will never feel ready. Start the phase milestone at ~60 % confidence and let the gaps surface as concrete, searchable questions.
+2. **Close the tutorial and rebuild from memory.** After finishing any guided project, delete it and rebuild it with the tab closed. What you cannot reproduce is what you have not learned — that list is your actual study plan.
+3. **Hold a 2:1 build-to-watch ratio.** Two hours writing your own code for every one hour of instruction. If the ratio inverts for a week, you are in tutorial hell.
+4. **Read, break, and fix other people's code.** Clone a small open-source Python repo, read it until you can explain the entry point, deliberately break something, then fix it. Reading production code is a distinct skill from writing greenfield code, and job interviews test it.
+5. **Join a community and be publicly accountable.** Post weekly what you shipped. External accountability is what survives the week your motivation does not — see [Career Operations](#career-operations).
+
+> **The principle underneath all five:** comfortable learning is mostly fake learning. Video 1 (09:30) calls the mechanism the *fluency illusion*; video 2 (07:12) frames the fix as taking the internal locus of control — you own the outcome, so you own the discomfort. Difficulty is the signal that encoding is happening.
+
+### 🤖 Disciplined AI-assistant policy (applies to M1–M5)
+
+AI coding assistants are the fastest way to learn Python and the fastest way to never learn it. The difference is entirely in *what you ask for*.
+
+**Permitted while working through M1–M5:**
+* "Explain what this error message means and what category of bug causes it."
+* "Review the code I already wrote and name the weaknesses — do not rewrite it."
+* "Quiz me on decorators. Ask questions, do not give answers."
+* "Explain three ways to structure this, with trade-offs" — then you choose and you type it.
+
+**Not permitted while working through M1–M5:**
+* "Write this function for me."
+* Pasting a milestone project's requirements into a model and shipping the output.
+* Accepting any autocomplete you could not have written yourself and cannot explain line by line.
+
+> **⚠️ The fluency illusion.** Video 1 (09:30): *"There's this fluency illusion where AI hands you a perfect answer, and you walk away feeling like you understood it, but you didn't do the cognitive work that makes the knowledge stick."* This is the failure mode the policy exists to prevent. The cost is invisible until an interview or a production incident, at which point it is total.
+>
+> **The policy loosens after M5.** Once the fundamentals are encoded, using models to generate boilerplate, scaffold tests, and draft config is straightforward professional leverage — and [M22](#module-22) treats agentic coding as a first-class engineering topic. The restriction is developmental, not moral.
+
+### 📚 Cited sources added in v2026.3
+
+* **[Scrimba — *Best Free Python Courses for Beginners in 2026*](https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/)** ✅ *(verified 2026-07-26)* — source for the [free Python course matrix](#python-course-matrix), the pairing stack, and the Python-2/no-OOP red flags.
+* **[Scrimba — *How to Learn Python: A Beginner's Guide (2026)*](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/)** ✅ *(verified 2026-07-26)* — source for the four-phase pacing structure, the weekly milestones, the phase-matched project ladder, the tutorial-hell escape protocol, and the honest time-to-competence estimates in the [Fast Lane](#practitioner-track).
+* **Video 1 — [*How to Become an ML Engineer*](https://www.youtube.com/watch?v=UZ_rK9gzVSc)** (03:00–04:00) — the Python competence bar for ML work: data types, control flow, functions, and file handling, then straight into NumPy and pandas ([M7](#module-7)). The *fluency illusion* warning is at 09:30.
+* **Video 3 — [*The Only 7 Books You Need to Become an AI Engineer*](https://www.youtube.com/watch?v=Pr9oRVtAqCM)** (01:21) — Python is "table stakes" for the AI Engineer role; *Automate the Boring Stuff* is named as the entry point (see the [Practitioner Shelf](#practitioner-shelf)).
+
+* **📦 Module Project (mandatory) — Weather CLI**
+  * **Deliverable:** A command-line weather tool that takes a city name, calls a real public weather API, caches responses to disk so repeated calls do not re-hit the network, and prints a formatted forecast. Class-based design, type hints throughout.
+  * **Definition of done:** (1) `pytest` suite covering the happy path, a bad city name, a network timeout, and a malformed API response — network mocked, not live; (2) `README.md` with install, usage, and one screenshot of real output; (3) a 1-page results memo recording what broke while you built it and how you diagnosed it.
+  * **Stretch (adds one production element):** Wire a GitHub Actions workflow that runs `ruff` + `pytest` on every push, and make the badge green.
+  * *Archetype source: video 1 (13:40) — the "weather CLI with real API, caching and error handling" tier; Phase 3 milestone of the [four-phase roadmap](#module-1).*
 
 ---
 
@@ -375,6 +579,22 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Checkpointing:** Trade compute for memory by recomputing activations during backward pass (used in FSDP / gradient-checkpointing in M15).
   * **Practical:** `jax.grad`, `jax.jvp`, `jax.vjp`, `jax.jacrev`, `jax.jacfwd`, `jax.hessian`; `torch.autograd.grad`, `torch.func.vmap`, `torch.func.jacrev`; all cross-reference the [MIT 18.063 matrix-calc notes](https://github.com/mitmath/matrixcalc) already cited above.
 
+> ### ⚡ Intuition-First Alternative (Practitioner Track)
+>
+> **The route (≈ 10–15 hours instead of 160):** Watch [3Blue1Brown — *Essence of Calculus*](https://www.3blue1brown.com/topics/calculus) (12 videos) for the derivative-as-rate-of-change and chain-rule pictures, then [StatQuest's gradient-descent series](https://statquest.org/) for the optimisation loop. Read *The Manga Guide to Calculus* if you want a book. Skip Stewart, skip 18.01/18.02, skip EE364A. **Do not skip the AutoDiff sub-section above** — read it as a *conceptual* description of what `loss.backward()` does; you need that model to debug training.
+>
+> **The argument for it:** Video 1 (01:41–02:06) puts 3Blue1Brown and StatQuest at Phase 1 and budgets **2–4 weeks** for "a rough mental map rather than mastery." Video 3's speaker reports never hand-computing a chain rule in six years at Amazon and Coursera (04:47).
+>
+> **What you give up — stated plainly:** you will not be able to derive a gradient, verify a paper's update rule, reason about convergence rates, or use KKT conditions to understand why the SVM dual looks the way it does. When a model fails to converge you will be limited to empirical remedies (change the LR, change the optimiser) rather than diagnostic ones.
+>
+> **Come back when:** you reach [M13](#module-13) variational inference, [M16](#module-16) diffusion/score-matching, [M17](#module-17) policy-gradient derivations, or any research role. The convex-optimisation half (EE364A) in particular is assumed by every proof in M9–M14.
+
+* **📦 Module Project (mandatory) — Gradient-descent laboratory**
+  * **Deliverable:** A small NumPy package that minimises a user-supplied scalar function. Implement (a) finite-difference gradients, (b) analytic gradients for three test functions (quadratic bowl, Rosenbrock, logistic loss), and (c) plain gradient descent, momentum, and Adam. Plot the optimisation trajectory over a contour map for each.
+  * **Definition of done:** (1) `pytest` suite asserting that your analytic gradient matches the finite-difference gradient to `1e-6` — this is the gradient-check discipline every DL codebase depends on; (2) `README.md` with the three contour plots and a table of iterations-to-convergence per optimiser; (3) a results memo answering *why* momentum beats plain GD on Rosenbrock, in your own words.
+  * **Stretch:** Reproduce your Adam result using `jax.grad` and show the two agree — this is your bridge into [M15](#module-15).
+  * *Fast-lane note: intuition-track learners may implement (a) and (c) only and skip the analytic derivations, but must still pass the gradient check.*
+
 ---
 
 <a id="module-3"></a>
@@ -425,6 +645,16 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Condition number & stability:** Why `np.linalg.lstsq(A, b)` beats `np.linalg.inv(A.T @ A) @ A.T @ b` by 10+ orders of magnitude on ill-conditioned designs. Read *Trefethen & Bau* Lectures 12–16.
   * **Floating-point traps:** catastrophic cancellation, log-sum-exp trick, Kahan summation, mixed-precision (bf16/fp16/fp8) for DL.
 
+> ### ⚡ Intuition-First Alternative (Practitioner Track)
+>
+> **The route (≈ 8–12 hours instead of 12 weeks):** Watch [3Blue1Brown — *Essence of Linear Algebra*](https://www.3blue1brown.com/topics/linear-algebra) (16 videos) end to end. That series is already cited in this module's topic list as the source of the geometric intuition — for the fast lane it becomes the *whole* module rather than a companion to Strang and Axler. Optionally add *The Manga Guide to Linear Algebra*. Then do **mini-project 1 only** (PCA on MNIST via `np.linalg.svd`) so the ideas touch code.
+>
+> **The argument for it:** Video 1 (01:41–02:06) names Essence of Linear Algebra specifically as the Phase 1 resource, with the goal being a mental map, not mastery.
+>
+> **What you give up — stated plainly:** the two-pass pedagogy above exists because computational fluency and abstract fluency are different skills. You keep neither in full. You will recognise "eigenvector = invariant direction" but not be able to prove the spectral theorem, derive why SVD always exists, or reason about the four fundamental subspaces. Practically, this bites in two places: **understanding *why* PCA works** (rather than that it does), and **numerical stability** — the `(AᵀA)⁻¹Aᵀy` versus `lstsq` trap above is a real production bug you will now only avoid by rule-following.
+>
+> **Come back when:** you touch [M11](#module-11) beyond `sklearn.decomposition`, [M16](#module-16) attention mathematics, or any systems work where conditioning matters. The Numerical Linear Algebra sub-section is the highest-value re-entry point for engineers.
+
 ---
 
 <a id="module-4"></a>
@@ -453,6 +683,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * _Algorithm Design Manual_ (**3rd Edition, 2020**) — Skiena — for problem-solving intuition.
     * _Concrete Mathematics_ (**2nd Edition**) — Graham, Knuth, Patashnik — for discrete-math depth.
   * **Practical Implementation:** Pure Python + `collections` (deque, defaultdict, Counter), **`sortedcontainers`**, **`networkx` 3.x** for graph algorithms, **LeetCode** + **Codeforces** for practice.
+
+* **📦 Module Project (mandatory) — Constraint-based meal planner**
+  * **Deliverable:** A program that, given a food database (calories + macros + cost per item) and a set of constraints (daily calorie target, minimum protein, budget ceiling, no more than *k* repeats per week), produces a valid 7-day meal plan. Solve it twice: once with your own search/DP formulation, once with a solver (`pulp` or `ortools`), and compare.
+  * **Definition of done:** (1) `pytest` suite including at least one *infeasible* constraint set that your program correctly reports as unsatisfiable rather than crashing or silently returning garbage; (2) `README.md` stating the formulation explicitly — decision variables, objective, constraints; (3) a results memo comparing your hand-rolled search against the solver on runtime and solution quality, and stating the complexity class of the problem you just solved.
+  * **Stretch:** Expose it as a Streamlit app so a non-programmer can change the constraints and see a new plan.
+  * *Archetype source: video 1 (14:05) — the constraint-based meal planner, cited there specifically because it demonstrates problem formulation rather than model-fitting.*
 
 ---
 
@@ -516,9 +752,27 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * Weeks 11–12: Stat 110 lectures 29–34 + measure-theoretic bridge (Wasserman Ch 21 *or* Capinski-Kopp Ch 1–4 if PhD-track).
   * **Capstone exercise:** write a 30-line script that empirically demonstrates the CLT, the Hoeffding bound, and the Galton-Watson process, all in one notebook. *If you can do this without help, you have actually learned probability.*
 
+> ### ⚡ Intuition-First Alternative (Practitioner Track)
+>
+> **The route (≈ 15–20 hours instead of 120):** [StatQuest's probability and statistics playlists](https://statquest.org/) plus *The Manga Guide to Statistics*, then — and this part is **mandatory even on the fast lane** — the capstone exercise above. Simulating the CLT yourself is cheap, requires no proof machinery, and is the single highest-value hour in this module.
+>
+> **The argument for it:** Video 1 (02:18–02:42) treats probability as something absorbed through StatQuest alongside ML overviews rather than as a standalone 12-week course. Video 3 (06:03) makes StatQuest's *Illustrated Guide to Machine Learning* one of its seven books precisely because it teaches "how the math actually applies to the results."
+>
+> **What you give up — stated plainly:** more than in any other math module. Probability is where the fast lane is most expensive, because uncertainty is not an implementation detail — it is the object being modelled. Without MGFs, conditional expectation as a random variable, and the concentration inequalities, you cannot reason about why a validation estimate is trustworthy, why a confidence interval is the width it is, or what a Bayesian posterior actually is. **This is the one math module we recommend fast-lane learners over-invest in relative to the video doctrine.**
+>
+> **Come back when:** you enter [M6](#module-6) inference in earnest, [M6½](#module-6-half) causal work, [M13](#module-13), or any role with "Data Scientist" in the title. In our [job survey](#skills-checklist), statistics/inference language appeared in 5 of 16 postings and A/B-testing language in 6 of 16 — concentrated almost entirely in the DS roles.
+
+* **📦 Module Project (mandatory) — Monte Carlo intuition engine**
+  * **Deliverable:** A simulation suite that answers four probability questions numerically *and* analytically, and shows the two converge: (1) the birthday problem, (2) the Monty Hall problem, (3) the coupon-collector expected time, (4) a random walk's hitting-time distribution. One module per problem, one shared `simulate(n_trials)` interface.
+  * **Definition of done:** (1) `pytest` suite asserting each simulated estimate lands within a stated tolerance of the closed-form answer at a fixed seed; (2) `README.md` with a convergence plot per problem (estimate vs `n_trials`, with the analytic value as a horizontal line); (3) a results memo explaining what the convergence rate you observed tells you about the Law of Large Numbers and the CLT.
+  * **Stretch:** Add a variance-reduction technique (antithetic variates or control variates) to one problem and quantify the efficiency gain.
+  * *This project is the reason the [fast lane](#practitioner-track) tells you to over-invest in M5 relative to the other maths modules: probability is the one branch you cannot fake with library calls.*
+
 ---
 
 # 🟨 CORE STATISTICS STRATUM (Modules 6–8)
+
+<img src="assets/stratum-2-statistics.jpg" alt="Statistics and data stratum, modules 6 to 8" width="100%">
 
 ---
 
@@ -552,6 +806,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Practical Implementation:** **`statsmodels` 0.14+** for classical inference (OLS, GLM, ANOVA), **`pingouin`** for modern stats API, **`scipy.stats`** for tests. Use **R 4.4+** with `{tidyverse}`, `{broom}`, `{infer}` for when you need publication-grade stats.
 
 * **➡️ Cross-ref note (NEW v2026.2):** A/B testing, experimental design, and causal inference have been promoted out of this module into a **dedicated Module 6½ — Causal Inference & Experimentation** (directly below) because every senior-DS interview at Meta / Netflix / Booking / Uber tests this material in depth.
+
+* **📦 Module Project (mandatory) — Inference toolkit from scratch**
+  * **Deliverable:** A package implementing, without `scipy.stats` doing the work for you: bootstrap confidence intervals (percentile + BCa), a permutation test, a two-sample t-test, and a multiple-comparison correction (Bonferroni + Benjamini–Hochberg). Then run all four on one real dataset and write up what they disagree about.
+  * **Definition of done:** (1) `pytest` suite cross-validating each of your implementations against the `scipy.stats` equivalent to within tolerance; (2) `README.md` stating each test's assumptions and what happens when they are violated; (3) a results memo that includes at least one honest instance of *"this test said significant and I do not believe it, here is why."*
+  * **Stretch:** Add a power-analysis function and use it to compute the sample size your dataset would have needed to detect a stated effect. Log the result — this is the calculation that most real experiment designs skip.
+  * **Anti-goal:** Do not produce a notebook full of p-values. The deliverable is a tested library plus a document about uncertainty.
 
 ---
 
@@ -628,6 +888,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Dashboards:** **[Streamlit](https://streamlit.io/)** ✅ for ML demos, **[Gradio](https://www.gradio.app/)** ✅ for HF-style model UIs, **[Evidently](https://www.evidentlyai.com/)** ✅ for data-drift dashboards.
   * **Feature Engineering Discipline:** Target encoding with K-fold smoothing, **train-test leakage** (temporal, group, target-leak from future aggregates), time-based features (lag, rolling, expanding windows), cyclical encoding (sin/cos of hour/month), **sklearn Pipelines + ColumnTransformer** as the *only* correct way to avoid leakage. Reference: [*Feature Engineering for Machine Learning* — Zheng & Casari (O'Reilly 2018)](https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/).
 
+* **📦 Module Project (mandatory) — End-to-end EDA on a dataset nobody has cleaned**
+  * **Deliverable:** Pick a genuinely messy public dataset — a government open-data portal, not a Kaggle "cleaned" CSV. Produce a reproducible pipeline (script, not a notebook) that ingests raw files, validates them, cleans them, and emits both a tidy Parquet file and a small set of publication-quality figures answering three questions you wrote down *before* you started.
+  * **Definition of done:** (1) A data-validation layer (`pandera` or explicit assertions) that fails loudly on schema drift, plus a `pytest` suite over your transform functions; (2) `README.md` with the three questions, the three figures, and a data dictionary; (3) a results memo listing every judgement call you made while cleaning — dropped rows, imputed values, outliers kept or removed — because that list is what a reviewer will actually interrogate.
+  * **Stretch:** Re-run the same pipeline in Polars and report the wall-clock difference on the full dataset.
+  * **Anti-goal:** No `df.describe()` dumps. Every figure must answer a stated question.
+
 ---
 
 <a id="module-8a"></a>
@@ -653,6 +919,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * **The Kimball Group** — [*The Data Warehouse Toolkit* (3e)](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/books/data-warehouse-dw-toolkit/) ✅ — the dimensional-modelling bible.
     * Reis & Housley — [*Fundamentals of Data Engineering*](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/) ✅ (O'Reilly 2022) — Chapters 5–8 for the DB/warehouse half.
   * **Practical Implementation:** **PostgreSQL 17** (with `pgvector` extension), **DuckDB 1.5+**, **SQLAlchemy 2.x** with async, **dbt-core 1.11.8**, **sqlmesh** (dbt alternative), **Snowflake** or **BigQuery** free-tier for cloud practice.
+
+* **📦 Module Project (mandatory) — Reddit scraper → warehouse → dashboard**
+  * **Deliverable:** A pipeline that pulls posts and comments from a subreddit you actually care about, lands them in PostgreSQL with a sane normalised schema (plus indexes you can justify), transforms them with SQL into a small star schema, and surfaces three metrics in a Streamlit dashboard.
+  * **Definition of done:** (1) Schema DDL committed as migrations, not typed into a client by hand; a `pytest` suite over the extraction and transform layers with the API mocked; (2) `README.md` containing your ER diagram and the `EXPLAIN ANALYZE` output for your slowest query, before and after you added the index; (3) a results memo on what you learned about the data that you did not expect.
+  * **Stretch:** Add incremental loading with a watermark column so a re-run does not re-ingest history, and schedule it.
+  * *Archetype source: video 1 (13:40) — the Reddit-scraper tier, promoted here from a toy script to a warehouse exercise because SQL is the highest-frequency skill in the [surveyed 2026 postings](#skills-checklist).*
 
 ---
 
@@ -692,6 +964,8 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 
 # 🟧 CLASSICAL MACHINE LEARNING STRATUM (Modules 9–12)
 
+<img src="assets/stratum-3-classical-ml.jpg" alt="Classical machine learning stratum, modules 9 to 12" width="100%">
+
 > This stratum is the intersection of every university's "first ML course" — MIT 6.390, Harvard CS 1810, Cambridge MLRD/MLBI, IITM BSCS2004/2007/2008.
 
 ---
@@ -723,6 +997,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * _The Elements of Statistical Learning_ (ESL, 2nd Ed corrected 12th printing) — Chapters 3, 5.
     * _Pattern Recognition and Machine Learning_ (Bishop, 2006) — Chapter 3.
   * **Practical Implementation:** **scikit-learn 1.5+** (`LinearRegression`, `Ridge`, `Lasso`, `ElasticNet`, `KNeighborsRegressor`, `GaussianProcessRegressor`), **statsmodels** for inferential output, **`torch.optim.SGD` / `torch.optim.AdamW`** once you graduate to M15.
+
+* **📦 Module Project (mandatory) — Linear regression from scratch, then honestly evaluated**
+  * **Deliverable:** `LinearRegressionScratch` in pure NumPy — closed-form normal equations *and* gradient descent — plus your own Ridge and Lasso (the latter via coordinate descent or ISTA). Compare against `sklearn` on a real regression dataset with a proper train/validation/test split and a regularisation path plot.
+  * **Definition of done:** (1) `pytest` suite asserting your coefficients match `sklearn`'s to within tolerance on a fixed-seed synthetic problem where you know the true weights; (2) `README.md` with the regularisation path, residual diagnostics, and a statement of which assumptions your data violates; (3) a results memo explaining what Lasso zeroed out and whether that matches domain sense.
+  * **Stretch:** Add a bootstrap confidence interval for each coefficient using your [M6](#module-6) toolkit and discuss which coefficients you would actually report.
+  * *This is the first rung of the from-scratch discipline described in [Stage 4 of the fast lane](#practitioner-track). Video 1 (05:40) is explicit that implementing the algorithm is what converts a course-watcher into someone who can debug a model.*
 
 ---
 
@@ -761,6 +1041,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Practical:** [`sklearn.calibration.CalibratedClassifierCV`](https://scikit-learn.org/stable/modules/calibration.html), [`sklearn.calibration.calibration_curve`](https://scikit-learn.org/stable/modules/generated/sklearn.calibration.calibration_curve.html), [`netcal`](https://github.com/EFS-OpenSource/calibration-framework) for DL calibration.
   * **Why it matters for 2026 interviews:** every senior-DS interview asks about calibration before asking about model choice.
 
+* **📦 Module Project (mandatory) — Churn prediction, from-scratch core, deployed dashboard**
+  * **Deliverable:** Two halves. **(a)** `LogisticRegressionScratch` in NumPy following the `__init__` / `sigmoid` / `fit` / `predict` structure laid out in [the fast lane](#practitioner-track), verified against `sklearn`. **(b)** A real churn-prediction model on a real customer-churn dataset — feature engineering, class-imbalance handling, threshold selection driven by a stated cost matrix rather than by accuracy — surfaced in a deployed Streamlit dashboard that takes a customer record and returns a churn probability plus the top drivers.
+  * **Definition of done:** (1) `pytest` suite over both halves, including a leakage test asserting that no feature derived from the target survives into training; (2) `README.md` with the confusion matrix at your chosen threshold, the cost calculation that justified it, a calibration curve, and a **live URL**; (3) a results memo stating what the model would cost the business if deployed at your threshold and at the naive 0.5 threshold.
+  * **Stretch:** Add SHAP explanations to the dashboard and a monitoring hook that logs the input-feature distribution so you could detect drift.
+  * *Archetype source: video 1 (13:10) — the churn-prediction dashboard is named there as the canonical portfolio project because it forces business framing, not just model-fitting. The "deployed" requirement is not decoration: **a messy project on the internet beats a perfect project on your laptop.***
+
 ---
 
 <a id="module-11"></a>
@@ -789,6 +1075,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * PRML Bishop — Chapters 9, 12.
     * _Probabilistic Machine Learning: An Introduction_ (Murphy, MIT Press 2022) — chapters 20-21.
   * **Practical Implementation:** **scikit-learn** (`KMeans`, `DBSCAN`, `AgglomerativeClustering`, `GaussianMixture`, `PCA`, `KernelPCA`, `TruncatedSVD`); **`hdbscan`**, **`umap-learn`**, **`openTSNE`**; **`pymc`** for Bayesian GMMs.
+
+* **📦 Module Project (mandatory) — K-Means from scratch + a dimensionality-reduction bake-off**
+  * **Deliverable:** `KMeansScratch` in NumPy (random init *and* k-means++ init, with inertia tracking and a proper convergence criterion), plus your own PCA via SVD. Then run a comparison on one high-dimensional real dataset: PCA vs t-SNE vs UMAP for visualisation, and K-Means vs DBSCAN vs GMM for clustering, with a defensible cluster-count selection (elbow **and** silhouette **and** a stability check).
+  * **Definition of done:** (1) `pytest` suite asserting your K-Means matches `sklearn`'s inertia on a fixed seed and that your PCA's explained-variance ratios match, plus a test that k-means++ beats random init on average over seeds; (2) `README.md` with the embedding plots side by side and an explicit warning about what t-SNE/UMAP distances do *not* mean; (3) a results memo naming the clusters and stating whether you believe they are real structure or artefacts.
+  * **Stretch:** Cluster on the PCA projection vs the raw features and quantify how much the preprocessing choice changed your conclusions.
+  * *Archetype source: video 1 (06:05) — K-Means is one of the three algorithms named for from-scratch implementation.*
 
 ---
 
@@ -819,9 +1111,17 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * _Interpretable Machine Learning_ — Christoph Molnar — [free online, 2024 edition](https://christophm.github.io/interpretable-ml-book/).
   * **Practical Implementation:** **scikit-learn** (`DecisionTreeClassifier`, `RandomForestClassifier`, `GradientBoostingClassifier`, `HistGradientBoostingClassifier` — now default, C++-backed), **XGBoost 2.x**, **LightGBM 4.x**, **CatBoost 1.2+**, **`shap` 0.46+**, **`interpret` (Microsoft InterpretML)**, **`dalex`**.
 
+* **📦 Module Project (mandatory) — Decision tree from scratch, then a boosting bake-off**
+  * **Deliverable:** `DecisionTreeScratch` in NumPy — Gini and entropy criteria, recursive splitting, depth and min-samples stopping rules, and a `predict` that walks the tree. Then, on one tabular dataset, run a fair comparison of your tree vs `RandomForest` vs `XGBoost` vs `LightGBM` vs `CatBoost` with identical folds and a tuned budget per model.
+  * **Definition of done:** (1) `pytest` suite covering a pure-node base case, a single-split dataset whose correct split you can compute by hand, and agreement with `sklearn`'s tree on a fixed-seed problem; (2) `README.md` with a leaderboard table (metric ± CV std, fit time, inference latency) — not just the best score; (3) a results memo answering *"would I ship the best model or the second-best, and why"* using the latency and interpretability columns.
+  * **Stretch:** Add a permutation-importance and a SHAP comparison, and explain any disagreement between them.
+  * *Archetype source: video 1 (06:05) — decision trees are the third named from-scratch implementation.*
+
 ---
 
 # 🟦 PROBABILISTIC & BAYESIAN STRATUM (Modules 13–14)
+
+<img src="assets/stratum-4-bayesian.jpg" alt="Probabilistic and Bayesian stratum, modules 13 to 14" width="100%">
 
 ---
 
@@ -856,6 +1156,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * _Bayesian Reasoning and Machine Learning_ — David Barber — [free PDF](http://www.cs.ucl.ac.uk/staff/D.Barber/brml/) (explicitly listed in Cambridge ML&BI reading list).
   * **Practical Implementation:** **PyMC 5.x** (with PyTensor backend), **NumPyro 0.15+** (JAX-native, 10-100× faster for complex models, standard in 2026 research), **Stan** via `cmdstanpy`, **TensorFlow Probability 0.24+**, **`arviz`** for posterior diagnostics (R̂, ESS, trace plots, posterior predictive checks).
 
+* **📦 Module Project (mandatory) — Bayesian A/B test, end to end**
+  * **Deliverable:** A full Bayesian analysis of a real or realistically-simulated experiment in PyMC or NumPyro: state the prior and defend it, fit the posterior, run convergence diagnostics (R-hat, ESS, divergences, trace and rank plots), do prior and posterior predictive checks, and report a decision — including the probability that B beats A by more than a stated business-relevant margin.
+  * **Definition of done:** (1) A test asserting R-hat < 1.01 and zero divergences at a fixed seed, so a regression in the model breaks CI; (2) `README.md` with the posterior plots, the prior-sensitivity analysis (re-run under at least two other defensible priors), and the decision rule; (3) a results memo contrasting your Bayesian conclusion with the frequentist p-value from your [M6](#module-6) toolkit on the same data — and explaining precisely what each one does and does not claim.
+  * **Stretch:** Extend to a hierarchical model across segments and show partial pooling shrinking the noisy small-segment estimates.
+  * **Fast-lane note:** This module is where the [intuition-first shortcut runs out](#module-5). If you are here, you need the probability spine.
+
 ---
 
 <a id="module-14"></a>
@@ -887,9 +1193,17 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * Bishop PRML — Chapter 13 (sequential data).
   * **Practical Implementation:** **`statsmodels.tsa`** (ARIMA, SARIMAX, VAR, state-space), **`pmdarima`** (auto-ARIMA), **`prophet` 1.1+**, **`hmmlearn`**, **`pykalman`**, **`filterpy`** for Kalman variants, **`darts`** (Unit8's unified TS library — 2026 favourite), **`sktime` 0.30+**, **`neuralforecast`** (Nixtla) for modern deep TS.
 
+* **📦 Module Project (mandatory) — Stock dashboard with honest forecasting**
+  * **Deliverable:** A deployed dashboard over a real time series (equities, energy demand, or web traffic) that shows the history, a forecast with prediction intervals, and — critically — a **backtest** using rolling-origin cross-validation. Baselines are mandatory: naive, seasonal-naive, and ARIMA must all appear before any fancy model does.
+  * **Definition of done:** (1) `pytest` suite including a test that asserts your backtest split never leaks future data into the past (the single most common bug in time-series code); (2) `README.md` with a metric table across horizons for every model including the naive baselines, and a live URL; (3) a results memo stating plainly whether your model beat seasonal-naive, and if not, saying so.
+  * **Stretch:** Add a probabilistic model (or a foundation forecasting model) and compare interval coverage, not just point error.
+  * *Archetype source: video 1 (13:55) — the stock dashboard, with the backtest and baseline requirements added because the archetype is otherwise the easiest portfolio project to fake.*
+
 ---
 
 # 🟪 DEEP LEARNING STRATUM (Modules 15–17)
+
+<img src="assets/stratum-5-deep-learning.jpg" alt="Deep learning stratum, modules 15 to 17" width="100%">
 
 ---
 
@@ -941,6 +1255,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Throughput engineering:** [Triton](https://github.com/triton-lang/triton) ✅ kernels, **FlashAttention-2 / 3** (Tri Dao), **PagedAttention** (vLLM), activation recomputation strategies, `torch.compile` with `fullgraph=True`.
   * **Reading:** [*How to Scale Your Model* (Google JAX scaling book, 2024)](https://jax-ml.github.io/scaling-book/) ✅, [PyTorch DTensor docs](https://pytorch.org/docs/stable/distributed.tensor.html), Stanford CS336 Lectures 5-7 (scaling, parallelism, systems).
 
+* **📦 Module Project (mandatory) — Backprop from scratch, then a real CNN**
+  * **Deliverable:** Two halves. **(a)** A NumPy-only MLP with manual forward and backward passes for at least Linear, ReLU, and Softmax-CE layers, trained on MNIST to >97 % test accuracy. **(b)** The same task in PyTorch, then a CNN on CIFAR-10 with augmentation, LR scheduling, and a training loop you wrote yourself.
+  * **Definition of done:** (1) A gradient-check test comparing every analytic backward pass against finite differences to `1e-5` — non-negotiable; plus a smoke test that the model can overfit a 10-sample batch to near-zero loss (the fastest way to detect a broken training loop); (2) `README.md` with loss/accuracy curves for train and validation, and a confusion matrix; (3) a results memo describing one bug you hit in the backward pass and how the gradient check found it.
+  * **Stretch:** Add mixed-precision training and report the throughput and memory difference.
+  * **Anti-goal:** Do not start from a tutorial's training loop. The point of the module is that you can write one.
+
 ---
 
 <a id="module-16"></a>
@@ -988,6 +1308,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * _The Little Book of Deep Learning_ — François Fleuret — concise reference.
   * **Practical Implementation:** **Hugging Face Transformers v5.0 / v4.57 LTS**, **Diffusers 0.30+** (image/video), **PEFT 0.14+** (LoRA/QLoRA/DoRA), **xformers** / **FlashAttention‑3**, **bitsandbytes** (4/8‑bit), **`torch.compile`** + **`torch.fullgraph`** (2× speedups), **Triton 3.x** for custom kernels (Stanford CS336 Lec 6).
 
+* **📦 Module Project (mandatory) — Sentiment analyser on a pretrained model, plus a transformer you built**
+  * **Deliverable:** Two halves. **(a)** A deployed sentiment (or topic) classifier built on a pretrained Hugging Face model — fine-tuned or used zero-shot, your choice, but you must justify it — with a proper eval set and error analysis. **(b)** A minimal decoder-only transformer written from scratch (tokeniser → embeddings → multi-head self-attention → residual + layer-norm → LM head) trained on a small corpus until it produces recognisable text.
+  * **Definition of done:** (1) `pytest` suite including a shape test for every tensor in the attention block and a causal-mask test proving position *t* cannot attend to *t+1*; (2) `README.md` with the classifier's per-class metrics, a confusion matrix, at least ten inspected misclassifications, and a live URL; (3) a results memo on what your from-scratch model's failure modes taught you about the pretrained one.
+  * **Stretch:** Compare your fine-tuned classifier against a well-prompted foundation model on the same eval set and report cost, latency, and accuracy — this is the exact trade-off [M21](#module-21) formalises.
+  * *Archetype source: video 1 (13:25) — "sentiment analyser on a pretrained Hugging Face model" is named as the accessible NLP portfolio project; the from-scratch half is added so the module still earns its place in the deep-learning stratum.*
+
 ---
 
 <a id="module-17"></a>
@@ -1022,9 +1348,16 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * _Foundations of Deep Reinforcement Learning_ — Graesser & Keng — for practitioners.
   * **Practical Implementation:** **Gymnasium** (successor to OpenAI Gym), **Stable-Baselines3 2.x**, **CleanRL** (single-file implementations — best for learning), **RLlib** (Ray, for distributed), **PettingZoo** (multi-agent), **trl** (Hugging Face — for RLHF), **DeepMind Acme**, **PufferLib** (2025, unified wrapper).
 
+* **📦 Module Project (mandatory) — Agent that actually learns**
+  * **Deliverable:** Tabular Q-learning implemented from scratch on a discrete environment (Taxi, FrozenLake, or a gridworld you define), then DQN on a continuous-observation environment (CartPole → LunarLander) with a training loop you wrote. Learning curves over at least five seeds, with mean and spread — single-seed RL results are not evidence.
+  * **Definition of done:** (1) `pytest` suite covering the Bellman update on a hand-computable 2-state MDP, the replay buffer's sampling and eviction, and epsilon decay; (2) `README.md` with the multi-seed learning curves, the full hyperparameter table, and a recorded episode; (3) a results memo describing one instability you observed (divergence, catastrophic forgetting, reward hacking of your own reward function) and what fixed it.
+  * **Stretch:** Re-run one experiment with a shaped reward and document how the agent exploited your shaping — the cheapest possible lesson in [M23](#module-23)'s specification-gaming material.
+
 ---
 
 # 🔴 FRONTIER & PRODUCTION STRATUM — Modules 18, 21–26
+
+<img src="assets/stratum-6-production.jpg" alt="Frontier and production AI stratum, modules 18 and 21 to 26" width="100%">
 
 ---
 
@@ -1083,6 +1416,12 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * [**lm-evaluation-harness (EleutherAI)**](https://github.com/EleutherAI/lm-evaluation-harness) ✅ — the canonical open-source harness (MMLU, GSM8K, HellaSwag, BBH, TruthfulQA, HumanEval).
     * [**HF Open LLM Leaderboard**](https://huggingface.co/open-llm-leaderboard) ✅ — the public scoreboard.
 
+* **📦 Module Project (mandatory) — Fine-tune a small open model and prove it improved**
+  * **Deliverable:** Take a small open-weights model, define a narrow task where you can measure quality, build a dataset for it, fine-tune with LoRA/QLoRA, and evaluate against three baselines: the base model zero-shot, the base model with a well-engineered prompt, and a RAG configuration over the same information. Report cost, latency, and quality for all four.
+  * **Definition of done:** (1) A committed eval harness — a versioned eval set plus scoring code, runnable by one command; a `pytest` suite over the data-preparation and scoring functions; (2) `README.md` with the four-way comparison table, a training-loss curve, and your dataset card (size, provenance, licence, known gaps); (3) a results memo giving your recommendation and the conditions under which it would flip.
+  * **Stretch:** Add a preference-tuning pass (DPO) on a small preference set and show whether it changed anything measurable — including whether it degraded a capability you did not intend to touch.
+  * *This project is the empirical version of the [prompting vs RAG vs fine-tuning decision framework](#module-21). Video 1 (07:15) is explicit that being able to reason about that choice — with numbers — is what employers are testing for.*
+
 ---
 
 <a id="module-21"></a>
@@ -1110,6 +1449,24 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * Microsoft GraphRAG paper (2024).
     * [BGE / FlagEmbedding docs](https://github.com/FlagOpen/FlagEmbedding) — embeddings best practices.
   * **Practical Implementation:** **LlamaIndex 0.11+**, **LangChain 0.3+**, **Haystack 2.x** (deepset), **DSPy 3.2+** (retrieval modules), **pgvector + Postgres 17**, **Qdrant-client 1.17+**, **Ragas**.
+
+* **⚖️ The decision framework: prompting vs RAG vs fine-tuning (learn this before you build anything)**
+
+  This is the single most-asked design question in an AI-Engineer interview, and the most common way real projects waste money. The failure mode is almost always the same: reaching for fine-tuning when the actual problem was retrieval, or reaching for RAG when a better prompt would have done it. Work down this ladder in order and stop at the first rung that meets your quality bar.
+
+  | Rung | Technique | Fixes | Does **not** fix | Cost / latency | Reach for it when |
+  | :-- | :--- | :--- | :--- | :--- | :--- |
+  | **1** | **Zero-shot prompting** | Nothing yet — this is your baseline and you are not allowed to skip it | Anything | Cheapest; one call | Always first. You cannot claim an improvement without it. |
+  | **2** | **Few-shot / structured prompting** (examples, output schema, chain-of-thought, [DSPy](https://github.com/stanfordnlp/dspy) ✅ optimisers) | Format compliance, task ambiguity, reasoning-depth failures | Missing knowledge; stale facts | Cheap; larger prompt = more tokens | The model *could* know the answer but is answering the wrong question or in the wrong shape. |
+  | **3** | **RAG / retrieval** (this module) | **Missing, private, or changing knowledge**; provenance and citation requirements; per-user or per-tenant data | Style, tone, output format, latent skill, deep domain reasoning | Moderate; +retrieval latency, +index cost | The failure is *"it does not know this"* — and especially when the knowledge changes faster than you could retrain. |
+  | **4** | **Fine-tuning** (SFT / LoRA — [M18](#module-18)) | **Style, tone, consistent output format, domain-specific behaviour**, latency and cost via a smaller model, skills that do not fit in a prompt | Facts. A fine-tuned model still hallucinates about things it was not taught, and your training set is stale the day you freeze it | Highest up-front; cheapest per token afterwards | The failure is *"it knows this but behaves wrong"*, or you need a small model to do one narrow job cheaply. |
+  | **5** | **RAG + fine-tuning together** | Both classes of failure | Bad data or an undefined eval | Highest total | You have measured both failure modes and have the eval suite to prove each component earns its keep. |
+
+  * **The rule that makes this framework operational:** you cannot choose a rung without an **eval set**. Build the eval set first — 50–200 real queries with acceptable answers — then climb. Anyone who fine-tunes before they can measure has bought an unfalsifiable improvement. The [M18 module project](#module-18) makes you run this comparison empirically, with cost and latency columns.
+  * **The default answer in 2026 is rung 3.** RAG is cheaper, updates instantly, gives citations, and keeps private data out of weights. Fine-tuning is the specialist tool, not the prestige tool.
+  * **Two common misdiagnoses:** (a) *"the model hallucinates, so we will fine-tune"* — hallucination from missing knowledge is a retrieval problem, and fine-tuning usually makes it worse by teaching confident wrongness; (b) *"our RAG returns irrelevant chunks, so we need a better model"* — that is a chunking, embedding, or reranking problem, all of which live in this module and none of which are fixed by a bigger LLM.
+  * **Also on the ladder, and frequently forgotten:** longer context windows, tool use / function calling ([M22](#module-22)), and simply routing to a stronger model. Each is cheaper than fine-tuning and should be priced before it.
+  * **Sources:** video 1 (07:15) names *"knowing when to use RAG versus fine-tuning"* as a distinguishing skill employers probe for; video 3 (05:52) frames the whole AI-Engineer role as composing prompting, RAG, fine-tuning, and agents over models you did not train. Chip Huyen's [*AI Engineering*](#practitioner-shelf) is the long-form treatment.
 
 * **📋 Mandatory mini-projects:**
   1. **Build a RAG over your own PDFs** — chunking → pgvector → BGE reranker → answer-with-citations; measure Ragas faithfulness & context precision.
@@ -1145,6 +1502,24 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
     * **WebArena**, **VisualWebArena** — browser-based agent eval.
     * **BrowseComp** (OpenAI 2025) — hard web-research eval.
   * **Patterns from Anthropic's ["Building Effective Agents"](https://www.anthropic.com/research/building-effective-agents) ✅ (Dec 2024):** workflows (Prompt Chaining, Routing, Parallelization, Orchestrator-Workers, Evaluator-Optimizer) vs true agents (loops with tools). **"Start with prompts, graduate to workflows, only use full agents when you need them."**
+  * **🔓 Agent security — prompt injection as a first-class engineering concern:** An agent with tools is an agent with a blast radius. The moment your system reads untrusted text (a web page, an email, a PDF, a user upload, another agent's output) and can then *act*, prompt injection stops being a curiosity and becomes your primary threat model.
+    * **Direct prompt injection** — the user tries to override your system prompt ("ignore previous instructions"). Annoying, usually low-impact, easy to demo.
+    * **Indirect prompt injection** — the payload is hidden in *content the agent retrieves*, not in what the user typed: a hostile instruction in a web page, a document, a code comment, an issue description, or a tool's response. This is the serious one, because the attacker never has to talk to your system directly. It is also the failure mode that RAG ([M21](#module-21)) and browsing agents structurally invite.
+    * **What injection escalates into:** data exfiltration (the agent is told to append secrets to an image URL it fetches), unauthorised tool calls, destructive actions, and **confused-deputy** problems where the agent's credentials are more privileged than the requester's.
+    * **Defences, honestly rated — none of them is a solution, and prompt-level mitigation is the weakest layer:**
+      * **Least privilege on tools.** Read-only by default; scope credentials per-task; separate the agent that reads untrusted content from the agent that holds write access. This is the only defence with real leverage.
+      * **Human-in-the-loop confirmation** for irreversible or privileged actions.
+      * **Sandboxed execution** for anything code-shaped (E2B / Daytona / Modal / Firecracker / gVisor, above).
+      * **Egress control** — allow-list the domains an agent may fetch or post to; this is what actually stops URL-based exfiltration.
+      * **Content/tool-output isolation** — mark retrieved text as data, never as instructions; strip or neutralise instruction-shaped content; do not let tool output flow straight into the system-prompt position.
+      * **Input/output guardrails** — [NeMo Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) ✅, [Guardrails AI](https://www.guardrailsai.com/) ✅, [Llama Guard / PurpleLlama](https://github.com/meta-llama/PurpleLlama) ✅, Rebuff, Lakera Guard. Treat these as filters that raise cost for an attacker, not as boundaries.
+    * **The stance to hold:** prompt injection is **not solved**, and any vendor claiming otherwise is wrong. Design so that a successful injection is survivable — that is an architecture decision, not a prompt-engineering one. Red-teaming technique and jailbreak taxonomy live in [M23](#module-23); the OWASP Top 10 for LLM Applications is the reference checklist.
+  * **📊 Agent eval pipelines — treat evaluation as the deliverable, not the afterthought:** The benchmarks above (GAIA, SWE-bench, τ-bench, WebArena) tell you where the field is; they do not tell you whether *your* agent regressed this morning. You need your own harness.
+    * **Trajectory evaluation, not just final-answer accuracy.** Score the steps: did it pick the right tool, with the right arguments, in a sensible order, and did it stop? An agent that reaches the right answer through six wrong tool calls is a latency and cost incident waiting to happen.
+    * **Layered metrics:** task success rate · **pass@k** (agents are stochastic — a single run is not a measurement) · steps and tokens per task · **cost per successful task** (the number that actually gets budget approved) · wall-clock latency · tool-error and retry rate · termination behaviour (does it loop forever?).
+    * **LLM-as-judge, used with discipline:** cheap and scalable, but biased toward verbose and self-similar answers. Calibrate it against a human-labelled subset, report the agreement rate, and never let an unvalidated judge gate a release.
+    * **Run evals as CI.** A frozen eval set + a scored run on every prompt, model, or tool change — this is the agentic equivalent of a test suite, and it is what makes a portfolio project read as production work. Tooling: [DeepEval](https://github.com/confident-ai/deepeval) ✅ (pytest-like), **promptfoo**, [Ragas](https://github.com/explodinggradients/ragas) ✅ for the retrieval leg, [Arize Phoenix](https://github.com/Arize-ai/phoenix) ✅ / [LangSmith](https://www.langchain.com/langsmith) ✅ / W&B Weave for traces (cross-ref [M24](#module-24) AgentOps).
+    * **Why this is emphasised:** **6 of the 7 AI-Engineer / Forward-Deployed postings [we surveyed](#skills-checklist) name evaluation explicitly** — more than RAG, agents, or fine-tuning individually. Building the demo is table stakes; proving it works is the job.
 
 * **2026 Resources:**
   * **Primary Course (free, certified):** [**Hugging Face AI Agents Course**](https://huggingface.co/learn/agents-course/) ✅ — free, certified, uses smolagents + LangGraph + LlamaIndex; covers MCP integration.
@@ -1260,6 +1635,36 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
   * **Agent eval harnesses (production):** [**GAIA**](https://huggingface.co/gaia-benchmark) ✅, [**SWE-bench**](https://www.swebench.com/) ✅, **τ-bench**, **WebArena** — run these as regression tests.
   * **Sandboxing & isolation:** [**E2B**](https://e2b.dev/) ✅, [**Daytona**](https://www.daytona.io/) ✅, [**Modal**](https://modal.com/) ✅, Firecracker microVMs, gVisor.
   * **Key primary anchors for all three tiers:** [**Full Stack Deep Learning**](https://fullstackdeeplearning.com/) ✅, [**Made With ML** (Goku Mohandas)](https://madewithml.com/) ✅, [**Chip Huyen — *AI Engineering***](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) ✅.
+
+* <a id="production-bar"></a>**🏁 Minimum Production Bar for Portfolio Projects**
+
+  Every [module project](#module-projects) accumulates one production element via its stretch goal. This is the full list they accumulate *toward*. At least **one** project in your portfolio must satisfy every line below — that project is what separates a hireable repository from a bootcamp repository. The [M24 module project](#module-24) exists specifically to get you there.
+
+  | # | Requirement | Passes when | Fails when |
+  | :-- | :--- | :--- | :--- |
+  | **1** | **Repository structure, not a loose notebook** | A real package (`src/` or `pkg/`, `__init__.py`, `pyproject.toml`), importable modules, an entry point, and pinned dependencies via `uv` or a lockfile. Notebooks exist only for exploration and are clearly marked as such. | The project *is* `analysis_final_v3.ipynb`. |
+  | **2** | **Automated tests** | A `pytest` suite that runs in one command and covers the data layer, the transform logic, and at least one end-to-end path. Numerical code has a tolerance-based assertion; ML code has an overfit-a-tiny-batch smoke test. | "It works when I run it." |
+  | **3** | **Typed Python** | Type hints on public functions, checked by `mypy` or `pyright` in CI. Pydantic v2 models for anything crossing a boundary (API request, config file, external payload). | Untyped `dict` passed between six functions. |
+  | **4** | **Structured logging** | The `logging` module (or `structlog`) with levels, correlation/request IDs, and no secrets. You can reconstruct what happened from logs alone. | `print()` statements, or silence. |
+  | **5** | **Configuration outside code** | Environment variables and/or a config file validated on startup (Hydra + Pydantic Settings). Secrets never committed — `.env` is gitignored and `.env.example` is not. | Hardcoded API key, hardcoded paths. |
+  | **6** | **Containerised** | A `Dockerfile` that builds from a clean clone and runs. Pinned base image, non-root user, sensible layer caching, `.dockerignore`. | "Install these 14 things first." |
+  | **7** | **CI pipeline** | A GitHub Actions workflow running lint (`ruff`) + typecheck + tests on every push and PR, with a green badge in the README. | Manual testing. |
+  | **8** | **Experiment tracking** | Runs logged to **MLflow** or **Weights & Biases**: parameters, metrics, artefacts, git SHA. Your reported best result is reproducible from the tracked run. | Best score remembered from a terminal you have since closed. |
+  | **9** | **Deployed and reachable** | A live URL. Streamlit Community Cloud, Hugging Face Spaces, Modal, Fly.io, Railway, or Cloud Run — free tiers are entirely acceptable. Include the URL at the top of the README. | Runs on your laptop only. |
+  | **10** | **Monitoring** | Health check, request/latency/error metrics, and **one thing that would actually alert you**: input-distribution drift (Evidently), a quality metric, or a cost ceiling. For LLM systems, traces via Langfuse / Phoenix / LangSmith. | Deployed and never looked at again. |
+  | **11** | **README a stranger can execute** | What it does · why · architecture diagram · quickstart that works from a clean clone · **results with numbers** · known limitations. | "Data science project." |
+  | **12** | **Results memo** | ≤2 pages: the question, what you did, what you found, what you are uncertain about, what you would do next. This is the most-skipped and most-senior-reading artefact in the entire list. | No written interpretation of the numbers. |
+
+  * **Reproducibility check (do this, it is brutal and it is fast):** clone your own repo into a fresh directory on a machine with nothing installed, follow only your README, and time yourself to first working output. If you cannot get there in 10 minutes, item 11 has failed regardless of what the file says.
+  * **Do not apply this to all twelve projects.** Applying the full bar once, deeply, beats applying it partially twelve times — and a partially-productionised project is indistinguishable from an unproductionised one. Get **one** project to all twelve lines; keep the rest at their stretch-goal level.
+  * **Then ship it anyway.** The bar is the target, not a gate on publishing. Push the repository at line 1 and work up in public — **a messy project on the internet beats a perfect project on your laptop**, and an in-progress repo with an honest "what's missing" section in the README is a stronger signal than a private perfect one.
+  * **Sources:** video 1 (10:45–12:30) specifies the portfolio architecture standard — Docker, cloud deployment, CI/CD, MLflow or W&B, and monitoring — as the differentiator employers actually notice. Catherine Nelson's [*Software Engineering for Data Scientists*](#practitioner-shelf) is the book-length treatment of items 1–5; [*AI Engineering*](#practitioner-shelf) covers 9–10 for foundation-model systems.
+
+* **📦 Module Project (mandatory) — Productionise one earlier project**
+  * **Deliverable:** Do not build something new. Take the single best project you have already shipped — the churn dashboard from [M10](#module-10), the RAG system from [M21](#module-21), or the agent from [M22](#module-22) — and bring it to the full [Minimum Production Bar](#production-bar): package layout, tests, typed Python, structured logging, Dockerfile, CI pipeline, experiment tracking, a deployment target, and monitoring that would actually page you.
+  * **Definition of done:** (1) Every line of the [Minimum Production Bar](#production-bar) checklist ticked, with the CI badge green and the deployment URL live; (2) `README.md` containing an architecture diagram, the runbook (how to deploy, how to roll back, what to do when the model degrades), and the cost per 1,000 requests; (3) a results memo — an incident write-up of one failure you deliberately induced (kill the vector DB, exhaust the rate limit, feed drifted input) and what your monitoring actually showed you.
+  * **Stretch:** Add a canary or shadow deployment and an automated rollback triggered by your own quality metric.
+  * *Rationale: video 1 (10:45–12:30) argues that the differentiator between a bootcamp portfolio and a hireable one is not more models, it is one model with Docker, cloud deployment, CI/CD, experiment tracking, and monitoring around it. This module exists to make that true of your repository.*
 
 ---
 
@@ -1411,6 +1816,52 @@ Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) im
 
 > **Tier 2 (reference)**: _All of Statistics_ (Wasserman), _Statistical Inference_ (Casella & Berger), _Bayesian Reasoning and Machine Learning_ (Barber), _Machine Learning: A Probabilistic Perspective_ (Murphy 2012), _Deep Learning_ (Goodfellow/Bengio/Courville 2016), _Algorithms for Decision Making_ (Kochenderfer), _Interpretable Machine Learning_ (Molnar), _Forecasting: Principles and Practice_ (Hyndman 3rd Ed. 2021), _Mining of Massive Datasets_ (Leskovec 3rd Ed. 2020, free at [mmds.org](http://www.mmds.org/)), _The Elements of Statistical Learning_ (ESL — still canonical), **_Active Calculus_** (Boelkins, free 2024), **_Linear Algebra and Learning from Data_** (Strang 2019/25 reprint), **_The Matrix Cookbook_** (Petersen-Pedersen 2024), **_Probability with Martingales_** (Williams 1991, PhD-track), **_Measure, Integral and Probability_** (Capinski-Kopp 2e 2014, PhD-track), **_Tao Analysis I & II_** (Hindustan Book Agency, 4e 2022, real-analysis bridge for PhD-track).
 
+<a id="practitioner-shelf"></a>
+## 🧰 The Practitioner Shelf
+
+> **What this subsection is, and what it is not.** The Tier 1 and Tier 2 lists above are the **academic spine** — they are what you read to be able to *check* a claim, derive a result, and read a paper. Nothing in them is deprecated by this subsection.
+>
+> This shelf is the **applied canon**: the shorter, faster, code-first books that get you from "I can write a loop" to "I have shipped a product built on a foundation model." It is the reading list attached to the [Practitioner Fast Lane](#practitioner-track) and the [AI Engineer (Applications)](#choose-your-track) track, sourced from [video 3](#refresh-log) — an ex-Coursera / ex-Amazon engineer's seven-book canon for the AI Engineer role — and reconciled against what this roadmap already carried.
+>
+> **The trade-off, stated plainly.** These books teach you to *build*. They do not teach you to *prove*. Every one of them optimises intuition and working code over derivation, which is exactly why they are fast and exactly why they are insufficient for research work. If your target is a PhD, a research-scientist role, or reading NeurIPS papers critically, this shelf is a supplement to the Tier 1 spine, not a substitute for it. Video 3 (04:47) makes the intuition-over-derivation argument explicitly; [Tier 1](#books) is the counterargument, and both are correct within their own conditions.
+
+| # | Title | Author(s) | Edition / Year | Serves | Access |
+| :-- | :--- | :--- | :--- | :--- | :--- |
+| **P1** | _Automate the Boring Stuff with Python_ | Al Sweigart | No Starch, **3rd Ed.** | [M1](#module-1) · [Fast lane](#practitioner-track) Stage 1 | ✅ **Free full text**: [automatetheboringstuff.com](https://automatetheboringstuff.com/) · print: [No Starch](https://nostarch.com/automate-boring-stuff-python-3rd-edition) |
+| **P2** | _Software Engineering for Data Scientists: From Notebooks to Scalable Systems_ | Catherine Nelson | O'Reilly, **May 2024** | [M1](#module-1) · [M24](#module-24) · the [Minimum Production Bar](#production-bar) | ✅ [Author's book page](https://catherinenelson.dev/books/software-engineering-for-data-scientists) · ⚠️ [O'Reilly](https://www.oreilly.com/library/view/software-engineering-for/9781098136192/) (403 to crawlers, opens in a browser) · ISBN 978-1-098-13619-2 |
+| **P3** | _The Manga Guide to Statistics_ | Shin Takahashi | No Starch | [M6](#module-6) intuition track | ✅ [No Starch](https://nostarch.com/mg_statistics.htm) |
+| **P3b** | _The Manga Guide to Linear Algebra_ | Shin Takahashi | No Starch | [M3](#module-3) intuition track | ✅ [No Starch](https://nostarch.com/mg_linearalgebra.htm) |
+| **P3c** | _The Manga Guide to Regression Analysis_ | Shin Takahashi | No Starch | [M9](#module-9) intuition track | ✅ [No Starch](https://nostarch.com/regression) |
+| **P4** | _StatQuest Illustrated Guides_ — three volumes: **Machine Learning**, **Neural Networks and AI**, **Statistics** | Josh Starmer | Self-published | [M6](#module-6) · [M9](#module-9)–[M12](#module-12) · [M15](#module-15) intuition track | ✅ [statquest.org store](https://statquest.org/statquest-store/) · free companion videos at [statquest.org](https://statquest.org/) |
+| **P5** | _Build a Large Language Model (From Scratch)_ | Sebastian Raschka | Manning, **2024** | [M16](#module-16) · [M18](#module-18) — **already [Tier 1 #18](#books)** | ✅ [Manning](https://www.manning.com/books/build-a-large-language-model-from-scratch) · ✅ free code: [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) |
+| **P6** | _AI Engineering_ | Chip Huyen | O'Reilly, **Jan 2025** | **Primary text of the [AI Engineer (Applications)](#choose-your-track) track** · [M18](#module-18) · [M21](#module-21)–[M24](#module-24) — **already [Tier 1 #23](#books)** | ✅ [Author's book page](https://huyenchip.com/books/) · ⚠️ [O'Reilly](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) (403 to crawlers) · ISBN 978-1-098-16629-8 |
+| **P7** | _Generative AI System Design Interview_ | Alex Xu, **Ali Aminian, Hao Sheng** | ByteByteGo, **2024** | [M21](#module-21) · [M22](#module-22) · [M24](#module-24) · interview prep for the [AI Eng track](#skills-checklist) | ✅ [Publisher announcement](https://blog.bytebytego.com/p/our-new-book-generative-ai-system) · ISBN 1736049143 |
+
+### How to actually use this shelf
+
+The seven entries are not a reading order — they are four distinct jobs.
+
+| Job | Books | When |
+| :--- | :--- | :--- |
+| **Get Python useful fast** | P1 | [M1](#module-1), weeks 1–8. Read alongside the [free-course matrix](#python-course-matrix), not instead of it. |
+| **Stop writing notebook code** | P2 | The moment your first project outgrows one file. This is the single most under-read book on the shelf and the one that maps most directly onto the [Minimum Production Bar](#production-bar). |
+| **Get maths and ML intuition without proofs** | P3 series, P4 | Paired with the [⚡ Intuition-First callouts](#module-3) in M3, M5, M6, M9–M12. Watch the free StatQuest videos first; buy the illustrated guides only if you want the offline reference. |
+| **Become an AI Engineer** | P5, P6, P7 | [M18](#module-18) onward. **P6 is the anchor text** — read it end to end. P5 gives you the mechanical understanding of what you are building on; P7 gives you the system-design vocabulary that interviews use. |
+
+> **On the notebook-to-production progression.** Video 3 (07:30) frames P2 as the hinge of the whole shelf: the gap between someone who can produce a working notebook and someone employable is testing, structure, refactoring, and APIs — not more modelling. Our [surveyed 2026 postings](#skills-checklist) agree: 15 of 16 asked for communication and collaboration, and none asked for Kaggle standing.
+>
+> **On P6 as the track's primary text.** Chip Huyen's own framing of the discipline — *"AI engineering: the process of building applications with readily available foundation models"* ([huyenchip.com/books](https://huyenchip.com/books/) ✅) — is precisely the role definition the [AI Engineer (Applications)](#choose-your-track) track targets: you build **on** models, you do not train them from scratch. It is also the reason this roadmap keeps a separate research-adjacent AI Engineer row rather than collapsing the two.
+
+### Corrections logged while verifying this shelf
+
+Recorded here because the repo's [audit discipline](audit/VERIFICATION.md) requires that corrections be visible rather than silently applied:
+
+* **P7 authorship.** The source video credits this book to Alex Xu and Sahn Lam. The publisher's own announcement names **Alex Xu, Ali Aminian, and Hao Sheng**; Sahn Lam is a co-author of ByteByteGo's *System Design Interview* series, not of this title. The corrected attribution is used above.
+* **P4 link structure.** Per-title StatQuest URLs (e.g. `statquest.org/statquest-illustrated-guide-to-machine-learning/`) return **404**. The canonical entry point is the [store page](https://statquest.org/statquest-store/). A **third** volume — *Statistics* — exists and is not mentioned in the source video; it is included above.
+* **P7 URL.** `bytebytego.com/courses/generative-ai-system-design-interview` returns **404** and is not cited. The publisher announcement post is used instead.
+
+Full HTTP status log for every link in this subsection: [`audit/VERIFICATION.md`](audit/VERIFICATION.md) and [`audit/AUDIT_v2026.3.md`](audit/AUDIT_v2026.3.md).
+
 ---
 
 <a id="toolchain"></a>
@@ -1440,7 +1891,7 @@ A practical stack mapped to the curriculum. Version numbers below are a dated re
 | **LLM fine‑tuning** | `trl` + `peft` + **Unsloth** + Axolotl | **TRL 1.2.0 · PEFT 0.19.1** | SFT / DPO / **GRPO** / **RLVR** / KTO / IPO / ORPO / SimPO — one surface |
 | **LLM inference** | **vLLM** / **SGLang** / TensorRT-LLM | **0.19.1** / latest | Continuous batching, paged‑attention, prefix caching, **FlashAttention‑3**, speculative decoding |
 | **LLM evals** | **promptfoo** / **DeepEval** / **Ragas** / **lm-eval-harness** | latest | M18 fine-tuning playbook + M24 LLMOps |
-| **Agents & Tools** | `smolagents` / **LangGraph** / LlamaIndex / CrewAI | **smolagents 1.24.0 · LangGraph 1.1.9** | **MCP‑native** since v1.0; Hugging Face Agents Course covers all three |
+| **Agents & Tools** | `smolagents` / **LangGraph** / LlamaIndex / **CrewAI** | **smolagents 1.26.0 · LangGraph 1.2.10 · CrewAI 1.15.9 · LlamaIndex 0.14.23** (PyPI, 30 Jul 2026) | **MCP‑native** since v1.0; Hugging Face Agents Course covers all three. CrewAI = role-based crews (M22) |
 | **MCP** | Anthropic MCP SDK (Py / TS) | 2025‑06‑18 spec + Nov 2025 anniversary | Standard for LLM↔tool/data interoperability |
 | **Agent sandboxing** | E2B / Daytona / Modal | latest | Isolated code-execution for agents (M22, M24 AgentOps) |
 | **Prompting** | **DSPy** | **3.2.0** (Apr 2026) | Programmatic prompting; optimiser‑driven; 2026 research favourite |
@@ -1455,6 +1906,7 @@ A practical stack mapped to the curriculum. Version numbers below are a dated re
 | **Containers** | Docker / Podman | 27+ / 5+ | Multi‑arch, rootless, SBOM |
 | **Orchestration** | Kubernetes / **Dagster** / Prefect | 1.32+ / 1.x / 3.x | Dagster > Airflow for ML pipelines (asset‑centric) |
 | **Serving** | **FastAPI** + BentoML / **Modal** | latest | Modal = serverless GPU with $30/mo free; used by Stanford CS336 |
+| **Dashboards & demo UIs** | **Streamlit** / Gradio / Evidently | **Streamlit 1.60.0** (PyPI, 21 Jul 2026) | The default free deployment target for the [Minimum Production Bar](#production-bar) item 9 (Streamlit Community Cloud · HF Spaces); Evidently for drift dashboards (M24) |
 | **Experiment config** | **Hydra** + **Pydantic** | 1.3+ / 2.10+ | Pydantic 2 is 20× faster than v1 |
 | **Reproducibility** | DVC + Git LFS | 3.x / latest | Version control for data + models |
 | **Writing** | Typst or LaTeX + Zotero 7 | latest | Typst = modern LaTeX alternative, compiles in ms |
@@ -1462,10 +1914,184 @@ A practical stack mapped to the curriculum. Version numbers below are a dated re
 
 ---
 
+<a id="career-operations"></a>
+# 🧭 Career Operations
+
+Everything above this line is about competence. This section is about the entirely separate skill of **converting competence into a job** — which most technical curricula omit, and which is where most self-taught learners actually stall.
+
+Two honest caveats before anything else. First, the guidance here is doctrine drawn from named practitioners (see [sources](#refresh-log)), not from a controlled study; treat it as informed heuristics. Second, nothing in this section substitutes for the [module projects](#module-projects). Career tactics applied to an empty portfolio do not work.
+
+## 1. The internal locus of control
+
+The single highest-leverage mental model in the source material. An **internal** locus of control means you attribute outcomes to your own actions; an **external** locus means you attribute them to the market, your degree, your age, or luck.
+
+Video 2 (07:12) makes the operational case: the market, the hiring bar, and your background are all fixed inputs you cannot edit. The only editable variables are what you build, who you talk to, and how many attempts you make. Every hour spent on the fixed inputs is an hour not spent on the editable ones.
+
+What this looks like in practice:
+
+| External framing (stalls) | Internal framing (moves) |
+| :--- | :--- |
+| "The market is terrible for juniors." | "The market is competitive, so my portfolio has to be visibly better than a bootcamp's. Here is the specific project that does that." |
+| "I don't have a CS degree." | "I don't have the credential, so I need the work to speak first. My repo is the credential." |
+| "I got rejected, I'm not good enough." | "I got rejected. What did the process tell me about the gap? Which module closes it?" |
+| "I'll apply once I've finished the roadmap." | "I'll apply now, and use the rejections to find out which modules actually matter for the roles I want." |
+
+The framing is not positive thinking. It is a filter that routes your attention to the variables you can act on.
+
+## 2. Iterative job seeking — apply at ~70 % match
+
+Job descriptions are wish-lists assembled by committee, not specifications. The observed practice among people who transition successfully is to **apply when you meet roughly 70 % of the listed requirements**, and to treat the remaining 30 % as the thing the job will teach you.
+
+* **Apply early and continuously, not after "finishing."** Applications are a data-collection instrument, and they have a long latency. Starting them six months before you feel ready is how you find out what the real bar is while you still have time to move it.
+* **Do not gate on the roadmap being complete.** By the end of [M12](#module-12) plus [M24](#module-24)'s production discipline you are already applicable to a meaningful slice of roles. See the [track table](#choose-your-track) for the minimum module set per role.
+* **Track your funnel.** Applications sent → screens → technical rounds → onsites → offers. If a stage has a zero conversion rate after 20+ attempts, the problem is located at that stage and nowhere else. Resume problem, screen problem, and technical problem all look identical from the inside if you are not counting.
+* **Expect a high denominator.** Video 2 (14:20) is blunt that the number of applications is measured in the hundreds, not the dozens, and that this is normal rather than a signal of failure.
+
+## 3. Interviews as data gathering
+
+Reframe the interview: it is the only place you get free, high-fidelity information about the gap between what you know and what the market pays for.
+
+* **Ask what the last person in this role spent their time on.** This tells you the real job, which is frequently not the job description.
+* **Ask what the team's biggest technical problem is right now.** Notice whether your roadmap covers it. If three separate companies name the same problem, that is a curriculum signal — go build a project on it.
+* **Log every question you could not answer.** That log is a personalised syllabus derived from actual demand. Map each entry to a module and close it.
+* **Debrief every rejection in writing.** Video 2 (16:05) treats a failed interview as a completed experiment: it cost you two hours and returned a list of specific, addressable gaps. The only wasted interview is the one you do not write up.
+* **Do informational interviews too.** A 20-minute conversation with someone doing the job you want is cheaper than six months of guessing which skills matter.
+
+## 4. Cold outreach
+
+Cold outreach has a low response rate and an extremely high value per response, which makes it worth doing badly at volume rather than perfectly at low volume.
+
+* **Message the practitioner, not the recruiter.** Someone doing the job can tell you what the job is; a recruiter can only tell you what the requisition says.
+* **Lead with the work, not with a request.** "I built *X*, here is the repo, I noticed your team works on *Y* — did I get the hard part wrong?" outperforms "can I pick your brain."
+* **Be specific and short.** Three sentences. One question that can be answered in one paragraph.
+* **Ask for information, not a referral.** Referrals follow from relationships; asking for one first ends the conversation.
+* **Follow up once, then stop.** Silence is usually a full inbox, not a verdict — but two follow-ups is a cost imposed on a stranger.
+
+## 5. Build for real people, not for datasets
+
+The strongest single differentiator in the source material. Video 2 (11:30) argues that a project built **for a real person or organisation that wanted the result** outperforms any generic dataset project, because it carries a stakeholder, a constraint, a deadline, and an outcome — the four things that make it an interview story instead of a screenshot.
+
+Where to find real problems, in rough order of accessibility:
+
+1. **A local non-profit, charity, or community organisation.** They have data, no analyst, and no budget. Offer one specific deliverable, not "help with data."
+2. **Your current employer, in your current non-technical role.** This is the highest-conversion path in the material: you already have domain context, data access, and trust. Automate something painful, then present it.
+3. **Open-source projects.** Real code, real review, a public record of collaboration, and a maintainer who will tell you when your PR is wrong.
+4. **A small business you already use.** A café, a gym, a freelancer. Scope it to one week.
+5. **Your own recurring annoyance.** You are a real user with real requirements — a legitimate stakeholder of one.
+
+> **The Kaggle caveat, stated fairly.** Kaggle is genuinely excellent for learning modelling technique against a strong benchmark, and notably **zero of the 16 [surveyed 2026 postings](#skills-checklist) mention Kaggle at all**, while 15 of 16 ask for stakeholder communication. Use Kaggle to build skill; do not expect it to carry a portfolio. The competition hands you a cleaned dataset, a defined target, and a fixed metric — which is to say it removes exactly the three parts of the job that are hard.
+
+## 6. Community and accountability
+
+Self-directed study fails at the motivation layer far more often than at the difficulty layer. Structural fixes, in increasing order of effectiveness:
+
+* **Publish weekly.** One post, one commit log, one paragraph on what you shipped. Public and boring beats private and ambitious.
+* **Find one accountability partner** at a similar stage, with a fixed weekly check-in. Two people rarely quit in the same week.
+* **Join a technical community and answer questions**, not just ask them. Explaining something badly and being corrected is the highest-bandwidth learning available for free.
+* **Work in public.** Post the broken version. Video 2 (09:40) treats visible, in-progress work as both an accountability mechanism and a discovery mechanism — people cannot offer you opportunities they cannot see.
+* **Beginner's mindset.** Video 2 (04:30) frames the transition from a senior non-technical role to a junior technical one as requiring you to be publicly, comfortably bad at something for a year. That is the actual cost of the transition, and it is a cost, not a personality flaw.
+
+## 7. Honest timelines — two estimates, both with conditions
+
+The sources disagree, and the disagreement is informative rather than a contradiction to be resolved. Both are presented with their conditions attached; pick the row whose conditions match your situation.
+
+| Estimate | Source & conditions | What it assumes |
+| :--- | :--- | :--- |
+| **9–12 months to job-ready** | Scrimba's [Python guide](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/) ✅ | Consistent near-full-time study; scope is **Python-centric software/data roles**, not research; you build a real portfolio; some prior technical or quantitative background. This is *"job-ready for a first junior role"*, not *"competent ML engineer."* |
+| **18–36 months for a career change** | Video 2 (18:40) — a transition into Applied Science from a non-technical background | Part-time study alongside an existing job; starting with little or no programming; targeting roles with a genuine mathematical bar. 18 months is the fast case with unusual intensity; 24–30 is typical; 36 is normal with a demanding job or caregiving. |
+| **24–36 months for the full roadmap** | This roadmap's own [pacing](#curriculum-at-a-glance) | Completing all 27 modules including the [full maths spine](#module-0) at ~15–20 h/week. This is the *research-capable* target, not the employability target. |
+
+**How to reconcile them.** They measure different finish lines. Employability arrives well before completion: the [Practitioner Fast Lane](#practitioner-track) targets 6–9 months to a shippable AI-Engineer portfolio precisely by deferring the proof-level mathematics, and the full spine continues afterwards. If you are studying part-time from a non-technical background, plan for the 18–36 month band and treat the 9–12 month figure as the best case for someone with prior technical background studying near-full-time. Anyone quoting a single number without stating these conditions is selling something.
+
+<a id="skills-checklist"></a>
+## 8. Skills checklist ↔ job-description mapping
+
+Grounded in a survey of **16 live 2026 postings** pulled from public Greenhouse job boards on **2026-07-26** — Anthropic (4), Scale AI (3), Figma (3), Databricks (2), Cloudflare (2), Discord (1), Airtable (1) — spanning AI Engineer / Forward-Deployed / Applied AI (7), ML Engineer (3), Data Scientist (4), and Data Engineer (2). Full posting list is in [`audit/AUDIT_v2026.3.md`](audit/AUDIT_v2026.3.md).
+
+**Counts below are literal mention frequencies in that sample.** The sample is small and skewed toward AI-native companies, so read it as a directional signal about *what these employers emphasise*, not as a national labour-market statistic.
+
+> **The three findings that should change how you study.**
+> 1. **Communication outranks every technical skill.** 15 of 16 postings ask for stakeholder communication, cross-functional collaboration, or customer-facing ability — more than Python (9), SQL (6), or any framework. This is why [M25](#module-25) is a required module and not an appendix.
+> 2. **Evaluation is the AI-Engineer skill.** 6 of 7 AI-Engineer/Forward-Deployed postings name evaluation explicitly. Building a RAG demo is table stakes; *proving it works* is the job. See [M21](#module-21) and [M23](#module-23).
+> 3. **Nobody asked for a PhD, and nobody asked about Kaggle.** 0 of 16 required a doctorate; 0 of 16 mentioned Kaggle. 5 of 16 mentioned a degree at all, most as "or equivalent experience."
+
+### AI Engineer (Applications) — 7 postings
+
+| Skill the postings ask for | Sample | Where you learn it |
+| :--- | :--- | :--- |
+| Customer-facing communication, translating ambiguous business problems into technical scope | **7/7** | [M25](#module-25) |
+| Evaluation of LLM systems — quality measurement, regression suites, benchmark design | **6/7** | [M21](#module-21) · [M23](#module-23) · [M18](#module-18) |
+| Cloud platforms (AWS/GCP/Azure) and deploying into a customer's environment | 3/7 | [M24](#module-24) |
+| Python as the primary implementation language | 2/7 | [M1](#module-1) |
+| LLM / foundation-model application development | 2/7 | [M18](#module-18) · [M21](#module-21) |
+| Agents, tool-use, multi-step workflows | 2/7 | [M22](#module-22) |
+| Distributed data processing (Spark and similar) | 2/7 | [M8b](#module-8b) |
+| RAG / retrieval / vector search | 1/7 | [M21](#module-21) |
+| Fine-tuning and adaptation | 1/7 | [M18](#module-18) |
+| Prompt design and prompt-injection awareness | 1/7 | [M22](#module-22) · [M23](#module-23) |
+
+> **Note on the Forward-Deployed Engineer title.** 5 of the 7 postings in this family are "Forward Deployed Engineer" or "Applied AI Architect" rather than "AI Engineer." This is currently the highest-volume real title for the [AI Engineer (Applications)](#choose-your-track) role, and its defining requirement is the pairing of solid software engineering with direct customer contact — which is exactly why [M25](#module-25) sits on the critical path of that track.
+
+### ML Engineer — 3 postings
+
+| Skill the postings ask for | Sample | Where you learn it |
+| :--- | :--- | :--- |
+| LLM / foundation-model systems in production | **3/3** | [M18](#module-18) · [M21](#module-21) |
+| Agent systems and agent oversight | **3/3** | [M22](#module-22) · [M23](#module-23) |
+| Python | 2/3 | [M1](#module-1) |
+| RAG / retrieval infrastructure | 2/3 | [M21](#module-21) |
+| Pipeline orchestration (Airflow/Dagster) | 2/3 | [M24](#module-24) · [M8b](#module-8b) |
+| MLOps, monitoring, observability | 2/3 | [M24](#module-24) |
+| Experimentation and A/B measurement | 2/3 | [M6½](#module-6-half) |
+| Statistics, causal reasoning, regression | 2/3 | [M6](#module-6) · [M9](#module-9) |
+| Evaluation pipelines | 2/3 | [M23](#module-23) |
+| Stakeholder collaboration | 2/3 | [M25](#module-25) |
+| Deep-learning frameworks (PyTorch) | 1/3 | [M15](#module-15) |
+| Containers / Kubernetes | 1/3 | [M24](#module-24) |
+| Warehouse / dbt | 1/3 | [M8a](#module-8a) |
+
+### Data Scientist — 4 postings
+
+| Skill the postings ask for | Sample | Where you learn it |
+| :--- | :--- | :--- |
+| SQL — fluent, non-negotiable | **4/4** | [M8a](#module-8a) |
+| Stakeholder communication and influencing product decisions | **4/4** | [M25](#module-25) |
+| Python | **3/4** | [M1](#module-1) · [M7](#module-7) |
+| Experimentation / A/B testing | **3/4** | [M6½](#module-6-half) |
+| Statistical inference, causal reasoning, regression | **3/4** | [M6](#module-6) · [M6½](#module-6-half) · [M9](#module-9) |
+| Warehouse / dbt / BigQuery-class tooling | **3/4** | [M8a](#module-8a) |
+| LLM-related analysis | 2/4 | [M18](#module-18) |
+| Large-scale data processing | 2/4 | [M8b](#module-8b) |
+| Metrics definition and instrumentation | 2/4 | [M25](#module-25) |
+
+> **The DS pattern is stable and it is not glamorous.** SQL + statistics + experimentation + communication appears in essentially every posting; deep learning appears in none of the four. If your target is Data Scientist, the highest-return modules are [M6](#module-6), [M6½](#module-6-half), [M8a](#module-8a), and [M25](#module-25) — not [M15](#module-15)–[M18](#module-18).
+
+### Data Engineer — 2 postings
+
+| Skill the postings ask for | Sample | Where you learn it |
+| :--- | :--- | :--- |
+| SQL | **2/2** | [M8a](#module-8a) |
+| Python | **2/2** | [M1](#module-1) |
+| Orchestration (Airflow/Dagster/equivalent) | **2/2** | [M24](#module-24) · [M8b](#module-8b) |
+| Warehouse modelling / dbt | **2/2** | [M8a](#module-8a) |
+| Cross-functional partnership with DS and product | **2/2** | [M25](#module-25) |
+| Streaming / event pipelines | 1/2 | [M8b](#module-8b) |
+| LLM-adjacent data work | 1/2 | [M18](#module-18) |
+
+> **Sample-size discipline.** Two postings is an anecdote, not a distribution. The Data Engineer row is included for completeness and because it agrees with the widely-observed core (SQL + Python + orchestration + modelling), but do not weight it as evidence. Before committing to any track, run this same exercise yourself on 10–15 postings **at companies you would actually join** — the mechanics are documented in [`audit/AUDIT_v2026.3.md`](audit/AUDIT_v2026.3.md), take about an hour, and produce a checklist calibrated to your market rather than to this sample.
+
+---
+
 <a id="progress-tracker"></a>
 # ✅ Progress Tracker
 
 > Fork this repo, copy this section, and replace `[ ]` with `[x]` as you complete each sub-module.
+
+### 🧭 Route selection (do this first)
+- [ ] Read [Start here](#start-here) and picked a route: **full spine** or [**🚀 Practitioner fast lane**](#practitioner-track)
+- [ ] Chose a target role from [Choose your track](#choose-your-track) and wrote down its minimum module set
+- [ ] Read the [module-project enforcement rule](#module-projects) and accepted it
+- [ ] Read [Career Operations §7](#career-operations) and picked the timeline band whose **conditions** match my situation
 
 ### 🩺 Math-Foundations Diagnostic
 - [ ] Took the **15-question diagnostic** and recorded my score per strand
@@ -1510,8 +2136,72 @@ A practical stack mapped to the curriculum. Version numbers below are a dated re
 - [ ] **Module 24**: MLOps + LLMOps + AgentOps (Harvard AC215, Chip Huyen AI Engineering, FSDL, Made With ML, Langfuse/LangSmith/Phoenix/Weave)
 - [ ] **Module 25**: Product DS · Communication · Decision Intelligence (Kozyrkov + Kohavi Trustworthy Experiments + Storytelling with Data + CMU MSPPM-DA / UMich MADS)
 
+### 📦 Module projects (one public repo each — see [the rule](#module-projects))
+- [ ] **M1** Weather CLI · **M2** gradient-descent lab · **M3** five linear-algebra mini-projects · **M4** constraint meal planner · **M5** Monte Carlo lab
+- [ ] **M6** inference toolkit · **M6½** causal mini-projects · **M7** end-to-end EDA · **M8a** Reddit scraper → warehouse · **M8b** streaming mini-projects
+- [ ] **M9** regression from scratch · **M10** churn dashboard + `LogisticRegressionScratch` · **M11** K-Means from scratch · **M12** decision tree from scratch + boosting bake-off
+- [ ] **M13** Bayesian A/B · **M14** forecasting dashboard with backtest · **M15** backprop from scratch + CNN · **M16** HF sentiment analyser + transformer from scratch · **M17** RL agent over 5 seeds
+- [ ] **M18** fine-tune + four-way eval · **M21** RAG mini-projects · **M22** agent mini-projects · **M23** safety mini-projects · **M24** productionise one project · **M25** product-DS mini-projects
+- [ ] At least **one** project satisfies all 12 lines of the [Minimum Production Bar](#production-bar)
+- [ ] At least **one** project was built **for a real person or organisation** ([why](#career-operations))
+
+### 🧭 Career Operations
+- [ ] Ran my own [job-description survey](#skills-checklist) on 10–15 postings at companies I would actually join
+- [ ] Built my per-track [skills checklist](#skills-checklist) and mapped each gap to a module
+- [ ] Started applying at ~70 % match and began tracking the funnel (applications → screens → technicals → onsites)
+- [ ] Wrote up my first rejection as a completed experiment
+- [ ] Have an accountability partner or public weekly log
+
 ### 🏆 Capstone Stratum
 - [ ] **Module 26**: Capstone Project — Choose **1 of 3 tracks**: Research / Systems / Applied (arXiv preprint + HF release + MCP‑compliant tool/agent OR production system with SLOs OR stakeholder-sponsored applied project with causal evaluation)
+
+---
+
+<a id="refresh-log"></a>
+# 🗓️ Refresh Log
+
+Each pass records what changed, what was verified, and what was deliberately left alone. Full HTTP status logs live in [`audit/VERIFICATION.md`](audit/VERIFICATION.md); per-pass reports live in [`audit/`](audit/).
+
+### v2026.3 — Practitioner's Pass · 2026-07-30
+
+**Diagnosis addressed:** the curriculum was academically strong but theory-first and intimidating — no practitioner entry point, no enforced project-per-module, no career-reality layer, and no distinct "AI Engineer (Applications)" identity of the kind the 2026 market hires for.
+
+| Workstream | Change | Primary evidence |
+| :-- | :--- | :--- |
+| **A** | [🚀 Practitioner Track (Fast Lane)](#practitioner-track) — a sequenced 6-stage / 6–9-month path; the [track table](#choose-your-track) split into **AI Engineer (Applications)** and **AI Engineer (Systems/Research-adjacent)**; ⚡ **Intuition-First Alternative** callouts added to [M0](#module-0), [M2](#module-2), [M3](#module-3), [M5](#module-5), each stating what you give up and when to come back | Video 1 (00:44–01:09, 03:00–07:15); video 3 (00:53, 04:47) |
+| **B** | [Module 1](#module-1) rebuilt around a four-phase pacing structure with ship-milestones, a [free Python course matrix](#python-course-matrix) (8 courses), the recommended pairing stack, the **tutorial-hell escape protocol**, and a disciplined AI-assistant policy naming the **fluency illusion** | Both Scrimba articles; video 1 (03:00–04:00, 09:30); video 3 (01:21) |
+| **C** | [Module-project enforcement rule](#module-projects) + **18 new 📦 Module Project blocks** so every module M1–M25 now carries a mandatory deliverable with tests, README, and a results memo | Video 1 (05:40–06:05, 10:45–14:05); video 2 (11:30) |
+| **D** | [🧭 Career Operations](#career-operations) appendix and the [skills ↔ job-description mapping](#skills-checklist) grounded in **16 live 2026 postings** | Video 2 (04:30–18:40); 16 Greenhouse postings, surveyed 2026-07-26 |
+| **E** | [🧰 Practitioner Shelf](#practitioner-shelf) — the applied seven-book canon added alongside (not instead of) the Tier 1 academic spine | Video 3 (full); publisher/author pages |
+| **F** | [Minimum Production Bar](#production-bar) (12 items) in M24 + toolchain; the [prompting vs RAG vs fine-tuning ladder](#module-21) in M21; prompt-injection security and agent eval pipelines promoted to first-class topics in [M22](#module-22); Streamlit added and agent-framework pins refreshed in the [toolchain](#toolchain) | Video 1 (07:15, 10:45–12:30); video 3 (05:52); surveyed postings (evaluation in 6/7 AI-Eng roles) |
+| **G** | Audit trail, TOC, progress tracker, version badge, `coursepages/` sync, and this log | [`audit/AUDIT_v2026.3.md`](audit/AUDIT_v2026.3.md) |
+| **H** | **Visual pass** — a hero banner, a six-stratum journey infographic, and a section banner for each stratum, all in one consistent dark-navy visual language. Every asset is licence-clean: two are model-generated originals, six are rendered deterministically by [`assets/make_banners.py`](assets/make_banners.py), which is committed so any banner can be regenerated or restyled. No third-party or stock imagery is used. Provenance in [`assets/README.md`](assets/README.md) | Trailing brief instruction to match the presentation quality of [microsoft/Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners) |
+
+**Sources consumed in full**
+
+* **Video 1** — [How to Become an ML Engineer](https://www.youtube.com/watch?v=UZ_rK9gzVSc) (Senior Applied Scientist, Twitch) — five-phase practical path, from-scratch NumPy discipline, portfolio architecture standard, the fluency illusion, project archetypes.
+* **Video 2** — [Breaking into AI/ML from a non-technical background](https://www.youtube.com/watch?v=FeQZmQMffzc) (Applied Scientist, Amazon) — internal locus of control, real-projects-for-real-organisations, interviews-as-data, realistic transition windows.
+* **Video 3** — [The Only 7 Books You Need to Become an AI Engineer](https://www.youtube.com/watch?v=Pr9oRVtAqCM) (ex-Coursera / ex-Amazon) — the AI Engineer role definition, intuition-over-derivation, notebook-to-production progression, the seven-book canon.
+* **Article 1** — [Scrimba: Best Free Python Courses for Beginners in 2026](https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/) ✅
+* **Article 2** — [Scrimba: How to Learn Python — A Beginner's Guide (2026)](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/) ✅
+* **Job market** — 16 live postings from public Greenhouse boards (Anthropic, Scale AI, Figma, Databricks, Cloudflare, Discord, Airtable), surveyed 2026-07-26. Enumerated in [`audit/AUDIT_v2026.3.md`](audit/AUDIT_v2026.3.md).
+
+**Verification summary:** 70 URLs HTTP-checked · **66 ✅ 200** · **3 ⚠️ 403** (bot-gated, browser-accessible: two O'Reilly product pages, BLS) · **0 ❌ dead links shipped**. Four candidate URLs were found broken during research and are **not** in the README: two No Starch Manga Guide path guesses, the per-title StatQuest URLs, and `bytebytego.com/courses/generative-ai-system-design-interview`. Framework versions re-pulled from the PyPI JSON API on 2026-07-30.
+
+**Corrections made to previously-published claims** (found while verifying, not part of any workstream's remit):
+
+| Location | Was | Verified actual | Evidence |
+| :-- | :--- | :--- | :--- |
+| M1 Required Reading | _Fluent Python_ "3rd Edition, 2025" | **2nd Edition (2022)**; a 3rd edition is not published | [fluentpython.com](https://www.fluentpython.com/) ✅ states "Fluent Python, Second Edition"; matches Tier 1 row 20 |
+| M1 Required Reading | _Python Crash Course_ "4th Edition, 2025" | **3rd Edition**; no 4th edition exists | [No Starch catalogue](https://nostarch.com/python-crash-course-3rd-edition) ✅ lists 3rd Ed. as current |
+| Practitioner Shelf P7 | Source video credits Alex Xu & Sahn Lam | **Alex Xu, Ali Aminian, Hao Sheng** | [Publisher announcement](https://blog.bytebytego.com/p/our-new-book-generative-ai-system) ✅ |
+| Toolchain agents row | smolagents 1.24.0 · LangGraph 1.1.9 | **smolagents 1.26.0 · LangGraph 1.2.10** | PyPI JSON API, 2026-07-30 |
+
+**Deliberately not changed:** the Tier 1 / Tier 2 reading lists, the module numbering scheme (including the M6½ and M8a/M8b splits and the M19/M20 gap), and the mathematical content of M0, M2, M3, M5, M9–M12, M13, and M15. The practitioner doctrine is added **alongside** the academic spine as a labelled alternative route, never as a replacement — where the two conflict, both are stated with their conditions.
+
+### v2026.2 and earlier
+
+See [`audit/FINAL_AUDIT.md`](audit/FINAL_AUDIT.md), [`audit/VERIFICATION.md`](audit/VERIFICATION.md), and [`audit/IMPROVEMENT_SPEC.md`](audit/IMPROVEMENT_SPEC.md) for the P1–P5 verification passes that established the 27-module structure, the free-first resource policy, and the link-verification conventions (✅ live · ⚠️ bot-gated · ❌ dead · 🔁 fixed-with-alternative) used throughout.
 
 ---
 
@@ -1532,6 +2222,8 @@ This curriculum synthesises publicly-available syllabi from:
 * **Anthropic / MCP Consortium** — [modelcontextprotocol.io](https://modelcontextprotocol.io/) (Nov 2025 spec) · [transformer-circuits.pub](https://transformer-circuits.pub/) (mechanistic interpretability research).
 
 All university material remains © their respective institutions; this repository only cites and organises publicly‑disclosed syllabi.
+
+**Images.** All artwork in [`assets/`](assets/) is original to this repository and carries no third-party licence obligation. `hero-banner.jpg` and `roadmap-overview.jpg` are AI-generated originals; the six `stratum-*.jpg` section banners are drawn programmatically by [`assets/make_banners.py`](assets/make_banners.py) (Pillow only, deterministic — re-run it to regenerate or restyle them). No stock photography, no commercially-licensed imagery, and no images scraped from third-party pages are used anywhere in this repository. See [`assets/README.md`](assets/README.md).
 
 ---
 

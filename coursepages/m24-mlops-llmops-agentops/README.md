@@ -1,6 +1,6 @@
 # Module 24 — MLOps + LLMOps + AgentOps
 
-> **Status:** v2026.2 scaffold · full spec in the root [README.md § Module 24](../../README.md#module-24-mlops--llmops--agentops-v20262--supersedes-old-m19).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 24](../../README.md#module-24).
 >
 > Supersedes old Module 19 (MLOps / Systems / Responsible AI) by expanding into three operational tiers.
 
@@ -46,6 +46,28 @@ Closes Gap #3 of the benchmark PDF — the 2026 operational stack for (1) classi
 | GAIA benchmark | Agent eval | <https://huggingface.co/gaia-benchmark> |
 | SWE-bench | Software-engineering eval | <https://www.swebench.com/> |
 | E2B / Daytona / Modal | Sandboxing | <https://e2b.dev/> · <https://www.daytona.io/> · <https://modal.com/> |
+
+## 🏁 The Minimum Production Bar
+
+Every project you ship from Modules 1–25 is measured against one standard, defined in full at
+[README.md § Minimum Production Bar](../../README.md#production-bar). A notebook that only ever ran on
+your laptop is not a project — it is a homework file. The bar, in brief:
+
+1. Runs from a clean clone with one documented command
+2. Pinned dependencies (`uv` / `requirements.txt` / lockfile), stated Python version
+3. A README that says what it does, why, and what the result was — with a number in it
+4. Version control with real commit history, not one `initial commit`
+5. Tests on the non-obvious logic, and CI that runs them
+6. Config and secrets outside the code (`.env`, never committed)
+7. Structured logging, not `print`
+8. A reachable artefact: an endpoint, a Streamlit/Gradio app, a scheduled job, or a container image
+9. A stated evaluation with a baseline to compare against
+10. Error handling for the inputs you know are malformed
+11. A written limitations section — what it does *not* do, and where it fails
+12. Reproducibility: fixed seeds, versioned data, recorded run parameters
+
+Items 1–4 are non-negotiable for every project. Items 5–12 are what separate the two or three
+portfolio-centrepiece projects from the rest.
 
 ## Mandatory mini-projects
 

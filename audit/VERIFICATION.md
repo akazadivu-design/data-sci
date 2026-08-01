@@ -314,3 +314,134 @@ Based on this verification, the following are **approved for use** in the new RE
 ## H) Verified-SAFE rule (anti-hallucination)
 
 **Every new URL that enters README.md in P3 will carry a footnote-style citation with a 2026-04-23 verification date.** Any resource not in this document will NOT be added.
+
+---
+
+# 🔎 P6 — Live Cross-Verification Report (v2026.3 "Practitioner's Pass")
+
+**Verified on:** 2026-07-26 (research pass) and 2026-07-30 (final re-check before commit)
+**Method:** `curl -o /dev/null -s -w "%{http_code}" -A "Mozilla/5.0" --max-time 20-25 -L <url>` for HTTP; `https://pypi.org/pypi/<pkg>/json` → `info.version` + `urls[0].upload_time` for framework versions; Open Library `/api/books` and publisher/author pages for book metadata.
+**Scope:** every URL newly introduced by workstreams A–G, plus every framework version touched.
+**Legend:** ✅ 200/302 live · ⚠️ 403 bot-gated but browser-accessible · ❌ 4xx/000 dead · 🔁 fixed-with-alternative.
+
+## P6-A) Module 1 — free Python course matrix (Workstream B)
+
+| Resource | URL | Status |
+|---|---|:---:|
+| Scrimba — Learn Python | `https://scrimba.com/learn-python-c02t` | ✅ 200 |
+| Harvard CS50P | `https://cs50.harvard.edu/python/` | ✅ 200 |
+| University of Helsinki Python MOOC | `https://programming-24.mooc.fi/` | ✅ 200 |
+| freeCodeCamp — Scientific Computing with Python | `https://www.freecodecamp.org/learn/scientific-computing-with-python/` | ✅ 200 |
+| Coursera — Python for Everybody (Michigan) | `https://www.coursera.org/specializations/python` | ✅ 200 |
+| Official Python tutorial | `https://docs.python.org/3/tutorial/` | ✅ 200 |
+| Google's Python Class | `https://developers.google.com/edu/python` | ✅ 200 |
+| Automate the Boring Stuff (free full text) | `https://automatetheboringstuff.com/` | ✅ 200 |
+
+## P6-B) Cited article sources (Workstream B — mandated by the brief)
+
+| Resource | URL | Status |
+|---|---|:---:|
+| Scrimba — *Best Free Python Courses for Beginners in 2026* | `https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/` | ✅ 200 |
+| Scrimba — *How to Learn Python: A Beginner's Guide (2026)* | `https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/` | ✅ 200 |
+
+Both appear as clickable citations inside the Module 1 resource list, per the brief's hard constraint 7.
+
+## P6-C) Practitioner Shelf — the seven-book canon (Workstream E)
+
+| Resource | URL | Status |
+|---|---|:---:|
+| P1 — Automate the Boring Stuff, free text | `https://automatetheboringstuff.com/` | ✅ 200 |
+| P1 — Automate the Boring Stuff 3rd Ed., publisher | `https://nostarch.com/automate-boring-stuff-python-3rd-edition` | ✅ 200 |
+| P2 — Software Engineering for Data Scientists, author page | `https://catherinenelson.dev/books/software-engineering-for-data-scientists` | ✅ 200 |
+| P2 — same, O'Reilly product page | `https://www.oreilly.com/library/view/software-engineering-for/9781098136192/` | ⚠️ 403 |
+| P3 — The Manga Guide to Statistics | `https://nostarch.com/mg_statistics.htm` | ✅ 200 |
+| P3b — The Manga Guide to Linear Algebra | `https://nostarch.com/mg_linearalgebra.htm` | ✅ 200 |
+| P3c — The Manga Guide to Regression Analysis | `https://nostarch.com/regression` | ✅ 200 |
+| P4 — StatQuest store (canonical entry point) | `https://statquest.org/statquest-store/` | ✅ 200 |
+| P4 — StatQuest site + free videos | `https://statquest.org/` | ✅ 200 |
+| P5 — Build a LLM (From Scratch), Manning | `https://www.manning.com/books/build-a-large-language-model-from-scratch` | ✅ 200 |
+| P5 — companion code | `https://github.com/rasbt/LLMs-from-scratch` | ✅ 200 |
+| P6 — AI Engineering, author page | `https://huyenchip.com/books/` | ✅ 200 |
+| P6 — same, O'Reilly product page | `https://www.oreilly.com/library/view/ai-engineering/9781098166298/` | ⚠️ 403 |
+| P7 — Generative AI System Design Interview, publisher announcement | `https://blog.bytebytego.com/p/our-new-book-generative-ai-system` | ✅ 200 |
+| P7 — retail listing (ISBN corroboration) | `https://www.amazon.com/Generative-AI-System-Design-Interview/dp/1736049143` | ✅ 200 |
+| Intuition-track video anchors | `https://www.3blue1brown.com/` · `https://statquest.org/` | ✅ 200 · ✅ 200 |
+
+**Book-metadata cross-references (non-gated corroboration for the two ⚠️ entries and P7):**
+
+| Claim | Source | Result |
+|---|---|---|
+| *Software Engineering for Data Scientists*, Catherine Nelson, subtitle *From Notebooks to Scalable Systems*, **May 2024**, O'Reilly | author's own book page (✅ 200) | Confirmed verbatim, incl. topic list (testing, OOP, refactoring, APIs) |
+| *AI Engineering*, Chip Huyen, O'Reilly | `huyenchip.com/books/` (✅ 200) | Confirmed; page also states *"AI engineering: the process of building applications with readily available foundation models"* — quoted in the README |
+| *Generative AI System Design Interview*, ByteByteGo, 2024, ISBN 1736049143 | Open Library `/api/books?bibkeys=ISBN:1736049143` | Confirmed title, publisher, year |
+| P7 authorship | `blog.bytebytego.com` announcement (✅ 200) | **Alex Xu, Ali Aminian, Hao Sheng** — the source video's "Sahn Lam" attribution is wrong and was corrected |
+
+## P6-D) Workstream F — new links in M21 / M22 / toolchain
+
+| Resource | URL | Status |
+|---|---|:---:|
+| DSPy (prompt optimisers, rung 2 of the decision ladder) | `https://github.com/stanfordnlp/dspy` | ✅ 200 |
+| NeMo Guardrails | `https://github.com/NVIDIA/NeMo-Guardrails` | ✅ 200 |
+| Guardrails AI | `https://www.guardrailsai.com/` | ✅ 200 |
+| Llama Guard / PurpleLlama | `https://github.com/meta-llama/PurpleLlama` | ✅ 200 |
+| DeepEval | `https://github.com/confident-ai/deepeval` | ✅ 200 |
+| Ragas | `https://github.com/explodinggradients/ragas` | ✅ 200 |
+| Arize Phoenix | `https://github.com/Arize-ai/phoenix` | ✅ 200 |
+| LangSmith | `https://www.langchain.com/langsmith` | ✅ 200 |
+| Streamlit (new toolchain row) | `https://streamlit.io/` | ✅ 200 |
+| CrewAI docs (version pinned in toolchain) | `https://docs.crewai.com/` | ✅ 200 |
+
+## P6-E) Workstream G — correction evidence
+
+| Resource | URL | Status | Used for |
+|---|---|:---:|---|
+| Fluent Python official site | `https://www.fluentpython.com/` | ✅ 200 | States "Fluent Python, **Second** Edition" → M1's "3rd Edition, 2025" claim corrected |
+| Fluent Python example code repo | `https://github.com/fluentpython/example-code-2e` | ✅ 200 | "Fluent Python **2e** example code" — corroborates the above |
+| Python Crash Course 3rd Ed. | `https://nostarch.com/python-crash-course-3rd-edition` | ✅ 200 | No Starch lists 3rd Ed. as current → M1's "4th Edition, 2025" claim corrected |
+| No Starch Python catalogue | `https://nostarch.com/catalog/python` | ✅ 200 | Lists only "Python Crash Course 3rd Edition"; no 4th edition exists |
+| `ehmatthes.github.io/pcc_4e/` | — | ❌ 404 | Confirms no 4th-edition companion site (the 3e companion is ✅ 200) |
+
+## P6-F) Framework-version cross-verification (PyPI JSON API, 2026-07-30)
+
+| Package | README claim before | PyPI actual latest | Release date | Action |
+|---|---|---|---|---|
+| `streamlit` | *(absent from toolchain)* | **1.60.0** | 2026-07-21 | ➕ Added new "Dashboards & demo UIs" row |
+| `crewai` | present, unpinned | **1.15.9** | 2026-07-30 | ➕ Pinned in the agents row |
+| `langgraph` | 1.1.9 | **1.2.10** | 2026-07-28 | 🔁 Corrected (stale) |
+| `smolagents` | 1.24.0 | **1.26.0** | 2026-05-29 | 🔁 Corrected (stale) |
+| `llama-index` | 0.11+ | **0.14.23** | 2026-06-24 | ➕ Pinned in the agents row |
+| `ragas` | cited, unpinned | 0.4.3 | 2026-01-13 | ✔ No version claim made; no change needed |
+| `deepeval` | cited, unpinned | 4.1.4 | 2026-07-27 | ✔ No version claim made |
+| `dspy` | 3.2.0 (Apr 2026) | 3.2.1 | 2026-05-05 | ⏭ Patch-level only; left as-is |
+| `mlflow` | 3.11.1 | 3.14.0 | 2026-06-17 | ⏭ **Not changed** — outside this pass's remit; logged for the next refresh |
+| `langchain` | 0.3+ | 1.3.14 | 2026-07-16 | ⏭ **Not changed** — the M21 line was untouched by this pass; logged for the next refresh |
+| `promptfoo` | cited, unpinned | 0.1.4 | 2026-04-06 | ✔ No version claim made |
+| `pytest` | cited, unpinned | 9.1.1 | 2026 | ✔ No version claim made |
+| `ruff` | cited, unpinned | 0.16.0 | 2026 | ✔ No version claim made |
+
+## P6-G) Broken candidates found during research and deliberately NOT added
+
+Recorded so that a future pass does not re-discover them.
+
+| Candidate URL | Status | Resolution |
+|---|:---:|---|
+| `https://nostarch.com/mg_linear_algebra.htm` | ❌ 404 | 🔁 Correct path is `mg_linearalgebra.htm` (no second underscore) |
+| `https://nostarch.com/regression-analysis` | ❌ 404 | 🔁 Correct path is `/regression` |
+| `https://nostarch.com/pythoncrashcourse3rdedition` | ❌ 404 | 🔁 Correct path is `/python-crash-course-3rd-edition` |
+| `https://statquest.org/statquest-illustrated-guide-to-machine-learning/` | ❌ 404 | 🔁 Per-title pages do not exist; the store page is used instead |
+| `https://www.bytebytego.com/courses/generative-ai-system-design-interview` | ❌ 404 | 🔁 Publisher announcement post used instead |
+| `https://www.bls.gov/ooh/.../software-developers.htm` | ⚠️ 403 | ⏭ Not cited — no claim in this pass required it |
+
+## P6-H) Summary statistics
+
+- **URLs HTTP-checked this pass:** 70
+- **✅ live (200):** 66
+- **⚠️ bot-gated (403) but browser-accessible:** 3 (two O'Reilly product pages, BLS — the last is not cited)
+- **❌ dead:** 6 found, **0 shipped** (each resolved to a working alternative or omitted with the reason logged in P6-G)
+- **Framework versions re-pulled from PyPI:** 13 · **stale claims corrected:** 2 · **new pins added:** 3
+- **Claims in the source brief that were falsified and corrected:** 3 (P7 authorship, StatQuest URL structure, ByteByteGo course URL)
+- **Previously-published README claims falsified and corrected:** 2 (Fluent Python edition, Python Crash Course edition)
+
+## P6-I) Verified-SAFE rule (unchanged)
+
+Every URL introduced in v2026.3 appears in the tables above with a 2026-07-26/30 verification date. **No URL entered README.md that is not in this document.** Where a resource was unverifiable or dead it was omitted and the reason recorded in P6-G, rather than being silently dropped.

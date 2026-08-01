@@ -1,6 +1,6 @@
 # Module 8b — Distributed Data & Streaming Systems
 
-> **Status:** v2026.2 scaffold · full spec in the root [README.md § Module 8b](../../README.md#module-8b-distributed-data--streaming-systems-new--v20262).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 8b](../../README.md#module-8b).
 
 ## Why this module exists
 

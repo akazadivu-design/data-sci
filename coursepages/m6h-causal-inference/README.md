@@ -1,6 +1,6 @@
 # Module 6½ — Causal Inference & Experimentation
 
-> **Status:** v2026.2 scaffold · full spec in the root [README.md § Module 6½](../../README.md#module-6-causal-inference--experimentation-new--v20262).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 6½](../../README.md#module-6-half).
 >
 > This folder will hold problem sets, notebooks, and reading-group notes for Module 6½. The root README holds the authoritative topic list and resource links.
 

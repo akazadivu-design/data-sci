@@ -1,6 +1,6 @@
 # Module 23 — AI Safety, Alignment, Interpretability, Evals & Policy
 
-> **Status:** v2026.2 scaffold · full spec in the root [README.md § Module 23](../../README.md#module-23-ai-safety-alignment-interpretability-evals--policy-new--v20262).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 23](../../README.md#module-23).
 
 ## Why this module exists
 

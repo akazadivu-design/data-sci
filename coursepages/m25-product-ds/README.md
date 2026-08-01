@@ -1,6 +1,6 @@
 # Module 25 — Product DS, Business, Communication & Storytelling
 
-> **Status:** v2026.2 scaffold · full spec in the root [README.md § Module 25](../../README.md#module-25-product-ds-business-communication--storytelling-new--v20262).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 25](../../README.md#module-25).
 
 ## Why this module exists
 
