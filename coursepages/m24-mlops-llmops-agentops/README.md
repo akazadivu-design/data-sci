@@ -1,6 +1,6 @@
 # Module 24 — MLOps + LLMOps + AgentOps
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 24](../../README.md#module-24).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 24](../../curriculum/6-frontier-production.md#module-24).
 >
 > Supersedes old Module 19 (MLOps / Systems / Responsible AI) by expanding into three operational tiers.
 
@@ -50,7 +50,7 @@ Closes Gap #3 of the benchmark PDF — the 2026 operational stack for (1) classi
 ## 🏁 The Minimum Production Bar
 
 Every project you ship from Modules 1–25 is measured against one standard, defined in full at
-[README.md § Minimum Production Bar](../../README.md#production-bar). A notebook that only ever ran on
+[README.md § Minimum Production Bar](../../curriculum/6-frontier-production.md#production-bar). A notebook that only ever ran on
 your laptop is not a project — it is a homework file. The bar, in brief:
 
 1. Runs from a clean clone with one documented command

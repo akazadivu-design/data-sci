@@ -98,7 +98,7 @@ LinkedIn, Indeed, RemoteOK and the YC job board are JavaScript-gated and returne
 | MLOps / monitoring / observability | 4 | | |
 | Cloud (AWS / GCP / Azure) | 4 | | |
 
-**Per-family split** (AI Eng n=7 · ML Eng n=3 · DS n=4 · DE n=2) is reproduced in the README's [skills-checklist](../README.md#skills-checklist) section.
+**Per-family split** (AI Eng n=7 · ML Eng n=3 · DS n=4 · DE n=2) is reproduced in the README's [skills-checklist](../guides/career-operations.md#skills-checklist) section.
 
 **Sampling limitations, stated in the README as well as here:** n=16 is small; the sample skews toward AI-native technology companies (which is *why* it is useful for reading where AI-Engineer demand is going, and why it is *not* a labour-market statistic); the Data Engineer row is n=2 and is labelled an anecdote. Greenhouse posting IDs are ephemeral, so the URLs were **deliberately not** placed in the README — only the methodology, the company list, and the counts.
 
@@ -108,16 +108,16 @@ LinkedIn, Indeed, RemoteOK and the YC job board are JavaScript-gated and returne
 
 | # | Gap in v2026.2 | Closing edit | Workstream |
 |---|---|---|---|
-| 1 | No practitioner entry point; the only route in was the full maths spine | [🚀 Practitioner Track](../README.md#practitioner-track): a 6-stage, 6–9-month sequence with a "what you give up" column | A |
+| 1 | No practitioner entry point; the only route in was the full maths spine | [🚀 Practitioner Track](../guides/practitioner-track.md#practitioner-track): a 6-stage, 6–9-month sequence with a "what you give up" column | A |
 | 2 | One undifferentiated "AI Engineer" row, research-flavoured | Split into **AI Engineer (Applications)** and **AI Engineer (Systems/Research-adjacent)**, with Chip Huyen's *AI Engineering* named as the Applications primary text | A |
 | 3 | Maths modules offered no honest shortcut, so beginners bounced | ⚡ **Intuition-First Alternative** callouts in M0, M2, M3, M5 — each with the route, the argument, what you give up, and when to return | A |
-| 4 | M1 had a topic list but no pacing, no course comparison, and no study method | Four-phase pacing with ship-milestones; the 8-course [matrix](../README.md#python-course-matrix); the pairing stack; the tutorial-hell protocol; the AI-use policy | B |
-| 5 | Only 7 of 25 modules mandated a project | [Enforcement rule](../README.md#module-projects) + **18 new 📦 Module Project blocks** — all M1–M25 now covered | C |
-| 6 | Zero career content; competence was assumed to convert itself into a job | [🧭 Career Operations](../README.md#career-operations): locus of control, ~70 %-match applying, funnel tracking, outreach, real-org sourcing, accountability, reconciled timelines | D |
-| 7 | No grounding in what employers actually ask for | [Skills ↔ JD mapping](../README.md#skills-checklist), 4 per-track tables from the 16-posting survey, every skill pointing at a module | D |
-| 8 | Reading list was entirely academic; nothing for a builder | [🧰 Practitioner Shelf](../README.md#practitioner-shelf) — 7-book applied canon, annotated by module/track, Tier 1 and 2 untouched | E |
-| 9 | "Production quality" was implied but never specified | [🏁 Minimum Production Bar](../README.md#production-bar) — a 12-item pass/fail table + clean-clone reproducibility check | F |
-| 10 | The most-asked AI-Engineer design question had no framework | The five-rung [prompting vs RAG vs fine-tuning ladder](../README.md#module-21) in M21, with the eval-set-first rule and two named misdiagnoses | F |
+| 4 | M1 had a topic list but no pacing, no course comparison, and no study method | Four-phase pacing with ship-milestones; the 8-course [matrix](../curriculum/1-foundations.md#python-course-matrix); the pairing stack; the tutorial-hell protocol; the AI-use policy | B |
+| 5 | Only 7 of 25 modules mandated a project | [Enforcement rule](../curriculum/README.md#module-projects) + **18 new 📦 Module Project blocks** — all M1–M25 now covered | C |
+| 6 | Zero career content; competence was assumed to convert itself into a job | [🧭 Career Operations](../guides/career-operations.md#career-operations): locus of control, ~70 %-match applying, funnel tracking, outreach, real-org sourcing, accountability, reconciled timelines | D |
+| 7 | No grounding in what employers actually ask for | [Skills ↔ JD mapping](../guides/career-operations.md#skills-checklist), 4 per-track tables from the 16-posting survey, every skill pointing at a module | D |
+| 8 | Reading list was entirely academic; nothing for a builder | [🧰 Practitioner Shelf](../resources/books.md#practitioner-shelf) — 7-book applied canon, annotated by module/track, Tier 1 and 2 untouched | E |
+| 9 | "Production quality" was implied but never specified | [🏁 Minimum Production Bar](../curriculum/6-frontier-production.md#production-bar) — a 12-item pass/fail table + clean-clone reproducibility check | F |
+| 10 | The most-asked AI-Engineer design question had no framework | The five-rung [prompting vs RAG vs fine-tuning ladder](../curriculum/6-frontier-production.md#module-21) in M21, with the eval-set-first rule and two named misdiagnoses | F |
 | 11 | Prompt injection existed in M23/M24 but not in M22, where agents get tools | Agent-security block in M22: direct vs indirect injection, escalation paths, defences honestly ranked | F |
 | 12 | Agent evaluation was benchmark-listing only, with no harness discipline | Agent eval-pipeline block: trajectory scoring, pass@k, cost-per-successful-task, LLM-as-judge calibration, evals-as-CI | F |
 | 13 | Streamlit absent from the toolchain; agent pins stale | New "Dashboards & demo UIs" row; agents row refreshed and CrewAI pinned | F |

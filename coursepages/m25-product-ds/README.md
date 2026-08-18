@@ -1,6 +1,6 @@
 # Module 25 — Product DS, Business, Communication & Storytelling
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 25](../../README.md#module-25).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 25](../../curriculum/6-frontier-production.md#module-25).
 
 ## Why this module exists
 
