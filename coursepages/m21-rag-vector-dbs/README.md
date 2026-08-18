@@ -1,6 +1,6 @@
 # Module 21 — RAG, Vector DBs & Retrieval Systems
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 21](../../README.md#module-21).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 21](../../curriculum/6-frontier-production.md#module-21).
 
 ## Why this module exists
 
@@ -27,7 +27,7 @@ Retrieval-Augmented Generation is the single most-deployed LLM pattern in produc
 
 Do not start this module by writing a retrieval pipeline. Start by deciding whether you need one.
 The root README carries the full decision table — see
-[README.md § Module 21 → the decision framework](../../README.md#module-21). Short version:
+[README.md § Module 21 → the decision framework](../../curriculum/6-frontier-production.md#module-21). Short version:
 
 | Rung | Technique | Reach for it when |
 |---|---|---|

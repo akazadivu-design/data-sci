@@ -1,6 +1,6 @@
 # Module 22 — Agentic AI (LangGraph, CrewAI, MCP & A2A)
 
-> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 22](../../README.md#module-22).
+> **Status:** v2026.3 scaffold · full spec in the root [README.md § Module 22](../../curriculum/6-frontier-production.md#module-22).
 
 ## Why this module exists
 
@@ -27,7 +27,7 @@
 
 An agent with tools is an agent with a blast radius. The moment your system reads untrusted text
 (a web page, an email, a PDF, an upload, another agent's output) and can then *act*, prompt injection
-stops being a curiosity. Full treatment in [README.md § Module 22](../../README.md#module-22).
+stops being a curiosity. Full treatment in [README.md § Module 22](../../curriculum/6-frontier-production.md#module-22).
 
 * **Direct injection** — the user tries to override your system prompt. Usually low impact.
 * **Indirect injection** — the payload is hidden in content the agent *retrieves*. This is the serious
