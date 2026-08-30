@@ -6,6 +6,8 @@
 
 <img src="../assets/stratum-4-bayesian.jpg" alt="Probabilistic and Bayesian stratum, modules 13 to 14" width="100%">
 
+> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [Pick-One table](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
+
 ---
 
 <a id="module-13"></a>

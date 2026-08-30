@@ -22,16 +22,16 @@
 | 11 | _Bayesian Data Analysis_ (BDA3) | Gelman et al. | 3rd Ed. 2013 (2024 reprint) | M6, M13 | ✅ [stat.columbia.edu](http://www.stat.columbia.edu/~gelman/book/) |
 | 12 | _Introduction to Algorithms_ (CLRS) | Cormen, Leiserson, Rivest, Stein | 4th Ed. 2022 | M4 | — |
 | 13 | _Introduction to Linear Algebra_ | Gilbert Strang | 6th Ed. 2023 | M3 | — |
-| 14 | _Designing Data-Intensive Applications_ | Martin Kleppmann | 1st Ed. 2017 (2nd Ed. coming 2026) | M8, M19 | — |
+| 14 | _Designing Data-Intensive Applications_ | Martin Kleppmann | 1st Ed. 2017 (2nd Ed. coming 2026) | M8a, M8b, M24 | — |
 | 15 | **_Speech and Language Processing_ (3rd Ed. draft, continually updated)** | Jurafsky & Martin | Draft 2024–2026 | M16, M18 | ✅ [stanford.edu/~jurafsky/slp3/](https://web.stanford.edu/~jurafsky/slp3/) |
 | 16 | _Foundations of Computer Vision_ | Torralba, Isola, Freeman | **MIT Press 2024** | M15-M16 | ✅ [visionbook.mit.edu](https://visionbook.mit.edu/) |
-| 17 | _Designing Machine Learning Systems_ | Chip Huyen | O'Reilly 2022 (2024 reprint) | M19 | — |
+| 17 | _Designing Machine Learning Systems_ | Chip Huyen | O'Reilly 2022 (2024 reprint) | M24 | — |
 | 18 | _Build a Large Language Model (From Scratch)_ | Sebastian Raschka | Manning **2024** | M18 | Partial GitHub mirror |
 | 19 | _Python for Data Analysis_ | Wes McKinney | 3rd Ed. 2022 | M7 | ✅ [wesmckinney.com](https://wesmckinney.com/book/) |
 | 20 | _Fluent Python_ | Luciano Ramalho | 2nd Ed. 2022 (3rd Ed. in progress) | M1 | — |
 | **21** | **_Hands‑On Machine Learning with Scikit‑Learn and PyTorch_** (NEW, **replaces TF edition**) | Aurélien Géron | **O'Reilly, Oct–Dec 2025**, 878 pp. | M9‑M17 | GitHub: [ageron/handson-mlp](https://github.com/ageron/handson-mlp) |
 | **22** | **_Hands‑On Large Language Models_** (NEW) | Jay Alammar & Maarten Grootendorst | **O'Reilly, Sep 2024**, 428 pp. | M18 | [HandsOnLLM repo](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) |
-| **23** | **_AI Engineering_** (NEW) | Chip Huyen | O'Reilly Jan 2025 | M18‑M19 | — |
+| **23** | **_AI Engineering_** (NEW) | Chip Huyen | O'Reilly Jan 2025 | M18, M21‑M24 | — |
 | **24** | **_Pattern Recognition and Machine Learning_** (PRML — moved to Tier 1‑reference) | Christopher Bishop | 2006 (still in print) | M9‑M17 | — |
 | **25** | **_Linear Algebra Done Right_ — 4th Edition (the abstract / proof‑track linear algebra)** | Sheldon Axler | **Springer 2024**, 400 pp., ISBN 978‑3‑031‑41025‑3 | M3 | ✅ [linear.axler.net](https://linear.axler.net/) |
 | **26** | **_Introduction to Probability for Data Science_ — bridges Stat 110 to Python code** | Stanley H. Chan | Michigan Publishing **2021/2023**, 700+ pp. | M5 | ✅ [probability4datascience.com](https://probability4datascience.com/) |
@@ -53,6 +53,8 @@
 <a id="practitioner-shelf"></a>
 ## 🧰 The Practitioner Shelf
 
+> **Citations in this subsection.** *"Video 3 (07:30)"* and similar refer to named practitioner sources resolved in [sources](../guides/sources.md#citation-key).
+>
 > **What this subsection is, and what it is not.** The Tier 1 and Tier 2 lists above are the **academic spine** — they are what you read to be able to *check* a claim, derive a result, and read a paper. Nothing in them is deprecated by this subsection.
 >
 > This shelf is the **applied canon**: the shorter, faster, code-first books that get you from "I can write a loop" to "I have shipped a product built on a foundation model." It is the reading list attached to the [Practitioner Fast Lane](../guides/practitioner-track.md#practitioner-track) and the [AI Engineer (Applications)](../README.md#choose-your-track) track, sourced from [video 3](../CHANGELOG.md#refresh-log) — an ex-Coursera / ex-Amazon engineer's seven-book canon for the AI Engineer role — and reconciled against what this roadmap already carried.

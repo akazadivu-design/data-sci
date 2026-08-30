@@ -1,0 +1,66 @@
+name: Dead or moved link
+description: A course, video, book, or docs link no longer works.
+title: "[Dead link]: "
+labels: ["dead-link"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks — this is the most useful report you can file. Link rot is the main
+        way this curriculum degrades.
+
+        This repository is documentation only; there is nothing to install and no
+        version number to report.
+  - type: input
+    id: url
+    attributes:
+      label: The broken URL
+      description: Paste the full link exactly as it appears in the repository.
+      placeholder: https://example.edu/course
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Where it appears
+      description: The file, and the module number if it is inside the curriculum.
+      placeholder: "curriculum/3-classical-ml.md — Module 9"
+    validations:
+      required: true
+  - type: dropdown
+    id: symptom
+    attributes:
+      label: What happened when you opened it?
+      options:
+        - 404 / page not found
+        - Redirects somewhere unrelated
+        - Now behind a paywall or login
+        - Video is private, removed, or region-blocked
+        - Domain does not resolve at all
+        - Works in my browser, but a bot or checker reports 403
+        - Something else (described below)
+    validations:
+      required: true
+  - type: textarea
+    id: replacement
+    attributes:
+      label: Suggested replacement (optional)
+      description: >
+        If you found a working equivalent, paste it here. Please note whether it is
+        free, and who publishes it. See CONTRIBUTING.md for the resource bar.
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Screenshots, HTTP status codes, or the date you checked.
+    validations:
+      required: false
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

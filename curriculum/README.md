@@ -6,6 +6,10 @@
 
 The full curriculum is organised into **six strata**. Work through them in order — each module states its strict prerequisites. This page is the map; each stratum has its own page with the complete module specifications.
 
+> **New here?** Read [START-HERE](../START-HERE.md) and [How to read a module](../guides/how-to-read-a-module.md) first — the second page includes a **[Pick-One table](../guides/how-to-read-a-module.md#pick-one)** giving one default course per module, so you never have to choose between twelve links.
+>
+> **27 modules, but the numbers skip 19 and 20 — nothing is missing.** Old M19 (MLOps) grew into [M24](6-frontier-production.md#module-24) and old M20 (Capstone) became [M26](6-frontier-production.md#module-26). Those two numbers were left vacant so existing links to M0–M18 keep working. Same reason **M6½** exists and **M8** is split into **M8a/M8b**. Details in the [FAQ](../FAQ.md#structure).
+
 <div align="center">
 
 <img src="../assets/roadmap-overview.jpg" alt="The six curriculum strata as a left-to-right learning path, from Foundations (M0-M5) to Production AI (M18-M26)" width="100%">
@@ -96,7 +100,7 @@ Each project block states three things in the same shape:
 | **Definition of done** | Three fixed requirements every time: a **test suite**, a **`README.md`** a stranger can follow, and a short **results memo** stating what you found and what you are unsure about. The memo is the part everyone skips and the part that reads as senior. |
 | **Stretch goal** | Adds exactly **one production element** — a Dockerfile, a CI workflow, a deployment, a monitoring hook. Stretch goals accumulate; by [M24](6-frontier-production.md#module-24) you will have met the full [Minimum Production Bar](6-frontier-production.md#production-bar). |
 
-> **Ship it before it is good.** A messy project on the internet beats a perfect project on your laptop. An unfinished public repository with an honest README is a stronger signal than a polished notebook nobody can see — and it is the only version of the work that can get you a job, feedback, or a collaborator. Video 2 (11:30) goes one step further: prefer projects built **for a real person or organisation** over generic dataset projects, because a stakeholder who wanted the result is what makes the project a story rather than a screenshot.
+> **Ship it before it is good.** A messy project on the internet beats a perfect project on your laptop. An unfinished public repository with an honest README is a stronger signal than a polished notebook nobody can see — and it is the only version of the work that can get you a job, feedback, or a collaborator. [Video 2](../guides/sources.md#citation-key) (11:30) goes one step further: prefer projects built **for a real person or organisation** over generic dataset projects, because a stakeholder who wanted the result is what makes the project a story rather than a screenshot.
 >
 > **Where the archetypes come from.** The project set is deliberately drawn from the archetypes named in the [source videos](../CHANGELOG.md#refresh-log) — churn-prediction dashboard, constraint-based meal planner, weather CLI, Reddit scraper, Discord bot, Flask blog with authentication, Hugging Face sentiment analyser, stock dashboard, RAG chatbot over your own notes — mapped to the module that actually teaches the underlying skill, and hardened with the definition-of-done requirements above.
 

@@ -1,0 +1,60 @@
+name: Something was confusing
+description: You could not tell what to do, or a page was unclear.
+title: "[Clarity]: "
+labels: ["clarity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Genuinely useful, and not a nuisance to file. If you got lost, others did too.
+
+        Quick check first — these three pages exist specifically to answer the most
+        common confusions:
+
+        - [START-HERE.md](https://github.com/akazadivu-design/data-sci/blob/master/START-HERE.md) — what to do on day one
+        - [How to read a module](https://github.com/akazadivu-design/data-sci/blob/master/guides/how-to-read-a-module.md) — which of the listed resources you actually need
+        - [FAQ](https://github.com/akazadivu-design/data-sci/blob/master/FAQ.md) — module numbering, timelines, symbol legend
+
+        If the answer was in there but you didn't find it, that is still worth
+        reporting: it means the signposting failed.
+  - type: input
+    id: page
+    attributes:
+      label: Which page or section?
+      placeholder: "README.md — 'Entry points by experience'"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What were you trying to work out?
+      placeholder: "Whether I needed to finish all the linked courses in Module 4 or just one."
+    validations:
+      required: true
+  - type: textarea
+    id: blocked
+    attributes:
+      label: What stopped you?
+      description: >
+        Too many options, undefined jargon, a symbol you couldn't decode, a
+        contradiction between two pages, a broken anchor — whatever it was.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checked
+    attributes:
+      label: Where you already looked
+      options:
+        - label: START-HERE.md
+          required: false
+        - label: How to read a module
+          required: false
+        - label: FAQ
+          required: false
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

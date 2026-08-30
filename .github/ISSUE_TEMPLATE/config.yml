@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Start here (new to the repository)
+    url: https://github.com/akazadivu-design/data-sci/blob/master/START-HERE.md
+    about: Not sure what to do first? This is a five-minute read that tells you exactly where to begin.
+  - name: FAQ
+    url: https://github.com/akazadivu-design/data-sci/blob/master/FAQ.md
+    about: Module numbering, how long it takes, what the symbols mean, and whether you need to install anything.
+  - name: How to read a module
+    url: https://github.com/akazadivu-design/data-sci/blob/master/guides/how-to-read-a-module.md
+    about: Each module lists many resources — this explains which ones you actually need, with a default choice already made for you.
