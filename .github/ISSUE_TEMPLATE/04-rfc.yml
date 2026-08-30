@@ -1,0 +1,89 @@
+name: RFC — propose a curriculum change
+description: Add, remove, or resequence modules, or change a curriculum-wide policy.
+title: "RFC: "
+labels: ["rfc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this only for changes to the **shape** of the curriculum. For a single
+        swapped course use *Resource change*; for a broken URL use *Dead or moved link*.
+
+        RFCs stay open for comment for about a month before anything merges, so that
+        people part-way through the affected modules can object. See
+        [CONTRIBUTING.md](https://github.com/akazadivu-design/data-sci/blob/master/CONTRIBUTING.md#rfc).
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: >
+        One sentence. The strongest critiques show the curriculum failing its own
+        stated commitments — free-first required resources, a coherent prerequisite
+        chain, one primary course per module, or a project per module.
+      placeholder: >
+        "M12 assumes linear algebra that no earlier module teaches, so the
+        prerequisite chain is broken."
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of change
+      options:
+        - Add a module
+        - Remove a module
+        - Resequence or merge modules
+        - Change a prerequisite chain
+        - Change a repository-wide policy
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Background
+      description: >
+        A few paragraphs. Describe the problem in depth, then your solution, then
+        its disadvantages. An RFC with no stated downsides usually means the
+        trade-offs haven't been found yet.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: A bullet list of concrete changes. Link a pull request if one exists.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other ways to address the same problem, and why you preferred yours.
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Effect on existing links
+      description: >
+        Module numbers are never recycled — 19 and 20 are deliberately vacant, and
+        M6½ / M8a / M8b exist to avoid renumbering. If your proposal touches
+        numbering, explain how inbound links stay working.
+    validations:
+      required: true
+  - type: input
+    id: duration
+    attributes:
+      label: Comment period
+      description: Normally one month from the date of posting.
+      value: "1 month from posting"
+    validations:
+      required: false
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

@@ -9,6 +9,8 @@
 >
 > It is **not** the only defensible path, and for a large share of 2026 job postings it is not the fastest one. This section is the parallel on-ramp for people whose goal is to be **employed building systems**, not to be able to prove convergence.
 
+> **Citations on this page.** *"video 1 (01:09)"* and similar are resolved in [sources](sources.md#citation-key).
+
 ### Why this track exists
 
 Three independent practitioner sources — an [ML Engineer path from a Twitch senior applied scientist](https://www.youtube.com/watch?v=UZ_rK9gzVSc), a [breaking-into-AI/ML account from an Amazon applied scientist](https://www.youtube.com/watch?v=FeQZmQMffzc), and an [AI-Engineer reading list from an ex-Coursera/Amazon engineer](https://www.youtube.com/watch?v=Pr9oRVtAqCM) — converge on the same three claims:

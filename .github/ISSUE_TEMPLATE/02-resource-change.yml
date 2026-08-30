@@ -1,0 +1,73 @@
+name: Resource change
+description: Suggest a better course, book, or reading for an existing module.
+title: "[Resource]: "
+labels: ["resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please skim the resource bar in
+        [CONTRIBUTING.md](https://github.com/akazadivu-design/data-sci/blob/master/CONTRIBUTING.md#resource-bar).
+
+        Two things it asks for in particular: required resources must be **free**,
+        and proposals should **replace** an existing entry rather than adding to an
+        already long list.
+  - type: input
+    id: module
+    attributes:
+      label: Which module?
+      placeholder: "M9 — curriculum/3-classical-ml.md"
+    validations:
+      required: true
+  - type: input
+    id: proposed
+    attributes:
+      label: Resource you are proposing
+      description: Title and URL.
+    validations:
+      required: true
+  - type: dropdown
+    id: cost
+    attributes:
+      label: Is it free to complete?
+      options:
+        - "Yes — fully free"
+        - "Free to audit, paid certificate"
+        - "Paid (propose as optional only)"
+    validations:
+      required: true
+  - type: input
+    id: replaces
+    attributes:
+      label: What should it replace?
+      description: >
+        Name the existing entry it displaces. If it is purely additive, write
+        "additive" and explain why the module needs another alternative.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is it better?
+      description: >
+        Tie this to the module's stated outcome. "Clearer explanations" is weaker
+        than "covers the outcome the current resource skips, namely X".
+    validations:
+      required: true
+  - type: checkboxes
+    id: pickone
+    attributes:
+      label: Pick-One table
+      description: >
+        The Pick-One table names the single default course per module and is what
+        most readers actually follow.
+      options:
+        - label: This change should also update the Pick-One table.
+          required: false
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

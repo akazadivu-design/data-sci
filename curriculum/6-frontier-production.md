@@ -6,6 +6,8 @@
 
 <img src="../assets/stratum-6-production.jpg" alt="Frontier and production AI stratum, modules 18 and 21 to 26" width="100%">
 
+> **Reading this page:** each module lists many resources — that is a menu, not a to-do list. Take **one** primary course; see the [Pick-One table](../guides/how-to-read-a-module.md#pick-one). Citations like *"Video 1 (05:05)"* are resolved in [sources](../guides/sources.md#citation-key).
+
 ---
 
 <a id="module-18"></a>

@@ -1,0 +1,45 @@
+name: Comment on empty issues
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  handle_empty_issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    # Only fires on a genuinely empty body. The previous version also matched a
+    # sentence from the old OSSU-derived RFC template; that template has been
+    # replaced by YAML issue forms, whose required fields make empty bodies rare.
+    if: github.event.issue.body == null || github.event.issue.body == ''
+    steps:
+      - name: Create comment
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hi @${{ github.event.issue.user.login }} — this issue came through with an empty description, so there's nothing for a maintainer to act on yet. Closing it for now, but please do open another one.
+
+            The quickest route is to pick a template instead of a blank issue, since the forms prompt for the details needed:
+
+            - **Dead or moved link** — a course, video, or book link no longer works
+            - **Resource change** — you know a better free resource for a module
+            - **Something was confusing** — you couldn't tell what to do next
+            - **RFC** — you want to propose a structural change to the curriculum
+
+            👉 https://github.com/${{ github.repository }}/issues/new/choose
+
+            If you were looking for help rather than filing a report, these may answer it directly:
+
+            - [START-HERE.md](https://github.com/${{ github.repository }}/blob/master/START-HERE.md) — what to do on day one
+            - [FAQ](https://github.com/${{ github.repository }}/blob/master/FAQ.md) — numbering, timelines, symbols
+            - [How to read a module](https://github.com/${{ github.repository }}/blob/master/guides/how-to-read-a-module.md) — which listed resources you actually need
+      - name: Close issue
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'close-issue'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}

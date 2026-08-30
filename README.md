@@ -6,20 +6,53 @@
 
 ### A rigorous, free-first path from foundations to production AI
 
-[![Version](https://img.shields.io/badge/version-2026.3%20Practitioner's%20Pass-blue)](CHANGELOG.md#refresh-log)
-[![Modules](https://img.shields.io/badge/modules-27-6f42c1)](#roadmap)
+[![Version](https://img.shields.io/badge/version-2026.5%20Clear%20Path-blue)](CHANGELOG.md#refresh-log)
+[![Modules](https://img.shields.io/badge/modules-27-6f42c1)](curriculum/README.md)
 [![Level](https://img.shields.io/badge/level-beginner%20to%20advanced-0969da)](#who-this-is-for)
-[![Resources](https://img.shields.io/badge/resources-free--first-1a7f37)](#how-to-use-this-roadmap)
+[![Cost](https://img.shields.io/badge/required%20resources-free-1a7f37)](FAQ.md#basics)
 [![License](https://img.shields.io/badge/license-CC%20BY--SA%204.0-lightgrey)](LICENSE.md)
 
-**Mathematics · Statistics · Machine Learning · Data Engineering · Deep Learning · LLMs · Production AI**
-
-[🚀 Fast lane (6–9 mo)](guides/practitioner-track.md) · [📚 Full curriculum](curriculum/README.md) · [🧭 Choose a track](#choose-your-track) · [📖 Books](resources/books.md) · [🛠️ Toolchain](resources/toolchain.md) · [💼 Career ops](guides/career-operations.md) · [✅ Progress tracker](guides/progress-tracker.md)
+**A free self-study plan for data science and AI — from mathematics to production systems.**
 
 </div>
 
+> ### 👉 New here? Read **[START-HERE.md](START-HERE.md)** first. It takes five minutes and tells you exactly what to do on day one.
+
 ---
 
+## What this is (in 30 seconds)
+
+This repository is a **study plan written in Markdown**. It tells you which free courses to take, which
+books to read, and which projects to build — in an order where nothing depends on something you have not
+learned yet.
+
+| ❓ | Answer |
+| :--- | :--- |
+| **Is there software to install?** | **No.** There is no code to run and nothing to `pip install` here. |
+| **What do I do with it, then?** | Open one module. Take the one course it names. Build the one project it names. Repeat. |
+| **What does it cost?** | Every required resource is free. Optional books are labelled as optional. |
+| **How long?** | 6–9 months to employable on the [fast lane](guides/practitioner-track.md); 24–36 months for the complete path. [Details](FAQ.md#how-long). |
+| **Do I need all 27 modules?** | **No.** [Pick a track](#choose-your-track) and do that track's modules. |
+
+**The method, in one line:** one course + one book + one public project per module, in prerequisite order.
+
+> ⚠️ **The one mistake to avoid.** Each module lists many resources. That is a **menu, not a to-do
+> list** — it exists so the curriculum still works if a link dies or a course doesn't suit you. Pick
+> *one* course per module. The [Pick-One table](guides/how-to-read-a-module.md#pick-one) has already
+> chosen a default for all 27 modules if you'd rather not decide.
+
+## Where to go next
+
+| If you are… | Go here |
+| :--- | :--- |
+| **Brand new to this repo** | 🧭 **[START-HERE.md](START-HERE.md)** — a four-day plan and one decision |
+| Confused by a module's length or link count | 📖 [How to read a module](guides/how-to-read-a-module.md) |
+| Wondering why modules skip 19 and 20, or other oddities | ❓ [FAQ](FAQ.md) |
+| Aiming at a job as fast as defensibly possible | 🚀 [Practitioner fast lane](guides/practitioner-track.md) |
+| Ready to browse the whole thing | 📚 [Curriculum index](curriculum/README.md) |
+| Tracking your own progress | ✅ [Progress tracker](guides/progress-tracker.md) |
+
+---
 
 ## Goal
 
@@ -47,13 +80,17 @@ The curriculum is detailed by design, but the navigation is intentionally simple
 1. **Take the [math diagnostic](curriculum/1-foundations.md#math-diagnostic).** Complete Module 0 if any foundation is weak.
 2. **Choose a destination** in the role-track table below instead of studying everything by default.
 3. **Respect prerequisites.** Each module states what you should know before starting.
-4. **Use one primary course and one primary book.** Treat the remaining links as alternatives or references.
+4. **Use one primary course and one primary book** — the [Pick-One table](guides/how-to-read-a-module.md#pick-one) names a default for every module. Treat the remaining links as alternatives or references.
 5. **Build every mandatory project.** Passive course completion is not enough.
 6. **Track your work** with the [progress checklist](guides/progress-tracker.md#progress-tracker).
 7. **Finish with a capstone** that matches your intended role.
 
 <a id="start-here"></a>
-## Start here
+## Entry points by experience
+
+> **First visit?** Use **[START-HERE.md](START-HERE.md)** instead of this table — it gives you one
+> decision and a four-day plan. The table below is for when you already know how the repo works and
+> just want the module sequence for your background.
 
 Use the shortest entry point that matches your current experience. You can return to the full curriculum whenever you need more depth.
 
@@ -80,31 +117,56 @@ Use the shortest entry point that matches your current experience. You can retur
 | **AI Engineer (Systems/Research-adjacent)** | M1 → M8a → M15–M18 → M21–M24 → M26 | Evaluated RAG or agent system with tracing and guardrails, plus architecture-level understanding of the models it serves |
 | **Research / PhD prep** | M0–M18 → M23 → M26 Research Track | Reproducible paper, ablations, and public research artifact |
 
-> **Reading the two AI Engineer rows.** They are different jobs, not seniority levels. The **Applications** row matches the role as defined in [video 3, 00:53](https://www.youtube.com/watch?v=Pr9oRVtAqCM): a software engineer who turns GPT/Claude/Llama into products via prompting, RAG, fine-tuning, and agents, and who does *not* train models from scratch. Its primary text is **Chip Huyen, _AI Engineering: Building Applications with Foundation Models_** (O'Reilly, Jan 2025 — see the [Practitioner Shelf](resources/books.md#practitioner-shelf)). The **Systems** row keeps the deep-learning spine (M15–M17) for people who must also reason about the model internals, not just the API surface. In our [survey of 16 live 2026 postings](guides/career-operations.md#skills-checklist), titles for the Applications row appear as "AI Engineer", "Applied AI Architect", and "Forward Deployed Engineer (GenAI)".
+> **Reading the two AI Engineer rows.** They are different jobs, not seniority levels. The **Applications** row matches the role as defined in [video 3](guides/sources.md#citation-key), 00:53: a software engineer who turns GPT/Claude/Llama into products via prompting, RAG, fine-tuning, and agents, and who does *not* train models from scratch. Its primary text is **Chip Huyen, _AI Engineering: Building Applications with Foundation Models_** (O'Reilly, Jan 2025 — see the [Practitioner Shelf](resources/books.md#practitioner-shelf)). The **Systems** row keeps the deep-learning spine (M15–M17) for people who must also reason about the model internals, not just the API surface. In our [survey of 16 live 2026 postings](guides/career-operations.md#skills-checklist), titles for the Applications row appear as "AI Engineer", "Applied AI Architect", and "Forward Deployed Engineer (GenAI)".
 
 <a id="roadmap"></a>
 ## 🗺️ Where everything lives
 
-The curriculum is split into focused pages so you never scroll through 2,000 lines again. **Start with the [curriculum index](curriculum/README.md)** — it lists every module with a one-line description.
+The curriculum is split into focused pages so you never scroll through 2,000 lines again. Pages are
+grouped below by **when you need them** — you are not expected to read the bottom group at all.
 
-| Section | What you will find there |
+### Read these first
+
+| Page | What you will find there |
 |---|---|
-| 🚀 [Practitioner Track (fast lane)](guides/practitioner-track.md) | The 6-stage, 6–9-month employment-first sequence, with the trade-offs stated |
+| 🧭 [**START-HERE**](START-HERE.md) | What this repo is, one decision, and a four-day plan |
+| 📖 [How to read a module](guides/how-to-read-a-module.md) | Module anatomy + the **Pick-One table**: one default resource per module |
+| ❓ [FAQ](FAQ.md) | Why modules skip 19/20, how long it takes, what the symbols mean |
 | 📚 [Curriculum index](curriculum/README.md) | All 27 modules across six strata, plus the module-project enforcement rule |
+
+### The curriculum itself
+
+| Page | What you will find there |
+|---|---|
 | 🟩 [1 · Foundations](curriculum/1-foundations.md) | Math diagnostic · M0–M5: proof, Python, calculus, linear algebra, algorithms, probability |
 | 🟨 [2 · Statistics & Data](curriculum/2-statistics-and-data.md) | M6–M8b: inference, causal inference, EDA, SQL, distributed data |
 | 🟧 [3 · Classical ML](curriculum/3-classical-ml.md) | M9–M12: regression, classification, unsupervised, ensembles |
 | 🟦 [4 · Probabilistic ML](curriculum/4-probabilistic-ml.md) | M13–M14: Bayesian inference, MCMC, time series |
 | 🟪 [5 · Deep Learning](curriculum/5-deep-learning.md) | M15–M17: MLPs/CNNs, transformers, generative models, RL |
 | 🔴 [6 · Frontier & Production](curriculum/6-frontier-production.md) | M18, M21–M26: LLMs, RAG, agents, safety, MLOps, product, capstone |
-| 🤝 [Companion curricula](guides/companion-curricula.md) | Where the two Microsoft beginner curricula slot into this roadmap |
-| 📖 [Books](resources/books.md) | Core textbook list + the 🧰 Practitioner Shelf |
-| 🛠️ [Toolchain](resources/toolchain.md) | The production tool choices, with versions |
-| 🧭 [Career Operations](guides/career-operations.md) | Job search mechanics + the skills ↔ job-description mapping |
-| ✅ [Progress tracker](guides/progress-tracker.md) | Fork-and-tick checklist for every module and project |
+
+### Guides and reference — when you need them
+
+| Page | Open it when… |
+|---|---|
+| 🚀 [Practitioner Track (fast lane)](guides/practitioner-track.md) | You want the 6–9-month employment-first sequence, trade-offs stated |
+| 🤝 [Companion curricula](guides/companion-curricula.md) | You are a beginner and want guided lessons alongside M1–M14 |
+| ✅ [Progress tracker](guides/progress-tracker.md) | You have forked the repo and want to tick modules off |
+| 🧭 [Career Operations](guides/career-operations.md) | You are ready to apply for jobs |
+| 📖 [Books](resources/books.md) | You need a specific book — your module already names the one to use |
+| 🛠️ [Toolchain](resources/toolchain.md) | You reach M8 or start deploying. A dated snapshot, not a shopping list |
+| 🔗 [Sources](guides/sources.md) | You see a citation like "Video 1 (05:05)" and want to resolve it |
+| 📂 [Course pages](coursepages/) | You reach M6½, M8b, or M21–M25 and want the extra scaffolding |
+
+### Maintainer material — safe to ignore as a learner
+
+| Page | Purpose |
+|---|---|
 | 🗓️ [Changelog](CHANGELOG.md) | Versioned refresh log with what changed and why |
-| 🔍 [Audit trail](audit/) | Link-verification and fact-checking logs for every release |
-| 📂 [Course pages](coursepages/) | Per-module scaffolds for the newest modules (M6½, M8b, M21–M25) |
+| 🔍 [Audit trail](audit/) | Link-verification and fact-checking logs backing every claim |
+| 🔧 [Tools](tools/) | The internal link checker |
+| 🤝 [Contributing](CONTRIBUTING.md) | How to report a dead link or propose a resource change |
+| 📜 [Code of conduct](CODE_OF_CONDUCT.md) | Contributor Covenant v2.1 |
 
 ## Curriculum at a glance
 

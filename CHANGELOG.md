@@ -7,6 +7,25 @@
 
 Each pass records what changed, what was verified, and what was deliberately left alone. Full HTTP status logs live in [`audit/VERIFICATION.md`](audit/VERIFICATION.md); per-pass reports live in [`audit/`](audit/).
 
+### v2026.5 — Clear Path · 2026-08-30
+
+**Diagnosis addressed:** first-time readers could not tell **what to do**. Feedback from students reading the repo cold produced three complaints: it was unclear whether this was software to install or a document to read; the entry points offered ~35 competing starting choices before any action; and each module's long resource list read as a mandatory to-do list rather than as link-rot insurance. No curriculum content was rewritten in this pass — every change is navigational, explanatory, or a factual correction.
+
+| Change | Detail |
+| :--- | :--- |
+| **[`START-HERE.md`](START-HERE.md)** | New single entry point, linked from the top of the README. States plainly that there is no software to install, reduces the whole repository to **one** decision ("can you already write Python loops and functions?"), and gives a day-1-to-day-7 plan. |
+| **[`guides/how-to-read-a-module.md`](guides/how-to-read-a-module.md)** | Explains module anatomy and what each resource label obliges you to do. Contains the **[Pick-One table](guides/how-to-read-a-module.md#pick-one)** — one default free course pre-chosen for all 27 modules, extracted from the existing `Primary Course Link` lines — plus a worked example of reading M9 correctly (total consumed: one course, three chapters, one project). |
+| **[`FAQ.md`](FAQ.md)** | Answers the recurring structural questions: why the module numbers skip 19 and 20, the true module count, realistic timelines, and a full **symbol legend** (✅ ⚠️ ❌ 🔁 ⏭ 📦 ⚡ 🩺 + stratum colours) that previously existed only in this changelog and `audit/`. |
+| **[`guides/sources.md`](guides/sources.md)** | 39 citations of the form *"Video 1 (05:05)"* appeared across 10 files with no key anywhere in the repo. All are now resolvable to full URLs, with a note on reading practitioner interviews as testimony rather than research. |
+| **README first screen** | Removed the pre-content navigation clutter. Added a "what this is in 30 seconds" table, a prominent pointer to `START-HERE.md`, and an explicit warning that resource lists are **a menu, not a to-do list**. "Start here" became "Entry points by experience" (anchor preserved); the file map is now tiered, ending with *maintainer material — safe to ignore as a learner*. |
+| **Stratum pages** | A one-line "reading this page" note added to all six curriculum pages, pointing at the Pick-One table and the citation key. |
+| **Factual corrections** | Four reader-facing references to the non-existent **M19** repaired (three in [`resources/books.md`](resources/books.md), one in [`curriculum/1-foundations.md`](curriculum/1-foundations.md)) — they now point at M24 and the M21–M24 range. The version badge, which read `2026.3` while this log read `v2026.4`, is now generated to match. |
+| **Community health files** | [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) (Contributor Covenant v2.1) added, per [GitHub's community-health guidance](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors). `CONTRIBUTING.md` documents the resource bar (free-first, named source, replaces-rather-than-adds), the ✅/⚠️/❌/🔁 verification legend actually used in `audit/`, and why module numbers are never recycled. |
+| **Issue templates** | The inherited RFC template still described "the current OSSU Curriculum" and linked to `ossu/data-science`. Replaced with four **YAML issue forms** — dead link, resource change, *something was confusing*, and RFC — plus a `config.yml` chooser pointing at `START-HERE.md`, the FAQ, and the module guide. The empty-issue workflow keyed off a sentence in the deleted template, so it needed correcting too; because the automation token cannot write to `.github/workflows/`, the fixed version ships as [`tools/delete-empty-issues.workflow.yml`](tools/delete-empty-issues.workflow.yml) for one-step manual install (see [`tools/README.md`](tools/README.md)). |
+| **Link integrity** | All internal links and anchors re-verified with [`tools/check_links.py`](tools/check_links.py) — 0 failures. |
+
+**Deliberately unchanged:** module sequencing, prerequisites, the free-first policy, all curriculum prose, and the vacant M19/M20 numbering.
+
 ### v2026.4 — Readable Repo · 2026-08-18
 
 **Diagnosis addressed:** the roadmap's content was strong but delivered as a single 2,236-line, ~300 KB `README.md` — overwhelming on first contact and slow to render. No curriculum text was rewritten in this pass; content was **moved verbatim** and only link paths were mechanically rewritten.

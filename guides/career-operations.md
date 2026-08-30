@@ -7,6 +7,8 @@
 
 Everything above this line is about competence. This section is about the entirely separate skill of **converting competence into a job** — which most technical curricula omit, and which is where most self-taught learners actually stall.
 
+> **Citations on this page.** *"Video 2 (07:12)"* and similar refer to named practitioner sources resolved in [sources](sources.md#citation-key).
+
 Two honest caveats before anything else. First, the guidance here is doctrine drawn from named practitioners (see [sources](../CHANGELOG.md#refresh-log)), not from a controlled study; treat it as informed heuristics. Second, nothing in this section substitutes for the [module projects](../curriculum/README.md#module-projects). Career tactics applied to an empty portfolio do not work.
 
 ## 1. The internal locus of control
