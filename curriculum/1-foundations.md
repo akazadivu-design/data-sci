@@ -13,114 +13,202 @@
 ---
 
 <a id="math-diagnostic"></a>
-## 🩺 Math-Foundations Diagnostic & Remediation Map
+## Math-Foundations Diagnostic & Remediation Map
 
-> **Why this section exists:** Most self-learners fail at Modules 9–17 not because ML is hard, but because they skipped (or mis-sequenced) one of *six* prerequisite skills. Below is a **15-question, 60-minute diagnostic** plus a **remediation table** so you can fix the weakness *before* it metastasises.
+**Start here for Module 0 placement.** This is a locally authored readiness check, not a university entrance exam or a validated assessment. You do **not** need calculus, linear algebra, probability, Python, or a CS degree to take it. Later-subject gaps belong to [M2](#module-2), [M3](#module-3), and [M5](#module-5); they are not reasons to repeat Module 0.
 
-### Step 1 — Take the 15-question self-diagnostic (free, 60 min)
+### Step 1 — Try the 12-question diagnostic
 
-Pick **one** of these freely-available diagnostic instruments — each maps cleanly to the 6 strands you must master:
+Allow **30–45 minutes**, or longer if needed; speed is not scored. Use paper or a plain document, without AI, notes, or a symbolic calculator. Write a reason or working for every answer. Unfamiliar notation is a useful gap to record, not a failure of aptitude. Use **Entry** now and save **Retest** for after remediation.
 
-| # | Strand | Diagnostic instrument | Pass bar | Remediation if you fail → |
-|---|---|---|---|---|
-| 1 | **Pre-calculus & algebra** | [MIT 18.01A diagnostic (Q1–Q10)](https://ocw.mit.edu/courses/18-01a-calculus-fall-2005/resources/exam_a/) | 8/10 | Module **0a** (Khan Academy Pre-Calc) |
-| 2 | **Trigonometry & complex numbers** | [Paul's Online Trig diagnostic](https://tutorial.math.lamar.edu/) | 7/10 | Module **0a** (Khan Academy Trig + Euler's formula) |
-| 3 | **Proof writing & logic** | [Velleman *How To Prove It* §1.5 exercises](https://www.cambridge.org/core/books/how-to-prove-it/) | 4/5 | Module **0b** (Hammack *Book of Proof* + Velleman + Lean tutorial) |
-| 4 | **Single-variable calculus** | [MIT 18.01 Final Exam](https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/final-exam/) | 70 % | Module **2** (full) |
-| 5 | **Linear algebra (computational)** | [MIT 18.06 Quiz 1](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/exams/) | 70 % | Module **3** (full) |
-| 6 | **Probability sense** | [Harvard Stat 110 Practice Strategic Practice 1–3](https://stat110.hsites.harvard.edu/) | 70 % | Module **5** (full) |
+| ID / strand | Entry question | Retest question (same skill, new example) |
+| :--- | :--- | :--- |
+| A1 · Algebra | Solve `3x - 5 = 16`. | Solve `4x + 7 = 31`. |
+| A2 · Factorisation | Factor `x² - 5x + 6` and find its zeros. | Factor `x² - 7x + 12` and find its zeros. |
+| A3 · Domains | Give the real domain of `1/(x - 2)` and explain the exclusion. | Give the real domain of `1/(x + 3)` and explain the exclusion. |
+| A4 · Exponents/logs | Evaluate `2³` and `log₂(8)`; explain how the operations are related. | Evaluate `3²` and `log₃(9)`; explain how the operations are related. |
+| A5 · Composition | If `f(x)=2x+1` and `g(x)=x²`, find `f(g(x))` and `g(f(x))`. | If `f(x)=3x-1` and `g(x)=x²`, find both compositions. |
+| A6 · Trigonometry | Convert `π/2` radians to degrees and give its sine and cosine. | Convert `π` radians to degrees and give its sine and cosine. |
+| B1 · Quantifiers | Negate: “Every dataset in this collection contains a missing value.” | Negate: “There exists a file in this folder that is empty.” |
+| B2 · Implication | Is `P implies Q` true when P is false and Q is false? Explain. | Is `P implies Q` true when P is true and Q is false? Explain. |
+| B3 · Logical direction | For integer n, write the converse and contrapositive of “If n is divisible by 4, n is even.” Which is equivalent to the original? | Do the same for “If n is divisible by 6, n is divisible by 3.” |
+| B4 · Sets | For `S={1,2}` and `T={2,3}`, find their intersection and union; is S a subset of T? | For `S={0,1}` and `T={1,2}`, answer the same questions. |
+| B5 · Direct proof | Prove that the square of an odd integer is odd, using `n=2k+1`. | Prove that the product of two odd integers is odd. |
+| B6 · Induction | State and prove the base case and inductive step for `1+...+n=n(n+1)/2`, integers `n≥1`. | Do the same for `1+3+...+(2n-1)=n²`, integers `n≥1`. |
 
-### Step 2 — Use the remediation paths
+<details>
+<summary>Answer guide — open only after attempting your chosen form</summary>
 
-* **Score < 50 %:** Do **Module 0** end-to-end (≈ 6–10 weeks at 10 hrs/week) before touching Module 2.
-* **Score 50–70 %:** Spot-fix using the per-topic links inside Module 0a / 0b.
-* **Score > 70 %:** Skip Module 0; you are ready for Module 1 + 2 in parallel.
+Award **1 point per row** only when all requested parts and the reasoning are correct; otherwise 0. Each strand is out of 6. If you cannot judge a proof, mark it “needs review” (0 for placement) and compare with the proof templates in 0b or ask a reviewer. Do not mark an AI's unverified verdict as a pass.
 
-### Step 3 — Adopt the **Math Maturity Operating Manual**
+| ID | Entry answer / reasoning | Retest answer / reasoning |
+| :--- | :--- | :--- |
+| A1 | `x=7`: add 5, then divide by 3. | `x=6`: subtract 7, then divide by 4. |
+| A2 | `(x-2)(x-3)`; zeros 2 and 3 by the zero-product rule. | `(x-3)(x-4)`; zeros 3 and 4. |
+| A3 | All real x except 2; denominator cannot be zero. | All real x except -3; same reason. |
+| A4 | 8 and 3; the logarithm asks which exponent gives 8 from base 2. | 9 and 2; the logarithm asks which exponent gives 9 from base 3. |
+| A5 | `2x²+1` and `(2x+1)²`; substitute the inner function into the outer one. | `3x²-1` and `(3x-1)²`; same substitution rule. |
+| A6 | 90°, sine 1, cosine 0; the unit-circle point is `(0,1)`. | 180°, sine 0, cosine -1; the point is `(-1,0)`. |
+| B1 | Some dataset in this collection has no missing values. Negate both the quantifier and predicate. | Every file in this folder is nonempty (including vacuous truth for an empty folder). |
+| B2 | True: an implication is false only when its premise is true and conclusion false. | False: precisely that failing case. |
+| B3 | Converse: even implies divisible by 4 (false at n=2). Contrapositive: not even implies not divisible by 4; only the contrapositive is equivalent. | Converse: divisible by 3 implies divisible by 6 (false at n=3). Contrapositive: not divisible by 3 implies not divisible by 6; equivalent. |
+| B4 | Intersection `{2}`, union `{1,2,3}`; no, since 1 is not in T. | Intersection `{1}`, union `{0,1,2}`; no, since 0 is not in T. |
+| B5 | For integer k, `(2k+1)²=2(2k²+2k)+1`; the bracket is an integer, so the result is odd. | For integers a,b, `(2a+1)(2b+1)=2(2ab+a+b)+1`, an odd integer. |
+| B6 | Base n=1: `1=1`. Assume the identity at n=k. Add k+1: `k(k+1)/2+(k+1)=(k+1)(k+2)/2`. This is the statement for k+1, so induction applies. | Base n=1: `1=1`. Assume the odd-number sum is k². Add the next term `2k+1`: `k²+2k+1=(k+1)²`, establishing the next case. |
 
-Independent of *which* topic, every elite programme (MIT, Cambridge, Harvard) implicitly assumes you have these **seven habits**:
+Checking several values is **not** a proof of B5 or B6. A valid B6 response needs a base case, an explicit induction hypothesis, a justified step, and a conclusion over the stated integers.
 
-1. **Quantifier discipline** — when you read "for every / there exists", you can write it as `∀ / ∃` and negate it correctly.
-2. **Definition-unfolding** — given a theorem, you can rewrite each term to its primitive definition before reasoning.
-3. **Counter-example reflex** — when you doubt a claim, you immediately try `n=0`, `n=1`, the empty set, the singleton, and the constant function.
-4. **Proof-template recall** — induction, contradiction, contrapositive, direct, construction, pigeonhole — each as a *template* you can fill in.
-5. **Notation hygiene** — distinguish `=` (equal), `:=` (defined-as), `≡` (congruent / identical), `≈` (approximately), `∼` (asymptotic), `∝` (proportional).
-6. **Computational verification** — every symbolic claim you make is sanity-checked in **SymPy** (algebra) or **NumPy** (numerical) within 5 minutes.
-7. **Lean / proof-assistant exposure** — *not required*, but doing one chapter of [Velleman's *How To Prove It With Lean*](https://djvelleman.github.io/HTPIwL/) **changes how you read every subsequent definition** for the rest of your career.
+</details>
 
-> **Cited source for habits 1–6:** Cambridge IB Discrete Mathematics + Harvard Math 22a "Reasoning, Proof, and Linear Algebra" course handbooks (2025–26).
+### Step 2 — Choose remediation by strand, not an average
+
+- **0a readiness:** at least **5/6 in A**, including A3 (domain restrictions).
+- **0b readiness:** at least **5/6 in B**, including B5 and B6 (actual proofs).
+- **0–2 in a strand:** study that submodule's full core. **3–4, or a missed required item:** repair the corresponding topics, then retest. **Ready:** correct the remaining error and move on; do not repeat an entire course.
+- **Ready in both strands:** Module 0 is **exempt**. Record your working and proceed to [M1](#module-1); check each later module's own prerequisites separately.
+- **Applications-first learner:** use the [practitioner route](#m0-practitioner-route). Deferring proofs is not the same as demonstrating proof readiness.
+
+These cutoffs are local curriculum rules, not research-established predictors. If you already saw the Retest solutions, use unseen exercises of the same types from the core texts and record their chapter/exercise numbers and marking source.
 
 ---
 
 <a id="module-0"></a>
 ## Module 0: Mathematical Maturity Bridge — Pre-Calculus, Logic & Proof
 
-> **Status:** Optional **only** if you scored > 70 % on every diagnostic above. Otherwise: **mandatory**.
+**Start:** [diagnostic](#math-diagnostic) → [choose a route](#m0-practitioner-route) → [weekly plan](#m0-weekly-plan) → [project and exit gate](#m0-project).
 
-* **The Tutor's "Why":** No university teaches *the leap* from procedural high-school math to definition-driven university math — they assume you already made it. The result: 60 %+ of self-learners stall at Module 5 (probability proofs) or Module 9 (regression assumptions). Cambridge's IB CST course explicitly assumes "Mathematics for Natural Sciences" maturity; MIT 6.7960 assumes 18.05 + a proof course; Harvard CS 1810 assumes Math 22a (linear algebra **with proofs**). **This module IS that proof course, compressed and free.**
+> **Status:** Remedial, not a universal gate before programming. Take only the strands you need. For the proof-based curriculum, complete or demonstrate the 0b core before a module requiring proof literacy. Applications-first learners may defer that core, explicitly recording the gap.
 
-* **Strict Prerequisites:** Working knowledge of high-school algebra (solve linear and quadratic equations).
+**Why this module exists:** Algebra helps you manipulate a formula without changing its meaning; proof literacy helps you distinguish assumptions, evidence, and conclusions. The goal is to explain a small mathematical claim and check its limits, not to reproduce a whole university mathematics degree before building anything.
 
-### Sub-module 0a — Pre-Calculus & Trigonometry Refresher (≈ 2–4 weeks)
+**Prerequisites:** Arithmetic with fractions and signed numbers, plus a first exposure to equations. If A1–A2 are inaccessible, start with the algebra review in the free OpenStax text below; allow extra time. **No programming or software installation is required.**
 
-* **Exhaustive Topic List:**
-  * **Numbers:** ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ; absolute value as distance; intervals; surds and rationalising.
-  * **Algebra:** factorisation (difference of squares, sum/difference of cubes), polynomial long division, partial fractions, exponent and log laws, change-of-base formula, **completing the square** (the single most-cited identity in regression).
-  * **Functions:** domain/range, composition, invertibility, even/odd, increasing/decreasing, piecewise, absolute value, floor/ceiling.
-  * **Conic sections:** circle, ellipse, parabola, hyperbola — equations and parametrisations (you'll see them again in Gaussians and SVMs).
-  * **Trigonometry:** unit circle, radian measure, six trig functions, identities (Pythagorean, sum/difference, double-angle, half-angle, product-to-sum), inverse trig, polar coordinates.
-  * **Complex numbers:** Cartesian and polar form, **Euler's formula `eⁱᶿ = cos θ + i sin θ`** (the bridge to Fourier transforms in M3), De Moivre's theorem, roots of unity.
-  * **Sequences & series:** arithmetic and geometric, sum formulas (you will re-derive these in MGFs in M5).
-  * **Limits — informal:** ε-δ intuition, one-sided limits, infinite limits, limits at infinity.
+**Outcomes:** State domains; use functions, exponents, logs and basic trig; translate and negate claims; find counterexamples; write direct, contrapositive, contradiction and induction proofs; explain why finite tests do not establish a universal claim.
 
-* **2026 Resources:**
-  * **Primary (free):** [Khan Academy Precalculus](https://www.khanacademy.org/math/precalculus) — 10 units, ≈ 40 hours, includes mastery quizzes.
-  * **Alternative (free, MIT-quality):** [MIT 18.01A Calculus with Pre-Calc](https://ocw.mit.edu/courses/18-01a-calculus-fall-2005/) — combines refresher with calculus, ideal if you have 6+ weeks.
-  * **Reading:** Stewart *Calculus, Early Transcendentals* (9th ed.) — Appendix A (numbers), Appendix B (coordinate geometry), Appendix C (graphs), §1.1–§1.5 (functions and models).
-  * **Computational verification:** every identity must be checked in **SymPy** within 1 line (e.g., `sympy.simplify(sin(x)**2 + cos(x)**2 - 1)`).
+**Video-informed review, with evidence limits:** [Video 4](../guides/sources.md#video-4) supplies the review topics: mathematics (04:08), learning (08:39), and projects (10:50). Those times are **publisher chapter markers**, not verified quotations. Playback/transcript access was blocked in this pass. The routes, tasks, hours and thresholds below are this curriculum's design decisions, not claims attributed to the speaker. The [online research and implementation plan](https://github.com/akazadivu-design/data-sci/issues/11) records evidence and the remaining transcript check.
 
-### Sub-module 0b — Logic, Proof & Mathematical Vernacular (≈ 4–6 weeks · CORE)
+### Sub-module 0a — Pre-Calculus & Trigonometry Refresher
 
-* **Exhaustive Topic List:**
-  * **Propositional logic:** truth tables, conjunction `∧`, disjunction `∨`, negation `¬`, implication `⟹`, biconditional `⟺`, **converse / contrapositive / inverse** (and which are logically equivalent).
-  * **Predicate logic:** universal `∀`, existential `∃`, **negating quantified statements** (`¬∀x P(x) ≡ ∃x ¬P(x)` — the single most error-prone identity in undergraduate maths).
-  * **Sets:** ∅, ∈, ⊆, ⊊, ∪, ∩, complement, Cartesian product, power set, Russell's paradox (and why ZFC patches it).
-  * **Functions formally:** as relations satisfying functional dependence; injection, surjection, bijection; image and pre-image; composition; inverse function theorem (statement only).
-  * **Relations:** reflexive, symmetric, transitive, equivalence relations, partitions, partial and total orders.
-  * **Cardinality:** finite, countably infinite (ℕ ∼ ℤ ∼ ℚ), uncountable (ℝ via Cantor's diagonal); pigeonhole as a corollary.
-  * **Proof techniques (with at least 3 worked examples each):**
-    1. **Direct proof** — e.g., sum of two evens is even.
-    2. **Proof by contradiction** — e.g., √2 is irrational; there are infinitely many primes.
-    3. **Proof by contrapositive** — e.g., if `n²` is even then `n` is even.
-    4. **Proof by mathematical induction** (weak and strong) — e.g., `Σk=1ⁿ k = n(n+1)/2`; well-ordering principle.
-    5. **Proof by construction** — e.g., explicitly construct a bijection ℕ → ℤ.
-    6. **Proof by cases** — e.g., triangle inequality.
-    7. **Pigeonhole principle** — e.g., among any 13 people, two share a birth-month.
-  * **Number theory primer:** divisibility, gcd, Euclidean algorithm (with extended version), Bezout's identity, modular arithmetic, Fermat's little theorem, Chinese Remainder Theorem (used in cryptography and hashing).
-  * **Combinatorial identities:** Pascal's rule, hockey-stick identity, Vandermonde's identity (you will re-encounter all three in Stat 110 Lec 1–2).
-  * **(Optional) Lean 4 first contact:** prove `∀ n : ℕ, n + 0 = n` interactively. *Not required for the curriculum but a 10× force-multiplier on every later module's confidence.*
+**Core (roughly 20–30 hours if rusty):**
 
-* **2026 Resources:**
-  * **Primary text (free, CC-BY):** [_Book of Proof_ (Hammack, **3rd Edition, 2018; revised 2025**)](https://richardhammack.github.io/BookOfProof/) — chapters 1–10. Open Textbook Initiative-approved; used at 50+ universities.
-  * **Companion text:** [_How to Prove It: A Structured Approach_ (Velleman, **3rd Edition, Cambridge 2019**)](https://www.cambridge.org/core/books/how-to-prove-it/) — chapters 1–6 + the new **[*How to Prove It With Lean* (Velleman, 2024)](https://djvelleman.github.io/HTPIwL/)** companion (free, browser-based).
-  * **Discrete-math companion:** [_Mathematics for Computer Science_ (Lehman, Leighton, Meyer — MIT 6.042J, **2024 edition free PDF**)](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/resources/mit6_042js15_textbook/) — chapters 1–5 (Proofs, Induction, Number Theory).
-  * **Video course:** [Stanford CS103 Mathematical Foundations of Computing — full lecture notes](https://web.stanford.edu/class/cs103/) (publicly mirrored).
-  * **Free online interactive course:** [_Introduction to Mathematical Thinking_ (Keith Devlin — Coursera, evergreen)](https://www.coursera.org/learn/mathematical-thinking) — Stanford-led, free audit.
-  * **Practical implementation:** **SymPy 1.13+** for symbolic verification; **Lean 4 + Mathlib** (optional) — `lean4-web` runs in browser, no install needed.
+| Learn | Demonstrate without a worked solution | Free reference |
+| :--- | :--- | :--- |
+| Number sets, fractions, signs, intervals and absolute value | Explain why `sqrt(x²)` is the absolute value of x for real x, not always x | OpenStax algebra review and §1.6 |
+| Equations, inequalities, factorisation, completing the square | Solve a quadratic, substitute your roots back, and state excluded denominators | OpenStax algebra review and chapter 3 |
+| Domain/range, graphs, composition, inverse functions | Compare `f(g(x))` with `g(f(x))`; explain why x² needs a restricted domain to have an inverse | OpenStax chapter 1 |
+| Exponents, logarithms and their domains | Rewrite `bʸ=x` as `log_b(x)=y` for `b>0`, `b≠1`, `x>0` | OpenStax chapter 4 |
+| Radians, unit circle, sine/cosine/tangent, Pythagorean identity | Sketch one sine cycle and identify where tangent is undefined | OpenStax chapter 5 |
+| Arithmetic/geometric sequences and summation notation | Expand a finite sum and distinguish the index from the number of terms | OpenStax chapter 11 |
 
-* **Outcome:** When you finish Module 0b you can **read any theorem statement in Stat 110 / 18.06 / CS 1810 and re-state it formally before attempting the proof.** That single skill is the difference between a frustrated learner and an MIT-track one.
+**Use one resource, not a stack:** [Khan Academy Precalculus](https://www.khanacademy.org/math/precalculus) for guided practice, **or** [OpenStax *Precalculus 2e*](https://openstax.org/details/books/precalculus-2e) for free web/PDF reading and exercises. Khan's dynamic course layout was only partially inspectable during this review; if its navigation or access fails, use OpenStax. The [OpenStax functions chapter](https://openstax.org/books/precalculus-2e/pages/1-introduction-to-functions) is a direct starting point. No paid book or certificate is required.
 
-* **Suggested Pace:** 6 weeks at 10 hrs/week = 60 hrs total; or 12 weeks at 5 hrs/week. **Do not skip the exercises** — Hammack provides 600+ with hints, and *doing 200 of them* is the entire point of this module.
+**Optional depth, not completion requirements:** conic sections, extended trig identities, polar/complex numbers, De Moivre's theorem, roots of unity and informal limits. Revisit complex-number intuition when needed in [M3](#module-3), and formal limits in [M2](#module-2). The inverse **function theorem** is not an entry-level substitute for understanding inverse functions.
 
-> ### ⚡ Intuition-First Alternative (Practitioner Track)
->
-> **The route:** Skip Module 0 entirely. Go straight to [M1](#module-1), and pick up mathematical vocabulary as it appears via [StatQuest](https://statquest.org/) and the [Manga Guides](../resources/books.md#practitioner-shelf). Return here only if you later hit the wall described below.
->
-> **The argument for it:** Video 3 (04:47) — *"You need intuition, not derivation skills. Get the concepts down and then move forward."* Video 1 (00:44–01:09) reports that months spent on manual derivations "took years longer than it needed to" and did not yield "great intuition for why models behave the way they do in practice."
->
-> **What you give up — stated plainly:** Module 0 is not a maths course, it is a *reading* course. Without it you cannot parse `∀ / ∃`, negate a quantified statement, or unfold a definition — which means every theorem statement in Stat 110, ESL, PRML, and Murphy remains opaque. You will be able to *use* methods and unable to *check* them.
->
-> **Come back when:** you enter [M13](4-probabilistic-ml.md#module-13) (Bayesian derivations), any research-track work, or you find yourself unable to tell whether a paper's claim is actually supported. Module 0 is 60 hours; it does not expire.
+### Sub-module 0b — Logic, Proof & Mathematical Vernacular
+
+**Core (roughly 40–50 hours):** Use Richard Hammack's free [*Book of Proof*](https://richardhammack.github.io/BookOfProof/), **3rd edition, revision 3.4 (2025-02-05)**. Read selected sections and do exercises; do not read the whole book by default. The author's licence restricts commercial use and adaptations; it is **not CC-BY**. Link to the book rather than republishing its contents. The diagnostic and project prompts here are original curriculum exercises.
+
+| Learn | Reading in Hammack | Evidence to produce |
+| :--- | :--- | :--- |
+| Sets, membership, subsets, union/intersection, Cartesian products | Chapter 1 | A set diagram and a counterexample to a false subset claim |
+| Propositions, truth tables, implication, quantifiers and negation | Chapter 2 | One complete implication truth table; translations and negations of three claims |
+| Definitions, direct proof and contrapositive | Chapters 4–5 | One proof of each type, naming the domain and assumptions |
+| Contradiction and existence/uniqueness | Chapters 6–7 | A contradiction proof; explain how an existence claim differs from uniqueness |
+| Set proofs and counterexamples | Chapters 8–9 | A set-equality proof using both inclusions; a disproof by counterexample |
+| Induction | Chapter 10 | Two induction proofs with explicit base cases and steps |
+| Relations and functions | Selected sections of chapters 11–12 | Distinguish injective, surjective and bijective; give an example with its domain/codomain |
+
+For each row, **attempt 4–6 selected exercises**, using provided hints/answers where available or a peer/tutor review. Record exercise numbers and mistakes. Add practice where your reasoning is weak; neither 200 exercises nor finishing every chapter is a substitute for the exit gate. Earlier correct exercises can be used as evidence in the project.
+
+**Two proof models:**
+
+- **Direct:** If integers a and b are even, write `a=2r`, `b=2s` for integers r,s. Then `a+b=2(r+s)`, so the sum is even by definition. The integer assumption is doing real work.
+- **Contrapositive:** To prove “if n² is even, n is even” for integer n, assume n is odd. Write `n=2k+1`; then `n²=2(2k²+2k)+1` is odd. This proves the contrapositive, hence the original implication. The converse is a different statement.
+
+**Optional depth:** strong induction, equivalence relations/partitions, countability and Cantor's diagonal argument, pigeonhole/counting, Euclid's algorithm, modular arithmetic, and a first proof-assistant exercise. These are useful extensions, not simultaneous prerequisites. For a broader discrete-math course, use [MIT 6.042J, Spring 2015](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/) as an **alternative/deeper resource**, not an additional required course. No claim of a “2024 edition” is made for that archive. Lean, ZFC, advanced number theory and combinatorial identities are not required to finish M0.
+
+<a id="m0-practitioner-route"></a>
+### Choose your route — including the intuition-first alternative
+
+| Route | What to do now | Completion status / when to return |
+| :--- | :--- | :--- |
+| **Already ready** | Pass both diagnostic strands with the required items, correct any remaining error, and save the working | **Exempt**; continue to M1 and later prerequisites |
+| **Foundation/research route** | Repair 0a and/or 0b, follow the relevant weekly rows, complete the project and exit gate | **Completed**; ready for subsequent proof-based study, not automatically for advanced ML |
+| **Applications-first route** | Spend about 6–10 hours initially on domains, functions, reading claims and counterexamples; work the project's Parts 1–2 while beginning M1 if its prerequisites are met | **0b deferred**, not completed; return before proof-based M2 work, M13 derivations, or research work where you must check proofs |
+
+The shorter route preserves momentum; it does **not** teach all of 0a or 0b in ten hours. Keep a gap list and revisit it when a real task needs the missing skill. No route guarantees employment or removes the need to understand model/data assumptions.
+
+<a id="m0-weekly-plan"></a>
+### Online study and implementation plan
+
+**First session (45–60 minutes):** attempt Entry, mark your two strands, choose one resource per needed strand, and create a learning log with `date | task | attempt | error | correction | next review`. The log can be a paper notebook or a plain online document. Start the project in week 1, not after all the reading.
+
+**Full bridge estimate:** 60–80 hours across 0a and 0b, including the project and assessment. Allow up to 20 extra hours for remediation (60–100 total); extensive algebra gaps may need longer. The example below is **8 weeks × 10 hours = 80 hours**. At 5 hours/week, use 16 weeks; compress only by demonstrating readiness, not by skipping practice.
+
+| Week | Focus | Deliverable (part of your project, not extra work) |
+| :--- | :--- | :--- |
+| 1 | Diagnostic; equations, signs and domains | Gap log; first domain/counterexample card |
+| 2 | Functions, composition, exponentials and logs | Hand-drawn or online graphs and explanations for Part 1 |
+| 3 | Basic trig, finite sums; repair 0a | Six unseen/retest A questions, with corrected working |
+| 4 | Sets, logic and quantifiers | Truth table and formalised claims for Part 2 |
+| 5 | Direct, contrapositive and contradiction proofs | Draft proof cards; record a reviewer/source check |
+| 6 | Set proofs, functions and induction | Finish proof cards and distinguish testing from proof |
+| 7 | Apply the reasoning to a tiny data-validation rule | Part 4: boundary cases and limitations; revise earlier errors |
+| 8 | Closed-book retest, explanation and review | Final evidence pack, rubric score and next-step decision |
+
+**A 60-minute study loop:** 10 minutes recall without notes → 15 minutes one worked example → 25 minutes solving a new problem → 10 minutes correcting and scheduling a revisit. Revisit a missed concept in a later session and again the following week. The [IES learning-and-memory practice guide](https://ies.ed.gov/ncee/wwc/PracticeGuide/1) supports retrieval quizzes and explanatory questions; this exact schedule and the module's cutoffs are editorial choices, not experimentally validated prescriptions.
+
+**AI-assistant policy for M0:** Make and save your own attempt first. Ask “Which step lacks justification? Give one hint, not the solution” or “Ask me a similar question.” Verify feedback against definitions/texts and rewrite the reasoning without AI. No generated proofs, unseen-answer lookup, or AI grading as the sole evidence during placement or exit assessment. An assistant is optional; the free text and answer guide suffice.
+
+<a id="m0-project"></a>
+### Module project — Mathematical Reasoning Evidence Pack
+
+**Deliverable:** One original Markdown document, PDF, or notebook explaining the four parts below. Include a short overview, your chosen route, assumptions, working, checks and an error log. A plain document with tables and paper sketches is a complete implementation; a coding environment is not required.
+
+1. **Functions and domains:** Compare `f(x)=x²` and `g(x)=x` at `x=-2,0,2`; plot or tabulate them. Explain why `sqrt(x²)=x` fails for negative real x and give the correct real identity. Explain why `(x²-1)/(x-1)=x+1` holds only for `x≠1`. A simplified formula does not restore an excluded input.
+2. **Claims and counterexamples:** Write the implication truth table. For a finite collection of datasets, express “every dataset has a missing value” using a universal quantifier over datasets and an existential quantifier over their entries. Negate it correctly. Construct a dataset with no missing values to disprove the original claim when that dataset belongs to the collection. Explain the empty-collection case.
+3. **Proof cards:** Write four short proofs: (a) the sum of two odd integers is even (direct); (b) if n² is odd then integer n is odd (contrapositive); (c) no integer is both even and odd (contradiction); (d) `1+3+...+(2n-1)=n²` for integers `n≥1` (induction). State the definitions used. Do these before opening the corresponding diagnostic answer. If you have already seen it, use a different induction exercise from Hammack with its reference. In every case, distinguish your proof from examples that merely check it.
+4. **Tiny data-rule lab (no ML needed):** Define an acceptance rule for a reported numeric score: “s is a real number in `[0,1]`.” Create a table for `-0.1, 0, 0.4, 1, 1.1, missing`. Decide accept/reject and explain each boundary. State that missing is rejected before numeric comparisons. Explain why six correct test cases do not prove a software implementation correct for every possible input. This is a validation exercise, not a trained model or a probability-calibration claim.
+
+**Expected checks for Parts 1, 2 and 4:** f gives `4,0,4`; g gives `-2,0,2`; `sqrt(x²)` is the absolute value of real x. With `D` the collection and `M(v)` meaning “entry v is missing,” Part 2 is `∀d∈D, ∃v∈d: M(v)`, whose negation is `∃d∈D, ∀v∈d: ¬M(v)`. For empty D the original is vacuously true and the negation false. Part 4 accepts only `0,0.4,1` from the listed cases. Cite these checks after making your own attempt; they do not replace the explanations or proof cards.
+
+**Online sharing:** Put your own work in a GitHub repository/Gist or a shareable document, and verify the link as your intended reader. Export a PDF or Markdown backup; local completion is equally valid if you cannot publish. Do not upload private datasets, credentials or copied textbook solution sets. No Supabase, paid API, GPU or hosted app is required for M0.
+
+**Optional computational stretch (after basic Python):** Run this in an environment that already has SymPy; it is not a gate for beginners. Predict each result and explain the assumptions first.
+
+```python
+from sympy import Abs, cos, simplify, sin, sqrt, symbols
+
+x = symbols("x", real=True)
+assert simplify(sin(x)**2 + cos(x)**2 - 1) == 0
+assert sqrt(x**2) == Abs(x)
+assert sqrt(x**2).subs(x, -2) == 2  # Not -2: a counterexample to sqrt(x²)=x.
+assert simplify((x**2 - 1) / (x - 1)) == x + 1
+# The original rational expression is still undefined at x=1.
+```
+
+The [official SymPy tutorial](https://docs.sympy.org/latest/tutorials/intro-tutorial/gotchas.html) explains that `==` checks structural equality and `simplify` is not an infallible decision procedure. Its [assumptions guide](https://docs.sympy.org/latest/guides/assumptions.html) explains why domains matter. A symbolic calculation needs its assumptions checked; sampling finitely many inputs cannot prove a universal claim on an infinite domain. For optional graphing use [Desmos](https://www.desmos.com/calculator), or keep the paper table/plot if the browser tool is unavailable.
+
+### Definition of done and marking rubric
+
+Score each criterion **0 = missing/incorrect; 1 = partly correct or needs help; 2 = correct, independently explained and checked**.
+
+| Criterion | Evidence for 2 points |
+| :--- | :--- |
+| Functions/domains | Part 1 values, graphs/table, square-root correction and excluded-input explanation are correct |
+| Logic | Part 2 truth table, quantifiers, negation and counterexample are correct, including empty-collection reasoning |
+| Proof quality | All four proof cards have justified steps and conclusions; induction has both base and step |
+| Validation reasoning | Part 4 decisions include boundaries/missing and explain why passing tests is not a universal proof |
+| Reproducibility/reflection | A reader can follow the working; source/exercise references, errors, corrections and review evidence are recorded |
+
+**Full-bridge exit gate:**
+
+- [ ] At least **8/10** on the pack, with **2/2 in logic and proof quality** and no uncorrected domain error.
+- [ ] At least **5/6 per strand** on Retest/unseen equivalent questions, including A3, B5 and B6, without notes/AI; save your working and marking source. Do not count memorised project/answer-guide work as unseen.
+- [ ] Explain one claim, one proof and one counterexample aloud or in a fresh written explanation without reading your pack. Have a peer/tutor review doubtful steps, or compare to the text and record the remaining uncertainty rather than calling it a pass.
+- [ ] Save/share the evidence pack and record **completed**, **exempt**, or **0b deferred** with the next topic and a reason. Hours watched and exercise counts alone do not pass the module.
+
+**If you miss the gate:** use the failed rubric row/question to pick the relevant 0a/0b topic, do two new exercises, obtain/check feedback and reassess with fresh questions. Do not restart the whole roadmap. Continue to [Module 1](#module-1) when its prerequisites are met; this review does not alter any later module.
 
 ---
 

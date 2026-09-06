@@ -7,6 +7,19 @@
 
 Each pass records what changed, what was verified, and what was deliberately left alone. Full HTTP status logs live in [`audit/VERIFICATION.md`](audit/VERIFICATION.md); per-pass reports live in [`audit/`](audit/).
 
+### Module 0 focused review · 2026-09-06
+
+**Scope:** Module 0 and its placement diagnostic only; Modules 1 onward, numbering, and explicit existing anchors are unchanged. [Online research and implementation plan](https://github.com/akazadivu-design/data-sci/issues/11).
+
+- Replaced the purported “15-question” link list with an original 12-question, two-strand diagnostic, a parallel retest, answer/marking guidance and topic-specific remediation. Later calculus, linear-algebra and probability tests no longer gate entry to M0.
+- Reconciled exemption, full-bridge completion and application-first proof deferral. Preserved the proof core while labelling advanced topics optional; removed the requirement to know Python before M1.
+- Added an 80-hour example schedule within a 60–100-hour planning range, practice/retrieval loop, hint-only AI guidance, a no-code reasoning evidence pack, scored rubric and explicit exit gate. Updated only the M0 row of the Pick-One table.
+- Replaced unlabelled paid/uncertain-access reading with free OpenStax and Hammack defaults. Corrected Hammack's CC-BY label (the author restricts commercial use and adaptations) and identified its 3.4 revision dated 2025-02-05. Removed the unsupported “2024 edition” description of the Spring 2015 MIT archive, the “60%+ stall” statistic and “10×” proof-assistant claim.
+- Added optional runnable SymPy checks with explicit imports, real-domain assumptions, excluded-input caveats and the distinction between finite tests and proof.
+- Recorded Video 4 as a verified title/channel/chapter-topic source, **not** a verified transcript: playback/captions were blocked, and conflicting automated analysis was rejected. Detailed speech alignment remains pending; the independent publisher/institution evidence and access limitations are linked from the source key and plan.
+
+**Validation:** Internal links/anchors, embedded SymPy checks, diagnostic calculations, project cases and byte-for-byte preservation of M1 onward are checked in the pull request. No site deployment, later-module rewrite or automatic merge is part of this pass.
+
 ### v2026.5 — Clear Path · 2026-08-30
 
 **Diagnosis addressed:** first-time readers could not tell **what to do**. Feedback from students reading the repo cold produced three complaints: it was unclear whether this was software to install or a document to read; the entry points offered ~35 competing starting choices before any action; and each module's long resource list read as a mandatory to-do list rather than as link-rot insurance. No curriculum content was rewritten in this pass — every change is navigational, explanatory, or a factual correction.

@@ -19,6 +19,7 @@ practitioner-track material.
 | **Video 1** | [*How to Become an ML Engineer*](https://www.youtube.com/watch?v=UZ_rK9gzVSc) | Senior Applied Scientist, Twitch | The five-phase practical path, the from-scratch NumPy discipline (logistic regression / K-Means / decision tree), the portfolio standard, the *fluency illusion*, and the project archetypes |
 | **Video 2** | [*Breaking into AI/ML from a non-technical background*](https://www.youtube.com/watch?v=FeQZmQMffzc) | Applied Scientist, Amazon | The internal locus of control, building for real organisations, interviews-as-data, and the realistic transition timelines |
 | **Video 3** | [*The Only 7 Books You Need to Become an AI Engineer*](https://www.youtube.com/watch?v=Pr9oRVtAqCM) | ex-Coursera / ex-Amazon engineer | The AI-Engineer role definition, intuition-over-derivation, the notebook-to-production gap, and the [Practitioner Shelf](../resources/books.md#practitioner-shelf) |
+| **Video 4** | [*How I'd Become an AI Engineer in 2026 (Even with No CS Degree)*](https://www.youtube.com/watch?v=8c8Rrhd2oxo) | Marina Wyss - AI & Machine Learning | M0 review topics only: mathematics, learning and projects; [evidence limitations](#video-4) apply |
 | **Article 1** | [*Best Free Python Courses for Beginners in 2026*](https://scrimba.com/articles/best-free-python-courses-for-beginners-in-2026/) | Scrimba | The [free Python course matrix](../curriculum/1-foundations.md#python-course-matrix), the pairing stack, the Python-2 red flags |
 | **Article 2** | [*How to Learn Python — A Beginner's Guide (2026)*](https://scrimba.com/articles/how-to-learn-python-a-beginners-guide-2026/) | Scrimba | The four-phase Python pacing structure, milestones, the project ladder, the tutorial-hell protocol |
 | **Job-market survey** | 16 live postings on public Greenhouse boards (Anthropic, Scale AI, Figma, Databricks, Cloudflare, Discord, Airtable), surveyed 2026-07-26 | — | The [skills ↔ job-description mapping](career-operations.md#skills-checklist) and the two AI-Engineer track rows |
@@ -28,10 +29,28 @@ check it yourself rather than taking this repository's word for it.
 
 ---
 
+<a id="video-4"></a>
+## Video 4 — Module 0 evidence boundary (2026-09-06)
+
+The public YouTube metadata identifies Marina Wyss's video above, published **2026-09-02**. The description discloses Supabase sponsorship and affiliate links; no promoted product is required by M0.
+
+| Publisher chapter range | Topic in the description | M0 editorial response, not a quoted recommendation |
+| :--- | :--- | :--- |
+| [04:08–04:37](https://www.youtube.com/watch?v=8c8Rrhd2oxo&t=248s) | How much math do you need for AI engineering? | Separate application-first deferral from proof-based readiness |
+| [08:39–10:50](https://www.youtube.com/watch?v=8c8Rrhd2oxo&t=519s) | How to actually learn AI engineering (free courses) | One resource per needed strand, practice, feedback and retesting |
+| [10:50–14:08](https://www.youtube.com/watch?v=8c8Rrhd2oxo&t=650s) | Building AI engineering projects | An early, small reasoning project that needs no Python or paid platform |
+
+**Verification limit:** Title, channel, date, description and chapter markers were retrieved. Playback and caption extraction were blocked by YouTube's sign-in/anti-bot response. An automated analysis returned conflicting metadata and was rejected as evidence for exact speech/timestamps. The creator's same-titled article preview was not a substitute for a transcript. These chapter ranges are navigation aids, **not verified timestamps for spoken claims**. No direct quotation or detailed claim about the video's advice is used in the M0 revision; transcript alignment remains pending.
+
+**Independent sources:** M0's mathematical scope is checked against the [Hammack author page](https://richardhammack.github.io/BookOfProof/), [OpenStax Precalculus 2e](https://openstax.org/details/books/precalculus-2e), and [MIT 6.042J Spring 2015](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/). Computational cautions use official [SymPy equality guidance](https://docs.sympy.org/latest/tutorials/intro-tutorial/gotchas.html) and [assumptions documentation](https://docs.sympy.org/latest/guides/assumptions.html). The study loop adapts retrieval/explanation recommendations from the [IES practice guide](https://ies.ed.gov/ncee/wwc/PracticeGuide/1); its precise timings and assessment cutoffs are local design choices, not validated instruments.
+
+The [online Module 0 research and implementation plan](https://github.com/akazadivu-design/data-sci/issues/11) records source-access results, audit findings, acceptance checks and the pending transcript work. The rest of the curriculum has not been reviewed against Video 4.
+
+---
+
 ## How to read these citations critically
 
-The three videos are **practitioner testimony, not research.** They are cited because they are specific,
-verifiable, and internally consistent with each other — not because they are authoritative.
+Videos 1–3 are **practitioner testimony, not research.** Their existing citations are retained, not re-audited in the M0 pass. Video 4 is currently a chapter-topic reference only, subject to the evidence boundary above. None should be treated as a controlled study of learning or employment outcomes.
 
 Where the practitioner doctrine conflicts with the academic doctrine, **this curriculum states both and
 names the trade-off** rather than choosing. The two clearest examples:

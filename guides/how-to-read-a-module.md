@@ -63,7 +63,7 @@ each module lists alternatives if a default does not suit you.
 
 | Module | Take this one course | Then build |
 | :--- | :--- | :--- |
-| [M0](../curriculum/1-foundations.md#module-0) Maths bridge | [Book of Proof](https://richardhammack.github.io/BookOfProof/) (text) + [Khan Precalculus](https://www.khanacademy.org/math/precalculus) | 200 Hammack exercises |
+| [M0](../curriculum/1-foundations.md#module-0) Maths bridge | [Book of Proof](https://richardhammack.github.io/BookOfProof/) for 0b; [Khan Precalculus](https://www.khanacademy.org/math/precalculus) or [OpenStax](https://openstax.org/details/books/precalculus-2e) only if 0a needs repair | [Reasoning Evidence Pack + exit gate](../curriculum/1-foundations.md#m0-project); exempt/deferred routes are labelled in M0 |
 | [M1](../curriculum/1-foundations.md#module-1) Python | [Harvard CS50P](https://cs50.harvard.edu/python/) | Weather CLI |
 | [M2](../curriculum/1-foundations.md#module-2) Calculus | [MIT 18.01 / MITx 18.01.1x](https://mitxonline.mit.edu/courses/course-v1:MITxT+18.01.1x/) | Gradient-descent lab |
 | [M3](../curriculum/1-foundations.md#module-3) Linear algebra | [MIT 18.06 SC](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/) | 5 linear-algebra minis |
