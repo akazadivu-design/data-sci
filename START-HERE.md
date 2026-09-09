@@ -1,139 +1,79 @@
-[🏠 Roadmap home](README.md)
+[Home](README.md) · [All modules](curriculum/README.md#all-modules) · [Resume](guides/progress-tracker.md#resume) · [FAQ](FAQ.md)
 
----
+<a id="-start-here"></a>
+# Start Here
 
-# 🧭 Start Here
+**Leave this page with one module open and one small task to do.** You do not need to read the whole repository or settle on a career track first.
 
-**Read this page to the end before opening anything else.** It takes about five minutes and it replaces
-every other decision you were about to make.
+[Choose your first step](#first-step) · [First study session](#first-session) · [Save your place](#save-your-place) · [Help](#help)
 
----
+<a id="1-what-this-repository-is"></a>
+## What you need
 
-## 1. What this repository is
+A browser is enough to read the roadmap. This is a study plan, not an app to install. No clone or fork is required. You will use a separate workspace for course exercises and your own projects; each course explains its setup.
 
-This is a **study plan**. It is a set of Markdown documents that tell you, in order, which free
-courses to take, which books to read, and which projects to build in order to learn data science and AI.
+<a id="first-step"></a>
+<a id="2-the-whole-thing-in-one-picture"></a>
+## Choose your first step
 
-| ❓ | Answer |
-| :--- | :--- |
-| Is there software to install? | **No.** |
-| Is there code to run? | **No** — not in this repo. You write code in *your own* repositories as you go. |
-| Do I need to clone it? | Not required. Reading it on GitHub is enough. Fork it only if you want to tick off the [progress tracker](guides/progress-tracker.md). |
-| What do I actually *do* with it? | Open one module, take the one course it names, build the one project it names, move on. |
-| Is it free? | Every required resource is free to access. Some optional books cost money and are labelled as optional. |
+| If this describes you | Do this now |
+|---|---|
+| **I'm new to Python, or unsure where to start.** | Open [M1: Programming Foundations](curriculum/1-foundations.md#module-1). Read its prerequisites and project brief, then start its [CS50P default](guides/how-to-read-a-module.md#module-default-1). |
+| **I can write and debug Python functions already.** | Pick a goal in the [track chooser](README.md#choose-your-track), open a relevant module in the [index](curriculum/README.md#all-modules), and check its prerequisites before choosing a resource. |
+| **I have already started this roadmap.** | Go directly to the [resume checklist](guides/progress-tracker.md#resume). You do not need to redo onboarding. |
 
-> **If you were expecting an app, a notebook, or a dataset — there isn't one, and nothing is broken.**
-> This is a curriculum, in the same sense that a university course catalogue is a curriculum.
+**Working on mathematics?** The [Foundations entry section](curriculum/1-foundations.md#math-diagnostic) is the current reference, but its promised unified diagnostic has not been supplied. See [known limitations](FAQ.md#known-limitations); do not interpret the brief Python question above as mathematical placement or a module waiver.
 
----
+<a id="first-session"></a>
+<a id="3-your-first-week--do-exactly-this"></a>
+<a id="rule-1--one-primary-resource-at-a-time"></a>
+## Your first study session
 
-## 2. The whole thing in one picture
+Use this as a suggested **30–60-minute session**, not a deadline or an assessment.
 
-```
-                    YOU ARE HERE
-                         │
-         ┌───────────────┴───────────────┐
-         │      Answer ONE question:     │
-         │  "Can I already write Python  │
-         │   loops and functions?"       │
-         └───────────────┬───────────────┘
-                 │               │
-                NO              YES
-                 │               │
-                 ▼               ▼
-            Module 1        Take the 60-min
-         (Python first)     math diagnostic
-                 │               │
-                 └───────┬───────┘
-                         ▼
-              Follow modules in order.
-          One course + one book + one project
-                      each.
-                         ▼
-               Module 26 — Capstone
-```
+1. **Open your module.** Read its prerequisites, outcomes, and mandatory project/mini-project block. The [reading-order checklist](guides/how-to-read-a-module.md#reading-order) explains where to look.
+2. **Choose a starting resource.** Use its row in the [resource-default table](guides/how-to-read-a-module.md#pick-one). Do not open several alternative courses at once. Required sections and later parts of the module still apply.
+3. **Attempt something small.** For M1, begin the first CS50P lesson and write a tiny program that asks for a name and prints a greeting. For another module, attempt one exercise from your chosen resource. Follow the course's own AI and collaboration rules.
+4. **Record what comes next.** Write the exact lesson/exercise to continue and one question you could not answer. Use the [resume note](guides/progress-tracker.md#resume).
 
-That is the entire method. Everything else in this repository is detail *inside* that loop.
+An unfinished exercise with a clear next step is a useful first session. An empty public repository is not a prerequisite to beginning a lesson.
 
----
+<a id="save-your-place"></a>
+<a id="4-the-three-rules-that-make-this-work"></a>
+<a id="rule-2--every-module-ends-in-a-public-repository"></a>
+<a id="rule-3--ship-before-it-is-good"></a>
+## Save your place
 
-## 3. Your first week — do exactly this
+- Bookmark the **module heading**, not just the repository home page.
+- Copy the [resume note](guides/progress-tracker.md#resume) into your own notes or a fork. GitHub checkboxes do not save your personal progress in the upstream README.
+- Keep practice work in your own workspace. Before publishing, follow the source course's sharing rules; never upload credentials, private data, or restricted assessment solutions.
+- Before claiming completion, check the module's definition of done and the [current project policy](curriculum/README.md#module-projects). Starting a project is not finishing it. If publishing would conflict with course rules, [ask for clarification](https://github.com/akazadivu-design/data-sci/issues/new/choose).
 
-Do not read the full curriculum yet. Do not choose a career track yet. Do these four things in order.
+## For the rest of your first week
 
-| Day | Do this | Time |
-| :--- | :--- | :--- |
-| **Day 1** | Read this page (you are nearly done) and [How to read a module](guides/how-to-read-a-module.md). That second page shows you which single resource to pick when a module lists twelve. | 20 min |
-| **Day 2** | Answer the one question in the picture above. **Can't write a Python loop?** → go to [Module 1](curriculum/1-foundations.md#module-1). **Can?** → take the [math diagnostic](curriculum/1-foundations.md#math-diagnostic). | 10 min–1 hr |
-| **Day 3** | Create a **public GitHub repository** for your first module project. Empty is fine. Its `README.md` should say what you intend to build. This is where your work will live. | 15 min |
-| **Days 4–7** | Start the **one primary course** your module names. Nothing else. Do not open a second course. | ~10 hrs |
+Return to the same resource, alternate instruction with practice, and begin a small part of the module project when ready. Record what you learned and your next task after each session. Adjust study time to your circumstances; you do not need a fixed four-day onboarding schedule.
 
-> **Then, and only then**, come back and read [Choose your track](README.md#choose-your-track) to decide
-> where you are heading long term. Picking a destination is useless before you have started moving.
+**When your goal becomes clearer:** [choose a track](README.md#choose-your-track). If you need more guided explanations, the [companion curricula](guides/companion-curricula.md) are options—not another compulsory starting sequence.
 
----
+<a id="5-what-to-ignore-for-now"></a>
+## What to leave for later
 
-## 4. The three rules that make this work
+You can ignore the [full book catalogue](resources/books.md), [production toolchain](resources/toolchain.md), and maintenance files until you need them. Extra course pages are linked from their modules in the [index](curriculum/README.md#all-modules). Nothing in those directories needs to be installed just to use this roadmap.
 
-Everything else is optional. These are not.
+<a id="help"></a>
+<a id="6-still-not-sure-about-something"></a>
+## Need help?
 
-### Rule 1 — One primary resource at a time
+- Too many resources? [Use the module guide](guides/how-to-read-a-module.md#reading-order).
+- A prerequisite, diagnostic, or payment requirement does not make sense? [Check known limitations](FAQ.md#known-limitations), then [report the specific instructions](https://github.com/akazadivu-design/data-sci/issues/new/choose).
+- Unsure about the full or applied route? [Read fast-lane trade-offs](guides/practitioner-track.md#when-you-must-come-back-to-the-math-spine).
+- Want to estimate the commitment? [Read the time assumptions](FAQ.md#how-long)—they are not employment guarantees.
 
-Each module lists many resources. **That is a menu, not a to-do list.** Pick one course and one book;
-treat the rest as alternatives for when your first pick does not click. The
-[Pick-one table](guides/how-to-read-a-module.md#pick-one) gives you a default choice for every module,
-so you never have to make this decision yourself.
+<a id="-your-start-here-checklist"></a>
+## Before you close this page
 
-### Rule 2 — Every module ends in a public repository
+- [ ] I have a starting module and have read its prerequisites.
+- [ ] I have chosen one resource to start, without assuming it replaces all required work.
+- [ ] I have attempted a small task and saved my next step.
 
-You do not advance until the current module's project is pushed somewhere public. Passing quizzes is not
-evidence; a repository is. See [the enforcement rule](curriculum/README.md#module-projects).
-
-### Rule 3 — Ship before it is good
-
-A messy public project beats a perfect private one. An unfinished repo with an honest README is a
-stronger signal than a polished notebook nobody can see.
-
----
-
-## 5. What to ignore (for now)
-
-The repository contains material aimed at people further along than you. Skipping these is correct,
-not lazy:
-
-| Folder / page | Ignore until… |
-| :--- | :--- |
-| [`audit/`](audit/) | Never needed for learning. It is the link-verification and fact-checking paper trail that backs the claims made elsewhere. Maintainers only. |
-| [`tools/`](tools/) | Only if you want to contribute and run the link checker. |
-| [`resources/toolchain.md`](resources/toolchain.md) | You reach Module 8 or start deploying things. It is a reference snapshot, not a shopping list. |
-| [`CHANGELOG.md`](CHANGELOG.md) | You want to know what changed between versions. |
-| Modules 21–26 | You have finished the classical ML modules — unless you are on the [fast lane](guides/practitioner-track.md). |
-| The full [books list](resources/books.md) | You need a specific book. Your module already tells you which one. |
-
----
-
-## 6. Still not sure about something?
-
-* **"Why do the modules skip 19 and 20?"** and other structural questions → [FAQ](FAQ.md)
-* **"What does *Video 1 (05:05)* mean?"** → [Sources](guides/sources.md)
-* **"What do the ✅ and ⚠️ marks mean?"** → [FAQ § symbols](FAQ.md#symbols)
-* **"How long will this really take?"** → [FAQ § time](FAQ.md#how-long)
-* **"I want a job, not a degree."** → [Practitioner fast lane](guides/practitioner-track.md)
-
----
-
-## ✅ Your Start-Here checklist
-
-Copy this into your first project's README and tick it off:
-
-- [ ] I understand this is a curriculum, not software to install
-- [ ] I read [How to read a module](guides/how-to-read-a-module.md)
-- [ ] I answered the Python question and know my starting module
-- [ ] I created a public repository for my first project
-- [ ] I started **one** course and closed the other tabs
-
-When all five are ticked, you are past the hardest part — which is starting.
-
----
-
-[🏠 Roadmap home](README.md) · [📖 How to read a module](guides/how-to-read-a-module.md) · [❓ FAQ](FAQ.md)
+[Open M1](curriculum/1-foundations.md#module-1) · [Browse modules](curriculum/README.md#all-modules) · [Save a resume note](guides/progress-tracker.md#resume)
